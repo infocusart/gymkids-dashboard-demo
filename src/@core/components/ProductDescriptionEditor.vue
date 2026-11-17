@@ -42,7 +42,7 @@ watch(() => props.modelValue, () => {
   if (isSame)
     return
 
-  editor.value?.commands.setContent(props.modelValue)
+  editor.value?.commands.setContent(props.modelValue, { emitUpdate: false })
 })
 </script>
 
