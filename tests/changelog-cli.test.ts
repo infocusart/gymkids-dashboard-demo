@@ -26,7 +26,7 @@ test('changelog CLI dry runs validate complete events and never write rejected l
   assert.equal(valid.status, 0, valid.stderr)
   assert.match(valid.stdout, /qa-cli-contract/)
   assert.notEqual(run([...eventArguments, '--route', 'javascript:alert(1)']).status, 0)
-  assert.notEqual(run([...eventArguments, '--link', 'Invalid=https://example.invalid']).status, 0)
+  assert.notEqual(run([...eventArguments, '--link', 'Invalid=http://example.invalid']).status, 0)
   assert.notEqual(run(['add', '--dry-run']).status, 0)
   assert.deepEqual(readdirSync('changelog/events').sort(), before)
 })

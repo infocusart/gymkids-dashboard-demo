@@ -3,8 +3,10 @@ import { readFileSync } from 'node:fs'
 import nodePath from 'node:path'
 import test from 'node:test'
 import { displayChangelogLinks, displayChangelogRoutes, livePreviewLaunchPath } from '../src/lib/changelogDisplay'
-import { safeChangelogHref, safeChangelogRoute } from '../src/lib/changelogLinks'
+import { normalizeChangelogUrl as safeChangelogRoute } from '../src/lib/changelogUrls'
 import { resolveGitExecutable, validateEvent } from '../scripts/changelog.mjs'
+
+const safeChangelogHref = (value: unknown) => safeChangelogRoute(value, true)
 
 const badRoutes = [
   'javascript:alert(1)',
@@ -44,12 +46,13 @@ test('rejects unsafe route families before native href binding and preserves val
   assert.deepEqual(displayChangelogRoutes(null), [])
 })
 
-test('allows only approved HTTPS origins and strips unsafe ordinary links', () => {
+test('preserves upstream HTTPS support without credentials and strips unsafe ordinary links', () => {
   const allowed = 'https://github.com/infocusart/gymkids-dashboard-demo'
 
   assert.equal(safeChangelogHref(allowed), allowed)
   assert.equal(safeChangelogHref('/changelog'), '/changelog')
-  for (const value of ['javascript:alert(1)', '//github.com/x', 'http://github.com/x', 'https://github.com.example.invalid', 'https://user:password@github.com/x', 'https://example.invalid', 'https://github.com:8443/x'])
+  assert.equal(safeChangelogHref('https://example.com/help'), 'https://example.com/help')
+  for (const value of ['javascript:alert(1)', '//github.com/x', 'http://github.com/x', 'https://user:password@github.com/x'])
     assert.equal(safeChangelogHref(value), null, value)
   assert.deepEqual(displayChangelogLinks([{ label: 'safe', url: allowed }, { label: 'unsafe', url: 'javascript:alert(1)' }, null]), [{ label: 'safe', url: allowed }])
 })
@@ -85,7 +88,7 @@ test('the changelog writer rejects the same URL attack families before saving an
   assert.doesNotThrow(() => validateEvent(event()))
   for (const route of badRoutes.filter(value => typeof value === 'string'))
     assert.throws(() => validateEvent({ ...event(), routes: [route] }))
-  for (const url of ['javascript:alert(1)', '//example.invalid', '/\\example.invalid', 'https://example.invalid'])
+  for (const url of ['javascript:alert(1)', '//example.invalid', '/\\example.invalid', 'http://example.invalid'])
     assert.throws(() => validateEvent({ ...event(), links: [{ label: 'Test', url }] }))
 })
 

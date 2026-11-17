@@ -6,7 +6,7 @@ import { realpathSync } from 'node:fs'
 import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises'
 import { dirname, isAbsolute, join, relative, resolve, sep } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { safeChangelogHref, safeChangelogRoute } from '../src/lib/changelogLinks.js'
+import { normalizeChangelogUrl } from '../src/lib/changelogUrls.js'
 
 const repoRoot = fileURLToPath(new URL('../', import.meta.url))
 const eventsRoot = join(repoRoot, 'changelog/events')
@@ -215,8 +215,10 @@ export function validateEvent(event, sourcePath = 'event') {
 
   assertStringArray(event.areas, `${sourcePath}.areas`)
   assertStringArray(event.routes, `${sourcePath}.routes`)
-  if (event.routes.some(route => !safeChangelogRoute(route)))
-    fail(`${sourcePath}.routes: разрешены только безопасные site-relative маршруты`)
+  event.routes.forEach((route, index) => {
+    if (normalizeChangelogUrl(route) === null)
+      fail(`${sourcePath}.routes[${index}]: разрешены только безопасные внутренние пути`)
+  })
   assertStringArray(event.files, `${sourcePath}.files`)
   assertStringArray(event.done, `${sourcePath}.done`)
   assertStringArray(event.blockers, `${sourcePath}.blockers`)
@@ -239,8 +241,8 @@ export function validateEvent(event, sourcePath = 'event') {
     assertString(link?.label, `${sourcePath}.links[${index}].label`)
     assertString(link?.url, `${sourcePath}.links[${index}].url`)
 
-    if (!safeChangelogHref(link.url))
-      fail(`${sourcePath}.links[${index}].url: требуется безопасный маршрут или разрешённый HTTPS origin`)
+    if (normalizeChangelogUrl(link.url, true) === null)
+      fail(`${sourcePath}.links[${index}].url: разрешены только HTTPS или публичные site-relative ссылки`)
   })
 
   const requiredPairs = {
