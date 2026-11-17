@@ -7,7 +7,7 @@ const hasUnsafeCharacters = value => (
 
 // Shared by the browser and the changelog generator. Preserve valid URLs verbatim.
 export const normalizeChangelogUrl = (value, allowExternal = false) => {
-  if (typeof value !== 'string' || !value || hasUnsafeCharacters(value))
+  if (typeof value !== 'string' || !value || value.length > 2048 || hasUnsafeCharacters(value))
     return null
 
   try {
@@ -24,6 +24,20 @@ export const normalizeChangelogUrl = (value, allowExternal = false) => {
       return null
     if (internal ? url.origin !== SITE_ORIGIN : url.protocol !== 'https:')
       return null
+
+    if (internal) {
+      let pathname = url.pathname
+      for (let depth = 0; depth < 4; depth++) {
+        if (pathname.startsWith('//') || hasUnsafeCharacters(pathname))
+          return null
+        const next = decodeURIComponent(pathname)
+        if (next === pathname)
+          return value
+        pathname = next
+      }
+
+      return null
+    }
 
     return value
   }

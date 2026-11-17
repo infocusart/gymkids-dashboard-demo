@@ -46,3 +46,7 @@ public/mockServiceWorker.js
 .env*
 !.env.example
 !.env.collaboration
+
+# Generated test coverage; uploaded as CI artifacts, never committed.
+/coverage/
+/.scannerwork/

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { themeNativeDashboard } from '@/data/dashboardThemeNative'
+import { parseReportPercent } from '@/lib/reportPercent'
 import ThemeNativeShipmentStatistics from '@/views/dashboard/theme-native/ThemeNativeShipmentStatistics.vue'
 
 definePage({
@@ -23,10 +24,9 @@ const goBack = () => {
 }
 
 const getShowRateTone = (showRate: string) => {
-  if (showRate === '—')
+  const numericValue = parseReportPercent(showRate)
+  if (numericValue === null)
     return 'secondary'
-
-  const numericValue = Number(showRate.replace('%', '').replace(',', '.'))
 
   if (numericValue >= 70)
     return 'success'
@@ -317,14 +317,30 @@ const getShowRateTone = (showRate: string) => {
                 <VTable class="text-no-wrap">
                   <thead>
                     <tr>
-                      <th>Дата</th>
-                      <th>Валидные</th>
-                      <th>Записаны</th>
-                      <th>Из прошлого периода</th>
-                      <th>Перезаписи</th>
-                      <th>Дошли</th>
-                      <th>No-show</th>
-                      <th>Доходимость</th>
+                      <th scope="col">
+                        Дата
+                      </th>
+                      <th scope="col">
+                        Валидные
+                      </th>
+                      <th scope="col">
+                        Записаны
+                      </th>
+                      <th scope="col">
+                        Из прошлого периода
+                      </th>
+                      <th scope="col">
+                        Перезаписи
+                      </th>
+                      <th scope="col">
+                        Дошли
+                      </th>
+                      <th scope="col">
+                        No-show
+                      </th>
+                      <th scope="col">
+                        Доходимость
+                      </th>
                     </tr>
                   </thead>
 

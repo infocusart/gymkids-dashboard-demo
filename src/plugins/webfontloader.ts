@@ -18,5 +18,8 @@ export async function loadFonts() {
 }
 
 export default function () {
-  loadFonts()
+  // Optional fonts load in the background; plugin registration stays synchronous.
+  loadFonts().catch(() => {
+    console.warn('Не удалось загрузить веб-шрифты; используются системные шрифты.')
+  })
 }

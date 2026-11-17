@@ -87,9 +87,15 @@ const moreList = [
           <VTable class="text-wrap">
             <thead>
               <tr>
-                <th>Метрика</th>
-                <th>Значение</th>
-                <th>Комментарий</th>
+                <th scope="col">
+                  Метрика
+                </th>
+                <th scope="col">
+                  Значение
+                </th>
+                <th scope="col">
+                  Комментарий
+                </th>
               </tr>
             </thead>
             <tbody>

@@ -2,6 +2,7 @@
 import { computed, onBeforeUnmount, onMounted, watch } from 'vue'
 import { useMediaQuery } from '@vueuse/core'
 import { useRoute, useRouter } from 'vue-router'
+import { stripParenthesizedNotes } from '@/lib/reportText'
 import SalesDesktopHeader from '@/components/sales/SalesDesktopHeader.vue'
 import SalesCardDetails from '@/components/sales/SalesCardDetails.vue'
 import SalesMonthlyDesktop from '@/components/sales/SalesMonthlyDesktop.vue'
@@ -56,7 +57,7 @@ const percentage = (value: number | null) => value === null ? '—' : `${number(
 const signed = (value: number | null) => value === null ? '—' : `${value > 0 ? '+' : ''}${number(value)}`
 const periodLabel = (value: string, short = false) => new Intl.DateTimeFormat('ru-RU', { month: short ? 'short' : 'long', ...(short ? {} : { year: 'numeric' }), timeZone: 'UTC' }).format(new Date(`${value}-01T12:00:00Z`))
 const fill = (value: number | null, base: number | null) => `${Math.min(100, Math.max(0, (ratio(value, base) ?? 0) * 100))}%`
-const cleanLabel = (label: string) => label.replace(/\s*\([^)]*\)/g, '').trim()
+const cleanLabel = stripParenthesizedNotes
 const revenue = computed(() => f(3) === null ? null : f(5))
 const revenueRate = computed(() => ratio(revenue.value, p(5)))
 const revenueDelta = computed(() => revenue.value === null || p(5) === null ? null : revenue.value - p(5)!)

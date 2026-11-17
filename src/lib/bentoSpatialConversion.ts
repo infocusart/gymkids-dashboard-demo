@@ -228,7 +228,7 @@ export const createBentoSpatialConversion = ({
     await focusBentoViewAfterPaint(target)
 
     if (requestedBentoView.value !== target)
-      transitionToBentoView(requestedBentoView.value)
+      await transitionToBentoView(requestedBentoView.value)
   }
 
   const cancelSpatialMotionFrame = () => {

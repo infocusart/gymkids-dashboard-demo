@@ -2,8 +2,9 @@
 
 import { execFileSync } from 'node:child_process'
 import { randomBytes } from 'node:crypto'
+import { realpathSync } from 'node:fs'
 import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises'
-import { dirname, join, relative } from 'node:path'
+import { dirname, isAbsolute, join, relative, resolve, sep } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { normalizeChangelogUrl } from '../src/lib/changelogUrls.js'
 
@@ -36,9 +37,10 @@ const actionLabels = {
 const actorKinds = new Set(['human', 'agent'])
 const actions = new Set(Object.keys(actionLabels))
 const stages = new Set(Object.keys(stageMeta))
+
 const publicStringBlocklist = [
   /\/Users\//i,
-  /(?:^|\W)Bearer\s+[A-Za-z0-9._~-]+/i,
+  /(?:^|\W)Bearer\s+[\w.~-]+/i,
   /Authorization\s*:/i,
   /(?:api[_-]?key|token|password|secret)\s*[=:]/i,
   /https?:\/\/(?:127\.0\.0\.1|localhost|[^/]+\.local)(?:[:/]|$)/i,
@@ -97,20 +99,36 @@ function listOption(options, key) {
     .filter(Boolean)
 }
 
-function slugify(value) {
-  return String(value)
+export function slugify(value) {
+  const normalized = String(value)
     .normalize('NFKD')
     .toLowerCase()
-    .replace(/[^a-z0-9а-яё]+/giu, '-')
-    .replace(/^-+|-+$/g, '')
-    .slice(0, 64) || 'participant'
+    .replace(/[^a-z0-9\u0430-\u044Fё]+/giu, '-')
+
+  const start = normalized.startsWith('-') ? 1 : 0
+  const end = normalized.endsWith('-') ? normalized.length - 1 : normalized.length
+
+  return normalized.slice(start, end).slice(0, 64) || 'participant'
+}
+
+export function resolveGitExecutable(configured = process.env.GYMKIDS_GIT_EXECUTABLE) {
+  const executable = configured ?? (process.platform === 'win32' ? 'C:/Program Files/Git/cmd/git.exe' : '/usr/bin/git')
+  if (!isAbsolute(executable))
+    fail('GYMKIDS_GIT_EXECUTABLE must be an absolute path')
+  const canonical = realpathSync(executable)
+  const repoRelative = relative(repoRoot, canonical)
+  if (repoRelative === '' || (!isAbsolute(repoRelative) && repoRelative !== '..' && !repoRelative.startsWith(`..${sep}`)))
+    fail('Git executable must be outside the source repository')
+
+  return canonical
 }
 
 function git(args, { optional = false } = {}) {
   try {
-    return execFileSync('git', ['-C', repoRoot, ...args], {
+    return execFileSync(resolveGitExecutable(), ['-C', repoRoot, ...args], {
       encoding: 'utf8',
       stdio: ['ignore', 'pipe', optional ? 'ignore' : 'pipe'],
+      timeout: 10_000,
     }).trim()
   }
   catch (error) {
@@ -157,15 +175,15 @@ function walkPublicStrings(value, path = 'event') {
 
   if (Array.isArray(value)) {
     value.forEach((item, index) => walkPublicStrings(item, `${path}[${index}]`))
+
     return
   }
 
-  if (value && typeof value === 'object') {
+  if (value && typeof value === 'object')
     Object.entries(value).forEach(([key, item]) => walkPublicStrings(item, `${path}.${key}`))
-  }
 }
 
-function validateEvent(event, sourcePath = 'event') {
+export function validateEvent(event, sourcePath = 'event') {
   if (!event || typeof event !== 'object' || Array.isArray(event))
     fail(`${sourcePath}: ожидается JSON-объект`)
 
@@ -180,7 +198,7 @@ function validateEvent(event, sourcePath = 'event') {
   validatePerson(event.actor, `${sourcePath}.actor`)
   validatePerson(event.owner, `${sourcePath}.owner`)
 
-  if (!/^evt-\d{8}T\d{6}Z-[a-z0-9а-яё-]+-[a-f0-9]{4}$/iu.test(event.event_id))
+  if (!/^evt-\d{8}T\d{6}Z-[a-z0-9\u0430-\u044Fё-]+-[a-f0-9]{4}$/iu.test(event.event_id))
     fail(`${sourcePath}.event_id: неверный формат`)
 
   if (!/^[a-z0-9][a-z0-9-]{2,80}$/u.test(event.work_id))
@@ -243,6 +261,7 @@ function validateEvent(event, sourcePath = 'event') {
 
 async function loadEvents() {
   await mkdir(eventsRoot, { recursive: true })
+
   const names = (await readdir(eventsRoot)).filter(name => name.endsWith('.json')).sort()
   const events = []
   const eventIds = new Set()
@@ -268,12 +287,12 @@ async function loadEvents() {
 }
 
 async function checkAppendOnly() {
-  const insideGit = git(['rev-parse', '--is-inside-work-tree'], { optional: true }) === 'true'
+  const insideGit = git(['rev-parse', '--is-inside-work-tree']) === 'true'
 
   if (!insideGit)
-    return { checked: false, reason: 'git metadata unavailable' }
+    fail('Append-only verification requires Git metadata')
 
-  const trackedOutput = git(['ls-tree', '-r', '--name-only', 'HEAD', '--', 'changelog/events'], { optional: true }) || ''
+  const trackedOutput = git(['ls-tree', '-r', '--name-only', 'HEAD', '--', 'changelog/events'])
   const trackedPaths = trackedOutput.split('\n').map(item => item.trim()).filter(Boolean)
 
   for (const trackedPath of trackedPaths) {
@@ -319,7 +338,7 @@ function buildProjection(events) {
     const latest = workEvents.at(-1)
     const participants = new Map()
 
-    workEvents.forEach((event) => {
+    workEvents.forEach(event => {
       participants.set(personKey(event.actor), event.actor)
       participants.set(personKey(event.owner), event.owner)
     })
@@ -430,7 +449,8 @@ function createEvent(options) {
   const owner = makePerson(ownerName, option(options, 'owner-id'), ownerKind)
   const sourceCommit = git(['rev-parse', 'HEAD'], { optional: true })
   const sourceBranch = git(['branch', '--show-current'], { optional: true })
-  const links = listOption(options, 'link').map((item) => {
+
+  const links = listOption(options, 'link').map(item => {
     const separator = item.indexOf('=')
 
     if (separator < 1)
@@ -470,7 +490,7 @@ function createEvent(options) {
 }
 
 function printHelp() {
-  console.log(`GYMKiDs changelog\n\nКоманды:\n  node scripts/changelog.mjs check --append-only\n  node scripts/changelog.mjs build\n  node scripts/changelog.mjs add --work-id ... --action ... --stage ... --title ... --summary ... [поля]\n\nПовторяемые поля: --area --route --file --done --blocker --verification --link 'Название=https://...'\nУчастники: --actor-name --actor-id --actor-kind human|agent --owner-name --owner-id --owner-kind human|agent\nДля проверки без записи добавьте --dry-run.`)
+  console.log('GYMKiDs changelog\n\nКоманды:\n  node scripts/changelog.mjs check --append-only\n  node scripts/changelog.mjs build\n  node scripts/changelog.mjs add --work-id ... --action ... --stage ... --title ... --summary ... [поля]\n\nПовторяемые поля: --area --route --file --done --blocker --verification --link \'Название=https://...\'\nУчастники: --actor-name --actor-id --actor-kind human|agent --owner-name --owner-id --owner-kind human|agent\nДля проверки без записи добавьте --dry-run.')
 }
 
 async function main() {
@@ -478,6 +498,7 @@ async function main() {
 
   if (command === 'help' || options.help) {
     printHelp()
+
     return
   }
 
@@ -486,6 +507,7 @@ async function main() {
     const appendOnly = options['append-only'] ? await checkAppendOnly() : { checked: false, reason: 'not requested' }
 
     console.log(JSON.stringify({ ok: true, events: events.length, append_only: appendOnly }, null, 2))
+
     return
   }
 
@@ -495,6 +517,7 @@ async function main() {
     const projection = await writeProjection(events)
 
     console.log(JSON.stringify({ ok: true, work_items: projection.summary.work_items, events: events.length, append_only: appendOnly, output: relative(repoRoot, projectionPath) }, null, 2))
+
     return
   }
 
@@ -503,23 +526,31 @@ async function main() {
 
     if (options['dry-run']) {
       console.log(JSON.stringify(event, null, 2))
+
       return
     }
 
     await mkdir(eventsRoot, { recursive: true })
+
     const eventPath = join(eventsRoot, `${event.event_id}.json`)
+
     await writeFile(eventPath, `${JSON.stringify(event, null, 2)}\n`, { encoding: 'utf8', flag: 'wx' })
+
     const events = await loadEvents()
+
     await writeProjection(events)
 
     console.log(JSON.stringify({ ok: true, event_id: event.event_id, path: relative(repoRoot, eventPath) }, null, 2))
+
     return
   }
 
   fail(`Неизвестная команда: ${command}`)
 }
 
-main().catch((error) => {
-  console.error(`[changelog] ${error.message}`)
-  process.exitCode = 1
-})
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  main().catch(error => {
+    console.error(`[changelog] ${error.message}`)
+    process.exitCode = 1
+  })
+}

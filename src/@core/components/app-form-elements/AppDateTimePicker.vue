@@ -127,13 +127,8 @@ watch(() => props, () => {
   immediate: true,
 })
 
-const elementId = computed (() => {
-  const _elementIdToken = fieldProps.id || fieldProps.label || inputProps.value.id
-
-  const _id = useId()
-
-  return _elementIdToken ? `app-picker-field-${_elementIdToken}` : _id
-})
+const generatedInputId = useId()
+const elementId = computed(() => props.id || generatedInputId)
 </script>
 
 <template>
@@ -176,6 +171,7 @@ const elementId = computed (() => {
               <!-- flat-picker  -->
               <FlatPickr
                 v-if="!isInlinePicker"
+                :id="elementId"
                 v-bind="compAttrs"
                 ref="refFlatPicker"
                 :model-value="props.modelValue"
@@ -191,6 +187,7 @@ const elementId = computed (() => {
               <!-- simple input for inline prop -->
               <input
                 v-if="isInlinePicker"
+                :id="elementId"
                 :value="props.modelValue"
                 :placeholder="props.placeholder"
                 :readonly="isReadonly.value"

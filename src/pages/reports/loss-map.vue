@@ -300,13 +300,27 @@ const goBack = () => {
                 <VTable class="text-no-wrap">
                   <thead>
                     <tr>
-                      <th>Дата</th>
-                      <th>Лиды</th>
-                      <th>Невалидные</th>
-                      <th>Валидные</th>
-                      <th>Записаны</th>
-                      <th>No-show</th>
-                      <th>Дошли</th>
+                      <th scope="col">
+                        Дата
+                      </th>
+                      <th scope="col">
+                        Лиды
+                      </th>
+                      <th scope="col">
+                        Невалидные
+                      </th>
+                      <th scope="col">
+                        Валидные
+                      </th>
+                      <th scope="col">
+                        Записаны
+                      </th>
+                      <th scope="col">
+                        No-show
+                      </th>
+                      <th scope="col">
+                        Дошли
+                      </th>
                     </tr>
                   </thead>
 

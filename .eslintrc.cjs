@@ -229,6 +229,22 @@ module.exports = {
       '\.eslintrc\.cjs',
     ],
   },
+  overrides: [{
+    // Explicit delimiters let Semgrep CE parse these type contracts completely.
+    files: ['src/data/gymkidsSnapshotTypes.ts', 'src/types/changelog.ts'],
+    rules: {
+      '@stylistic/ts/member-delimiter-style': ['error', {
+        multiline: { delimiter: 'semi', requireLast: true },
+        singleline: { delimiter: 'semi', requireLast: false },
+      }],
+    },
+  }, {
+    files: ['scripts/**/*.mjs'],
+    rules: {
+      // Native Node ESM requires file extensions for relative imports.
+      'import/extensions': ['error', 'ignorePackages', { js: 'always', mjs: 'always' }],
+    },
+  }],
   settings: {
     'import/resolver': {
       node: true,

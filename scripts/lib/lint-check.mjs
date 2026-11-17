@@ -11,7 +11,7 @@ export const runLintCheck = async ({
   const eslint = new ESLint({
     cwd: root,
     overrideConfigFile: configFile,
-    extensions: ['.ts', '.js', '.cjs', '.vue', '.tsx', '.jsx'],
+    extensions: ['.ts', '.js', '.mjs', '.cjs', '.vue', '.tsx', '.jsx'],
     fix: false,
   })
 
