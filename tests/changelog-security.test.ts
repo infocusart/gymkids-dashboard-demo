@@ -1,9 +1,10 @@
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
+import nodePath from 'node:path'
 import test from 'node:test'
 import { displayChangelogLinks, displayChangelogRoutes, livePreviewLaunchPath } from '../src/lib/changelogDisplay'
 import { safeChangelogHref, safeChangelogRoute } from '../src/lib/changelogLinks'
-import { validateEvent } from '../scripts/changelog.mjs'
+import { resolveGitExecutable, validateEvent } from '../scripts/changelog.mjs'
 
 const badRoutes = [
   'javascript:alert(1)',
@@ -26,6 +27,13 @@ const badRoutes = [
   {},
   1,
 ]
+
+test('Git metadata commands require an absolute executable outside the repository', () => {
+  for (const value of ['git', './git', '../git', ''])
+    assert.throws(() => resolveGitExecutable(value), /absolute path/)
+  assert.throws(() => resolveGitExecutable(nodePath.resolve('scripts/changelog.mjs')), /outside the source/)
+  assert.ok(nodePath.isAbsolute(resolveGitExecutable()))
+})
 
 test('rejects unsafe route families before native href binding and preserves valid selection URLs', () => {
   for (const value of badRoutes)

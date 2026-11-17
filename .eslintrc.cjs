@@ -229,6 +229,16 @@ module.exports = {
       '\.eslintrc\.cjs',
     ],
   },
+  overrides: [{
+    // Explicit delimiters let Semgrep CE parse these type contracts completely.
+    files: ['src/data/gymkidsSnapshotTypes.ts', 'src/types/changelog.ts'],
+    rules: {
+      '@stylistic/ts/member-delimiter-style': ['error', {
+        multiline: { delimiter: 'semi', requireLast: true },
+        singleline: { delimiter: 'semi', requireLast: false },
+      }],
+    },
+  }],
   settings: {
     'import/resolver': {
       node: true,

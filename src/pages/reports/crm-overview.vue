@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { themeNativeDashboard } from '@/data/dashboardThemeNative'
+import { parseReportPercent } from '@/lib/reportPercent'
 import ThemeNativeShipmentStatistics from '@/views/dashboard/theme-native/ThemeNativeShipmentStatistics.vue'
 
 definePage({
@@ -23,10 +24,9 @@ const goBack = () => {
 }
 
 const getShowRateTone = (showRate: string) => {
-  if (showRate === '—')
+  const numericValue = parseReportPercent(showRate)
+  if (numericValue === null)
     return 'secondary'
-
-  const numericValue = Number(showRate.replace('%', '').replace(',', '.'))
 
   if (numericValue >= 70)
     return 'success'

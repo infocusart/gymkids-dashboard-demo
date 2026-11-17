@@ -2,8 +2,9 @@
 
 import { execFileSync } from 'node:child_process'
 import { randomBytes } from 'node:crypto'
+import { realpathSync } from 'node:fs'
 import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises'
-import { dirname, join, relative, resolve } from 'node:path'
+import { dirname, isAbsolute, join, relative, resolve, sep } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { safeChangelogHref, safeChangelogRoute } from '../src/lib/changelogLinks.js'
 
@@ -106,11 +107,24 @@ function slugify(value) {
     .slice(0, 64) || 'participant'
 }
 
+export function resolveGitExecutable(configured = process.env.GYMKIDS_GIT_EXECUTABLE) {
+  const executable = configured ?? (process.platform === 'win32' ? 'C:/Program Files/Git/cmd/git.exe' : '/usr/bin/git')
+  if (!isAbsolute(executable))
+    fail('GYMKIDS_GIT_EXECUTABLE must be an absolute path')
+  const canonical = realpathSync(executable)
+  const repoRelative = relative(repoRoot, canonical)
+  if (repoRelative === '' || (!isAbsolute(repoRelative) && repoRelative !== '..' && !repoRelative.startsWith(`..${sep}`)))
+    fail('Git executable must be outside the source repository')
+
+  return canonical
+}
+
 function git(args, { optional = false } = {}) {
   try {
-    return execFileSync('git', ['-C', repoRoot, ...args], {
+    return execFileSync(resolveGitExecutable(), ['-C', repoRoot, ...args], {
       encoding: 'utf8',
       stdio: ['ignore', 'pipe', optional ? 'ignore' : 'pipe'],
+      timeout: 10_000,
     }).trim()
   }
   catch (error) {
@@ -266,12 +280,12 @@ async function loadEvents() {
 }
 
 async function checkAppendOnly() {
-  const insideGit = git(['rev-parse', '--is-inside-work-tree'], { optional: true }) === 'true'
+  const insideGit = git(['rev-parse', '--is-inside-work-tree']) === 'true'
 
   if (!insideGit)
-    return { checked: false, reason: 'git metadata unavailable' }
+    fail('Append-only verification requires Git metadata')
 
-  const trackedOutput = git(['ls-tree', '-r', '--name-only', 'HEAD', '--', 'changelog/events'], { optional: true }) || ''
+  const trackedOutput = git(['ls-tree', '-r', '--name-only', 'HEAD', '--', 'changelog/events'])
   const trackedPaths = trackedOutput.split('\n').map(item => item.trim()).filter(Boolean)
 
   for (const trackedPath of trackedPaths) {
