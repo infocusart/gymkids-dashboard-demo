@@ -34,8 +34,12 @@ test('changelog CLI dry runs validate complete events and never write rejected l
   assert.deepEqual(readdirSync('changelog/events').sort(), before)
 })
 
-test('changelog build reproduces the committed projection and confirms append-only verification', () => {
+test('changelog build creates a deterministic projection and confirms append-only verification', () => {
   const filename = 'public/data/changelog/index.json'
+  const initial = run(['build'])
+
+  assert.equal(initial.status, 0, initial.stderr)
+
   const before = JSON.parse(readFileSync(filename, 'utf8'))
   const built = run(['build'])
 
