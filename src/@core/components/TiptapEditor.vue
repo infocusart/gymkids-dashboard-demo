@@ -19,7 +19,7 @@ const editorRef = ref()
 const editor = useEditor({
   content: props.modelValue,
   extensions: [
-    StarterKit,
+    StarterKit.configure({ link: false, underline: false, trailingNode: false }),
     TextAlign.configure({
       types: ['heading', 'paragraph'],
     }),

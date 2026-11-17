@@ -3,9 +3,9 @@
 import { execFileSync } from 'node:child_process'
 import { randomBytes } from 'node:crypto'
 import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises'
-import { dirname, join, relative } from 'node:path'
+import { dirname, join, relative, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { normalizeChangelogUrl } from '../src/lib/changelogUrls.js'
+import { safeChangelogHref, safeChangelogRoute } from '../src/lib/changelogLinks.js'
 
 const repoRoot = fileURLToPath(new URL('../', import.meta.url))
 const eventsRoot = join(repoRoot, 'changelog/events')
@@ -165,7 +165,7 @@ function walkPublicStrings(value, path = 'event') {
   }
 }
 
-function validateEvent(event, sourcePath = 'event') {
+export function validateEvent(event, sourcePath = 'event') {
   if (!event || typeof event !== 'object' || Array.isArray(event))
     fail(`${sourcePath}: ожидается JSON-объект`)
 
@@ -197,10 +197,8 @@ function validateEvent(event, sourcePath = 'event') {
 
   assertStringArray(event.areas, `${sourcePath}.areas`)
   assertStringArray(event.routes, `${sourcePath}.routes`)
-  event.routes.forEach((route, index) => {
-    if (normalizeChangelogUrl(route) === null)
-      fail(`${sourcePath}.routes[${index}]: разрешены только безопасные внутренние пути`)
-  })
+  if (event.routes.some(route => !safeChangelogRoute(route)))
+    fail(`${sourcePath}.routes: разрешены только безопасные site-relative маршруты`)
   assertStringArray(event.files, `${sourcePath}.files`)
   assertStringArray(event.done, `${sourcePath}.done`)
   assertStringArray(event.blockers, `${sourcePath}.blockers`)
@@ -223,8 +221,8 @@ function validateEvent(event, sourcePath = 'event') {
     assertString(link?.label, `${sourcePath}.links[${index}].label`)
     assertString(link?.url, `${sourcePath}.links[${index}].url`)
 
-    if (normalizeChangelogUrl(link.url, true) === null)
-      fail(`${sourcePath}.links[${index}].url: разрешены только HTTPS или публичные site-relative ссылки`)
+    if (!safeChangelogHref(link.url))
+      fail(`${sourcePath}.links[${index}].url: требуется безопасный маршрут или разрешённый HTTPS origin`)
   })
 
   const requiredPairs = {
@@ -519,7 +517,9 @@ async function main() {
   fail(`Неизвестная команда: ${command}`)
 }
 
-main().catch((error) => {
-  console.error(`[changelog] ${error.message}`)
-  process.exitCode = 1
-})
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  main().catch((error) => {
+    console.error(`[changelog] ${error.message}`)
+    process.exitCode = 1
+  })
+}

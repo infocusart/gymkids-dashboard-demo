@@ -10,7 +10,8 @@
 
 ```bash
 corepack enable
-corepack pnpm install --frozen-lockfile
+corepack pnpm install --frozen-lockfile --ignore-scripts
+corepack pnpm build:icons
 corepack pnpm dev
 ```
 
