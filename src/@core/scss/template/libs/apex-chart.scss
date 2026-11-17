@@ -1,0 +1,153 @@
+@use "@styles/variables/_vuetify.scss" as vuetify;
+@use "@layouts/styles/mixins" as layoutsMixins;
+@use "@core/scss/base/mixins";
+
+body .apexcharts-canvas {
+  &line[stroke="transparent"] {
+    display: "none";
+  }
+
+  .apexcharts-tooltip {
+    @include mixins.elevation(3);
+
+    border-color: rgba(var(--v-border-color), var(--v-border-opacity)) !important;
+    background: rgb(var(--v-theme-surface)) !important;
+    color: rgba(var(--v-theme-on-surface), 0.96) !important;
+
+    .apexcharts-tooltip-title {
+      border-color: rgba(var(--v-border-color), var(--v-border-opacity)) !important;
+      background: rgba(var(--v-theme-on-surface), 0.06) !important;
+      color: rgba(var(--v-theme-on-surface), 0.96) !important;
+      font-weight: 500;
+      padding-inline: 10px;
+    }
+
+    &.apexcharts-theme-light {
+      color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));
+    }
+
+    &.apexcharts-theme-dark {
+      color: white;
+    }
+
+    .apexcharts-tooltip-series-group:first-of-type {
+      padding-block-end: 0;
+    }
+
+    .apexcharts-tooltip-text,
+    .apexcharts-tooltip-text-y-label,
+    .apexcharts-tooltip-text-y-value,
+    .apexcharts-tooltip-text-x-label,
+    .apexcharts-tooltip-text-z-label,
+    .apexcharts-tooltip-text-z-value,
+    .apexcharts-tooltip-text-goals-label,
+    .apexcharts-tooltip-text-goals-value,
+    .apexcharts-tooltip-series-group,
+    span,
+    div {
+      color: rgba(var(--v-theme-on-surface), 0.96) !important;
+      fill: rgba(var(--v-theme-on-surface), 0.96) !important;
+    }
+  }
+
+  .apexcharts-xaxistooltip {
+    border-color: rgba(var(--v-border-color), var(--v-border-opacity)) !important;
+    background: rgb(var(--v-theme-surface)) !important;
+    color: rgba(var(--v-theme-on-surface), 0.96) !important;
+
+    &::after {
+      border-block-end-color: rgb(var(--v-theme-surface)) !important;
+    }
+
+    &::before {
+      border-block-end-color: rgba(var(--v-border-color), var(--v-border-opacity)) !important;
+    }
+  }
+
+  .apexcharts-yaxistooltip {
+    border-color: rgba(var(--v-border-color), var(--v-border-opacity)) !important;
+    background: rgb(var(--v-theme-surface)) !important;
+    color: rgba(var(--v-theme-on-surface), 0.96) !important;
+
+    &::after {
+      border-inline-start-color: rgb(var(--v-theme-surface)) !important;
+    }
+
+    &::before {
+      border-inline-start-color: rgba(var(--v-border-color), var(--v-border-opacity)) !important;
+    }
+  }
+
+  .apexcharts-xaxistooltip-text,
+  .apexcharts-yaxistooltip-text {
+    color: rgba(var(--v-theme-on-surface), 0.96) !important;
+    fill: rgba(var(--v-theme-on-surface), 0.96) !important;
+  }
+
+  .apexcharts-yaxis .apexcharts-yaxis-texts-g .apexcharts-yaxis-label {
+    @include layoutsMixins.rtl {
+      text-anchor: start;
+    }
+  }
+
+  .apexcharts-text,
+  .apexcharts-tooltip-text,
+  .apexcharts-datalabel-label,
+  .apexcharts-datalabel,
+  .apexcharts-xaxistooltip-text,
+  .apexcharts-yaxistooltip-text,
+  .apexcharts-legend-text {
+    font-family: vuetify.$body-font-family !important;
+  }
+
+  .apexcharts-pie-label {
+    fill: white;
+    filter: none;
+  }
+
+  .apexcharts-marker {
+    box-shadow: none;
+  }
+
+  .apexcharts-tooltip-marker {
+    margin-inline-end: 0.625rem;
+
+    @include layoutsMixins.rtl {
+      margin-inline: 0 0.625rem !important;
+    }
+  }
+
+  .apexcharts-legend-marker {
+    margin-inline-end: 0.3875rem !important;
+
+    @include layoutsMixins.rtl {
+      margin-inline-end: 0.75rem !important;
+    }
+  }
+}
+
+body {
+  .apexcharts-tooltip,
+  .apexcharts-tooltip.apexcharts-theme-dark,
+  .apexcharts-xaxistooltip,
+  .apexcharts-xaxistooltip.apexcharts-theme-dark,
+  .apexcharts-yaxistooltip,
+  .apexcharts-yaxistooltip.apexcharts-theme-dark {
+    border: 1px solid rgba(225, 222, 245, 0.12) !important;
+    background: #2f3349 !important;
+    box-shadow: 0 14px 30px rgba(19, 17, 32, 0.28) !important;
+    color: rgba(225, 222, 245, 0.96) !important;
+
+    * {
+      color: rgba(225, 222, 245, 0.96) !important;
+      fill: rgba(225, 222, 245, 0.96) !important;
+      opacity: 1 !important;
+    }
+  }
+
+  .apexcharts-tooltip-title {
+    border-color: rgba(225, 222, 245, 0.12) !important;
+    background: rgba(225, 222, 245, 0.08) !important;
+    color: rgba(225, 222, 245, 0.96) !important;
+  }
+}

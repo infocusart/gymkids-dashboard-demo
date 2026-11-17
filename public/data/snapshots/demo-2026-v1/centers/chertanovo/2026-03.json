@@ -1,0 +1,2914 @@
+{
+  "schema_version": "gymkids.manager-dashboard.v1",
+  "environment": "demo",
+  "demo_notice": "Данные предоставлены для демонстрации и не отражают реальные показатели центров.",
+  "generated_at": "2026-09-08T09:00:00+03:00",
+  "center": {
+    "id": "chertanovo",
+    "display_name": "Чертаново",
+    "currency": "RUB",
+    "timezone": "Europe/Moscow"
+  },
+  "request": {
+    "center_id": "chertanovo",
+    "month": "2026-03",
+    "from": "2026-03-01",
+    "to": "2026-03-31",
+    "timezone": "Europe/Moscow"
+  },
+  "time_contract": {
+    "cohort": {
+      "basis": "lead.created_at",
+      "from": "2026-03-01",
+      "to": "2026-03-31"
+    },
+    "crm_snapshot": {
+      "as_of": "2026-09-08T09:00:00+03:00"
+    },
+    "trial_calendar": {
+      "basis": "trial_scheduled_at",
+      "from": "2026-03-01",
+      "to": "2026-03-31"
+    }
+  },
+  "data_status": {
+    "overall": "ready",
+    "partial": false,
+    "warnings": [],
+    "sources": {}
+  },
+  "plan": {
+    "month_days": 31
+  },
+  "overview": {
+    "days": [
+      {
+        "date": "2026-03-01",
+        "leads": 38,
+        "valid": 27,
+        "scheduled": 18,
+        "reached": 15,
+        "invalid": 5,
+        "in_work": 6
+      },
+      {
+        "date": "2026-03-02",
+        "leads": 24,
+        "valid": 17,
+        "scheduled": 11,
+        "reached": 9,
+        "invalid": 3,
+        "in_work": 4
+      },
+      {
+        "date": "2026-03-03",
+        "leads": 26,
+        "valid": 19,
+        "scheduled": 13,
+        "reached": 12,
+        "invalid": 3,
+        "in_work": 4
+      },
+      {
+        "date": "2026-03-04",
+        "leads": 19,
+        "valid": 15,
+        "scheduled": 11,
+        "reached": 9,
+        "invalid": 2,
+        "in_work": 2
+      },
+      {
+        "date": "2026-03-05",
+        "leads": 30,
+        "valid": 21,
+        "scheduled": 13,
+        "reached": 12,
+        "invalid": 4,
+        "in_work": 5
+      },
+      {
+        "date": "2026-03-06",
+        "leads": 21,
+        "valid": 15,
+        "scheduled": 11,
+        "reached": 10,
+        "invalid": 3,
+        "in_work": 3
+      },
+      {
+        "date": "2026-03-07",
+        "leads": 38,
+        "valid": 27,
+        "scheduled": 17,
+        "reached": 15,
+        "invalid": 5,
+        "in_work": 6
+      },
+      {
+        "date": "2026-03-08",
+        "leads": 25,
+        "valid": 18,
+        "scheduled": 13,
+        "reached": 12,
+        "invalid": 3,
+        "in_work": 4
+      },
+      {
+        "date": "2026-03-09",
+        "leads": 37,
+        "valid": 26,
+        "scheduled": 17,
+        "reached": 15,
+        "invalid": 5,
+        "in_work": 6
+      },
+      {
+        "date": "2026-03-10",
+        "leads": 30,
+        "valid": 22,
+        "scheduled": 14,
+        "reached": 12,
+        "invalid": 4,
+        "in_work": 4
+      },
+      {
+        "date": "2026-03-11",
+        "leads": 37,
+        "valid": 27,
+        "scheduled": 17,
+        "reached": 14,
+        "invalid": 5,
+        "in_work": 5
+      },
+      {
+        "date": "2026-03-12",
+        "leads": 34,
+        "valid": 24,
+        "scheduled": 15,
+        "reached": 13,
+        "invalid": 5,
+        "in_work": 5
+      },
+      {
+        "date": "2026-03-13",
+        "leads": 25,
+        "valid": 18,
+        "scheduled": 12,
+        "reached": 10,
+        "invalid": 3,
+        "in_work": 4
+      },
+      {
+        "date": "2026-03-14",
+        "leads": 29,
+        "valid": 21,
+        "scheduled": 14,
+        "reached": 12,
+        "invalid": 4,
+        "in_work": 4
+      },
+      {
+        "date": "2026-03-15",
+        "leads": 32,
+        "valid": 22,
+        "scheduled": 15,
+        "reached": 13,
+        "invalid": 5,
+        "in_work": 5
+      },
+      {
+        "date": "2026-03-16",
+        "leads": 35,
+        "valid": 24,
+        "scheduled": 16,
+        "reached": 13,
+        "invalid": 5,
+        "in_work": 6
+      },
+      {
+        "date": "2026-03-17",
+        "leads": 29,
+        "valid": 20,
+        "scheduled": 14,
+        "reached": 12,
+        "invalid": 4,
+        "in_work": 5
+      },
+      {
+        "date": "2026-03-18",
+        "leads": 32,
+        "valid": 23,
+        "scheduled": 16,
+        "reached": 13,
+        "invalid": 4,
+        "in_work": 5
+      },
+      {
+        "date": "2026-03-19",
+        "leads": 28,
+        "valid": 20,
+        "scheduled": 14,
+        "reached": 12,
+        "invalid": 4,
+        "in_work": 4
+      },
+      {
+        "date": "2026-03-20",
+        "leads": 40,
+        "valid": 29,
+        "scheduled": 19,
+        "reached": 16,
+        "invalid": 5,
+        "in_work": 6
+      },
+      {
+        "date": "2026-03-21",
+        "leads": 29,
+        "valid": 20,
+        "scheduled": 14,
+        "reached": 12,
+        "invalid": 4,
+        "in_work": 5
+      },
+      {
+        "date": "2026-03-22",
+        "leads": 30,
+        "valid": 22,
+        "scheduled": 14,
+        "reached": 12,
+        "invalid": 4,
+        "in_work": 4
+      },
+      {
+        "date": "2026-03-23",
+        "leads": 28,
+        "valid": 20,
+        "scheduled": 13,
+        "reached": 12,
+        "invalid": 4,
+        "in_work": 4
+      },
+      {
+        "date": "2026-03-24",
+        "leads": 31,
+        "valid": 21,
+        "scheduled": 14,
+        "reached": 12,
+        "invalid": 5,
+        "in_work": 5
+      },
+      {
+        "date": "2026-03-25",
+        "leads": 22,
+        "valid": 16,
+        "scheduled": 11,
+        "reached": 10,
+        "invalid": 3,
+        "in_work": 3
+      },
+      {
+        "date": "2026-03-26",
+        "leads": 32,
+        "valid": 23,
+        "scheduled": 15,
+        "reached": 12,
+        "invalid": 4,
+        "in_work": 5
+      },
+      {
+        "date": "2026-03-27",
+        "leads": 20,
+        "valid": 15,
+        "scheduled": 11,
+        "reached": 9,
+        "invalid": 2,
+        "in_work": 3
+      },
+      {
+        "date": "2026-03-28",
+        "leads": 25,
+        "valid": 18,
+        "scheduled": 12,
+        "reached": 11,
+        "invalid": 3,
+        "in_work": 4
+      },
+      {
+        "date": "2026-03-29",
+        "leads": 28,
+        "valid": 20,
+        "scheduled": 12,
+        "reached": 11,
+        "invalid": 4,
+        "in_work": 4
+      },
+      {
+        "date": "2026-03-30",
+        "leads": 27,
+        "valid": 19,
+        "scheduled": 13,
+        "reached": 11,
+        "invalid": 4,
+        "in_work": 4
+      },
+      {
+        "date": "2026-03-31",
+        "leads": 19,
+        "valid": 13,
+        "scheduled": 9,
+        "reached": 8,
+        "invalid": 3,
+        "in_work": 3
+      }
+    ],
+    "source_catalog": [
+      {
+        "key": "website",
+        "label": "Заявка с сайта"
+      },
+      {
+        "key": "promo",
+        "label": "Промоутеры"
+      },
+      {
+        "key": "direct-center",
+        "label": "Прямое обращение в центр"
+      },
+      {
+        "key": "yandex-maps",
+        "label": "Яндекс Карты"
+      },
+      {
+        "key": "telegram",
+        "label": "Телеграм"
+      },
+      {
+        "key": "repeat-processing",
+        "label": "Повторная проработка"
+      },
+      {
+        "key": "other",
+        "label": "Остальные источники"
+      }
+    ],
+    "source_order_keys": [
+      "website",
+      "promo",
+      "direct-center",
+      "yandex-maps",
+      "telegram",
+      "repeat-processing",
+      "other"
+    ],
+    "source_by_key_by_date": {
+      "2026-03-01": {
+        "website": {
+          "leads": 17,
+          "valid": 12,
+          "scheduled": 8,
+          "reached": 6,
+          "valid_scheduled": 8,
+          "valid_reached": 6
+        },
+        "promo": {
+          "leads": 7,
+          "valid": 5,
+          "scheduled": 3,
+          "reached": 2,
+          "valid_scheduled": 3,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "yandex-maps": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "telegram": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "repeat-processing": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "other": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        }
+      },
+      "2026-03-02": {
+        "website": {
+          "leads": 8,
+          "valid": 6,
+          "scheduled": 4,
+          "reached": 3,
+          "valid_scheduled": 4,
+          "valid_reached": 3
+        },
+        "promo": {
+          "leads": 8,
+          "valid": 6,
+          "scheduled": 4,
+          "reached": 3,
+          "valid_scheduled": 4,
+          "valid_reached": 3
+        },
+        "direct-center": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "yandex-maps": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "telegram": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "repeat-processing": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "other": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        }
+      },
+      "2026-03-03": {
+        "website": {
+          "leads": 10,
+          "valid": 7,
+          "scheduled": 5,
+          "reached": 4,
+          "valid_scheduled": 5,
+          "valid_reached": 4
+        },
+        "promo": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "yandex-maps": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "telegram": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "repeat-processing": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "other": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        }
+      },
+      "2026-03-04": {
+        "website": {
+          "leads": 8,
+          "valid": 6,
+          "scheduled": 4,
+          "reached": 3,
+          "valid_scheduled": 4,
+          "valid_reached": 3
+        },
+        "promo": {
+          "leads": 5,
+          "valid": 4,
+          "scheduled": 3,
+          "reached": 2,
+          "valid_scheduled": 3,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "yandex-maps": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "telegram": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "repeat-processing": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "other": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        }
+      },
+      "2026-03-05": {
+        "website": {
+          "leads": 15,
+          "valid": 10,
+          "scheduled": 6,
+          "reached": 5,
+          "valid_scheduled": 6,
+          "valid_reached": 5
+        },
+        "promo": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "yandex-maps": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "telegram": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "repeat-processing": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "other": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        }
+      },
+      "2026-03-06": {
+        "website": {
+          "leads": 8,
+          "valid": 6,
+          "scheduled": 4,
+          "reached": 3,
+          "valid_scheduled": 4,
+          "valid_reached": 3
+        },
+        "promo": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "yandex-maps": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "telegram": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "repeat-processing": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "other": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        }
+      },
+      "2026-03-07": {
+        "website": {
+          "leads": 18,
+          "valid": 13,
+          "scheduled": 8,
+          "reached": 6,
+          "valid_scheduled": 8,
+          "valid_reached": 6
+        },
+        "promo": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "yandex-maps": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "telegram": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "repeat-processing": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "other": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        }
+      },
+      "2026-03-08": {
+        "website": {
+          "leads": 8,
+          "valid": 6,
+          "scheduled": 4,
+          "reached": 3,
+          "valid_scheduled": 4,
+          "valid_reached": 3
+        },
+        "promo": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "yandex-maps": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "telegram": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "repeat-processing": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "other": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        }
+      },
+      "2026-03-09": {
+        "website": {
+          "leads": 14,
+          "valid": 10,
+          "scheduled": 6,
+          "reached": 5,
+          "valid_scheduled": 6,
+          "valid_reached": 5
+        },
+        "promo": {
+          "leads": 8,
+          "valid": 6,
+          "scheduled": 4,
+          "reached": 3,
+          "valid_scheduled": 4,
+          "valid_reached": 3
+        },
+        "direct-center": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "yandex-maps": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "telegram": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "repeat-processing": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "other": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        }
+      },
+      "2026-03-10": {
+        "website": {
+          "leads": 11,
+          "valid": 8,
+          "scheduled": 5,
+          "reached": 4,
+          "valid_scheduled": 5,
+          "valid_reached": 4
+        },
+        "promo": {
+          "leads": 8,
+          "valid": 6,
+          "scheduled": 4,
+          "reached": 3,
+          "valid_scheduled": 4,
+          "valid_reached": 3
+        },
+        "direct-center": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "yandex-maps": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "telegram": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "repeat-processing": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "other": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        }
+      },
+      "2026-03-11": {
+        "website": {
+          "leads": 18,
+          "valid": 13,
+          "scheduled": 8,
+          "reached": 6,
+          "valid_scheduled": 8,
+          "valid_reached": 6
+        },
+        "promo": {
+          "leads": 7,
+          "valid": 5,
+          "scheduled": 3,
+          "reached": 2,
+          "valid_scheduled": 3,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "yandex-maps": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "telegram": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "repeat-processing": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "other": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        }
+      },
+      "2026-03-12": {
+        "website": {
+          "leads": 13,
+          "valid": 9,
+          "scheduled": 6,
+          "reached": 5,
+          "valid_scheduled": 6,
+          "valid_reached": 5
+        },
+        "promo": {
+          "leads": 7,
+          "valid": 5,
+          "scheduled": 3,
+          "reached": 2,
+          "valid_scheduled": 3,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "yandex-maps": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "telegram": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "repeat-processing": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "other": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        }
+      },
+      "2026-03-13": {
+        "website": {
+          "leads": 11,
+          "valid": 8,
+          "scheduled": 5,
+          "reached": 4,
+          "valid_scheduled": 5,
+          "valid_reached": 4
+        },
+        "promo": {
+          "leads": 5,
+          "valid": 4,
+          "scheduled": 3,
+          "reached": 2,
+          "valid_scheduled": 3,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "yandex-maps": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "telegram": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "repeat-processing": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "other": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        }
+      },
+      "2026-03-14": {
+        "website": {
+          "leads": 9,
+          "valid": 6,
+          "scheduled": 4,
+          "reached": 3,
+          "valid_scheduled": 4,
+          "valid_reached": 3
+        },
+        "promo": {
+          "leads": 8,
+          "valid": 6,
+          "scheduled": 4,
+          "reached": 3,
+          "valid_scheduled": 4,
+          "valid_reached": 3
+        },
+        "direct-center": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "yandex-maps": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "telegram": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "repeat-processing": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "other": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        }
+      },
+      "2026-03-15": {
+        "website": {
+          "leads": 16,
+          "valid": 11,
+          "scheduled": 7,
+          "reached": 6,
+          "valid_scheduled": 7,
+          "valid_reached": 6
+        },
+        "promo": {
+          "leads": 7,
+          "valid": 5,
+          "scheduled": 3,
+          "reached": 2,
+          "valid_scheduled": 3,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "yandex-maps": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "telegram": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "repeat-processing": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "other": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        }
+      },
+      "2026-03-16": {
+        "website": {
+          "leads": 17,
+          "valid": 12,
+          "scheduled": 8,
+          "reached": 6,
+          "valid_scheduled": 8,
+          "valid_reached": 6
+        },
+        "promo": {
+          "leads": 7,
+          "valid": 5,
+          "scheduled": 3,
+          "reached": 2,
+          "valid_scheduled": 3,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "yandex-maps": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "telegram": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "repeat-processing": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "other": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        }
+      },
+      "2026-03-17": {
+        "website": {
+          "leads": 11,
+          "valid": 8,
+          "scheduled": 5,
+          "reached": 4,
+          "valid_scheduled": 5,
+          "valid_reached": 4
+        },
+        "promo": {
+          "leads": 6,
+          "valid": 4,
+          "scheduled": 3,
+          "reached": 2,
+          "valid_scheduled": 3,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "yandex-maps": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "telegram": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "repeat-processing": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "other": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        }
+      },
+      "2026-03-18": {
+        "website": {
+          "leads": 17,
+          "valid": 12,
+          "scheduled": 8,
+          "reached": 6,
+          "valid_scheduled": 8,
+          "valid_reached": 6
+        },
+        "promo": {
+          "leads": 5,
+          "valid": 4,
+          "scheduled": 3,
+          "reached": 2,
+          "valid_scheduled": 3,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "yandex-maps": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "telegram": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "repeat-processing": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "other": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        }
+      },
+      "2026-03-19": {
+        "website": {
+          "leads": 14,
+          "valid": 10,
+          "scheduled": 6,
+          "reached": 5,
+          "valid_scheduled": 6,
+          "valid_reached": 5
+        },
+        "promo": {
+          "leads": 5,
+          "valid": 4,
+          "scheduled": 3,
+          "reached": 2,
+          "valid_scheduled": 3,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "yandex-maps": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "telegram": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "repeat-processing": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "other": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        }
+      },
+      "2026-03-20": {
+        "website": {
+          "leads": 17,
+          "valid": 12,
+          "scheduled": 8,
+          "reached": 6,
+          "valid_scheduled": 8,
+          "valid_reached": 6
+        },
+        "promo": {
+          "leads": 7,
+          "valid": 5,
+          "scheduled": 3,
+          "reached": 2,
+          "valid_scheduled": 3,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "yandex-maps": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "telegram": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "repeat-processing": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "other": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        }
+      },
+      "2026-03-21": {
+        "website": {
+          "leads": 16,
+          "valid": 11,
+          "scheduled": 7,
+          "reached": 6,
+          "valid_scheduled": 7,
+          "valid_reached": 6
+        },
+        "promo": {
+          "leads": 6,
+          "valid": 4,
+          "scheduled": 3,
+          "reached": 2,
+          "valid_scheduled": 3,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "yandex-maps": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "telegram": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "repeat-processing": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "other": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        }
+      },
+      "2026-03-22": {
+        "website": {
+          "leads": 11,
+          "valid": 8,
+          "scheduled": 5,
+          "reached": 4,
+          "valid_scheduled": 5,
+          "valid_reached": 4
+        },
+        "promo": {
+          "leads": 7,
+          "valid": 5,
+          "scheduled": 3,
+          "reached": 2,
+          "valid_scheduled": 3,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "yandex-maps": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "telegram": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "repeat-processing": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "other": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        }
+      },
+      "2026-03-23": {
+        "website": {
+          "leads": 13,
+          "valid": 9,
+          "scheduled": 6,
+          "reached": 5,
+          "valid_scheduled": 6,
+          "valid_reached": 5
+        },
+        "promo": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "yandex-maps": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "telegram": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "repeat-processing": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "other": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        }
+      },
+      "2026-03-24": {
+        "website": {
+          "leads": 12,
+          "valid": 8,
+          "scheduled": 5,
+          "reached": 4,
+          "valid_scheduled": 5,
+          "valid_reached": 4
+        },
+        "promo": {
+          "leads": 7,
+          "valid": 5,
+          "scheduled": 3,
+          "reached": 2,
+          "valid_scheduled": 3,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "yandex-maps": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "telegram": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "repeat-processing": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "other": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        }
+      },
+      "2026-03-25": {
+        "website": {
+          "leads": 8,
+          "valid": 6,
+          "scheduled": 4,
+          "reached": 3,
+          "valid_scheduled": 4,
+          "valid_reached": 3
+        },
+        "promo": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "direct-center": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "yandex-maps": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "telegram": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "repeat-processing": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "other": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        }
+      },
+      "2026-03-26": {
+        "website": {
+          "leads": 17,
+          "valid": 12,
+          "scheduled": 8,
+          "reached": 6,
+          "valid_scheduled": 8,
+          "valid_reached": 6
+        },
+        "promo": {
+          "leads": 8,
+          "valid": 6,
+          "scheduled": 4,
+          "reached": 3,
+          "valid_scheduled": 4,
+          "valid_reached": 3
+        },
+        "direct-center": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "yandex-maps": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "telegram": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "repeat-processing": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "other": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        }
+      },
+      "2026-03-27": {
+        "website": {
+          "leads": 8,
+          "valid": 6,
+          "scheduled": 4,
+          "reached": 3,
+          "valid_scheduled": 4,
+          "valid_reached": 3
+        },
+        "promo": {
+          "leads": 6,
+          "valid": 4,
+          "scheduled": 3,
+          "reached": 2,
+          "valid_scheduled": 3,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "yandex-maps": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "telegram": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "repeat-processing": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "other": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        }
+      },
+      "2026-03-28": {
+        "website": {
+          "leads": 9,
+          "valid": 6,
+          "scheduled": 4,
+          "reached": 3,
+          "valid_scheduled": 4,
+          "valid_reached": 3
+        },
+        "promo": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "yandex-maps": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "telegram": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "repeat-processing": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "other": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        }
+      },
+      "2026-03-29": {
+        "website": {
+          "leads": 11,
+          "valid": 8,
+          "scheduled": 5,
+          "reached": 4,
+          "valid_scheduled": 5,
+          "valid_reached": 4
+        },
+        "promo": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "direct-center": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "yandex-maps": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "telegram": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "repeat-processing": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "other": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        }
+      },
+      "2026-03-30": {
+        "website": {
+          "leads": 12,
+          "valid": 8,
+          "scheduled": 5,
+          "reached": 4,
+          "valid_scheduled": 5,
+          "valid_reached": 4
+        },
+        "promo": {
+          "leads": 8,
+          "valid": 6,
+          "scheduled": 4,
+          "reached": 3,
+          "valid_scheduled": 4,
+          "valid_reached": 3
+        },
+        "direct-center": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "yandex-maps": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "telegram": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "repeat-processing": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "other": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        }
+      },
+      "2026-03-31": {
+        "website": {
+          "leads": 8,
+          "valid": 6,
+          "scheduled": 4,
+          "reached": 3,
+          "valid_scheduled": 4,
+          "valid_reached": 3
+        },
+        "promo": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "yandex-maps": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "telegram": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "repeat-processing": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "other": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        }
+      }
+    },
+    "invalid_reason_order": [
+      "Дубль, уже есть сделка",
+      "Глухой недозвон"
+    ],
+    "invalid_reasons_by_date": {
+      "2026-03-01": {
+        "Дубль, уже есть сделка": 2,
+        "Глухой недозвон": 3
+      },
+      "2026-03-02": {
+        "Дубль, уже есть сделка": 1,
+        "Глухой недозвон": 2
+      },
+      "2026-03-03": {
+        "Дубль, уже есть сделка": 1,
+        "Глухой недозвон": 2
+      },
+      "2026-03-04": {
+        "Дубль, уже есть сделка": 1,
+        "Глухой недозвон": 1
+      },
+      "2026-03-05": {
+        "Дубль, уже есть сделка": 2,
+        "Глухой недозвон": 2
+      },
+      "2026-03-06": {
+        "Дубль, уже есть сделка": 1,
+        "Глухой недозвон": 2
+      },
+      "2026-03-07": {
+        "Дубль, уже есть сделка": 2,
+        "Глухой недозвон": 3
+      },
+      "2026-03-08": {
+        "Дубль, уже есть сделка": 1,
+        "Глухой недозвон": 2
+      },
+      "2026-03-09": {
+        "Дубль, уже есть сделка": 2,
+        "Глухой недозвон": 3
+      },
+      "2026-03-10": {
+        "Дубль, уже есть сделка": 2,
+        "Глухой недозвон": 2
+      },
+      "2026-03-11": {
+        "Дубль, уже есть сделка": 2,
+        "Глухой недозвон": 3
+      },
+      "2026-03-12": {
+        "Дубль, уже есть сделка": 2,
+        "Глухой недозвон": 3
+      },
+      "2026-03-13": {
+        "Дубль, уже есть сделка": 1,
+        "Глухой недозвон": 2
+      },
+      "2026-03-14": {
+        "Дубль, уже есть сделка": 2,
+        "Глухой недозвон": 2
+      },
+      "2026-03-15": {
+        "Дубль, уже есть сделка": 2,
+        "Глухой недозвон": 3
+      },
+      "2026-03-16": {
+        "Дубль, уже есть сделка": 2,
+        "Глухой недозвон": 3
+      },
+      "2026-03-17": {
+        "Дубль, уже есть сделка": 2,
+        "Глухой недозвон": 2
+      },
+      "2026-03-18": {
+        "Дубль, уже есть сделка": 2,
+        "Глухой недозвон": 2
+      },
+      "2026-03-19": {
+        "Дубль, уже есть сделка": 2,
+        "Глухой недозвон": 2
+      },
+      "2026-03-20": {
+        "Дубль, уже есть сделка": 2,
+        "Глухой недозвон": 3
+      },
+      "2026-03-21": {
+        "Дубль, уже есть сделка": 2,
+        "Глухой недозвон": 2
+      },
+      "2026-03-22": {
+        "Дубль, уже есть сделка": 2,
+        "Глухой недозвон": 2
+      },
+      "2026-03-23": {
+        "Дубль, уже есть сделка": 2,
+        "Глухой недозвон": 2
+      },
+      "2026-03-24": {
+        "Дубль, уже есть сделка": 2,
+        "Глухой недозвон": 3
+      },
+      "2026-03-25": {
+        "Дубль, уже есть сделка": 1,
+        "Глухой недозвон": 2
+      },
+      "2026-03-26": {
+        "Дубль, уже есть сделка": 2,
+        "Глухой недозвон": 2
+      },
+      "2026-03-27": {
+        "Дубль, уже есть сделка": 1,
+        "Глухой недозвон": 1
+      },
+      "2026-03-28": {
+        "Дубль, уже есть сделка": 1,
+        "Глухой недозвон": 2
+      },
+      "2026-03-29": {
+        "Дубль, уже есть сделка": 2,
+        "Глухой недозвон": 2
+      },
+      "2026-03-30": {
+        "Дубль, уже есть сделка": 2,
+        "Глухой недозвон": 2
+      },
+      "2026-03-31": {
+        "Дубль, уже есть сделка": 1,
+        "Глухой недозвон": 2
+      }
+    },
+    "stage_catalog": [
+      {
+        "key": "assigned-operator",
+        "label": "Распределены оператору"
+      },
+      {
+        "key": "contacting",
+        "label": "На стадиях связи"
+      },
+      {
+        "key": "callback-agreed",
+        "label": "Согласован перезвон"
+      },
+      {
+        "key": "trial-scheduled",
+        "label": "Записаны на пробное"
+      }
+    ],
+    "stage_order_keys": [
+      "assigned-operator",
+      "contacting",
+      "callback-agreed",
+      "trial-scheduled"
+    ],
+    "stages_by_key_by_date": {
+      "2026-03-01": {
+        "assigned-operator": 2,
+        "contacting": 2,
+        "callback-agreed": 2,
+        "trial-scheduled": 3
+      },
+      "2026-03-02": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 2,
+        "trial-scheduled": 2
+      },
+      "2026-03-03": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 2,
+        "trial-scheduled": 1
+      },
+      "2026-03-04": {
+        "assigned-operator": 0,
+        "contacting": 0,
+        "callback-agreed": 2,
+        "trial-scheduled": 2
+      },
+      "2026-03-05": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 3,
+        "trial-scheduled": 1
+      },
+      "2026-03-06": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 1,
+        "trial-scheduled": 1
+      },
+      "2026-03-07": {
+        "assigned-operator": 2,
+        "contacting": 2,
+        "callback-agreed": 2,
+        "trial-scheduled": 2
+      },
+      "2026-03-08": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 2,
+        "trial-scheduled": 1
+      },
+      "2026-03-09": {
+        "assigned-operator": 2,
+        "contacting": 2,
+        "callback-agreed": 2,
+        "trial-scheduled": 2
+      },
+      "2026-03-10": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 2,
+        "trial-scheduled": 2
+      },
+      "2026-03-11": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 3,
+        "trial-scheduled": 3
+      },
+      "2026-03-12": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 3,
+        "trial-scheduled": 2
+      },
+      "2026-03-13": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 2,
+        "trial-scheduled": 2
+      },
+      "2026-03-14": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 2,
+        "trial-scheduled": 2
+      },
+      "2026-03-15": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 3,
+        "trial-scheduled": 2
+      },
+      "2026-03-16": {
+        "assigned-operator": 2,
+        "contacting": 2,
+        "callback-agreed": 2,
+        "trial-scheduled": 3
+      },
+      "2026-03-17": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 3,
+        "trial-scheduled": 2
+      },
+      "2026-03-18": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 3,
+        "trial-scheduled": 3
+      },
+      "2026-03-19": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 2,
+        "trial-scheduled": 2
+      },
+      "2026-03-20": {
+        "assigned-operator": 2,
+        "contacting": 2,
+        "callback-agreed": 2,
+        "trial-scheduled": 3
+      },
+      "2026-03-21": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 3,
+        "trial-scheduled": 2
+      },
+      "2026-03-22": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 2,
+        "trial-scheduled": 2
+      },
+      "2026-03-23": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 2,
+        "trial-scheduled": 1
+      },
+      "2026-03-24": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 3,
+        "trial-scheduled": 2
+      },
+      "2026-03-25": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 1,
+        "trial-scheduled": 1
+      },
+      "2026-03-26": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 3,
+        "trial-scheduled": 3
+      },
+      "2026-03-27": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 1,
+        "trial-scheduled": 2
+      },
+      "2026-03-28": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 2,
+        "trial-scheduled": 1
+      },
+      "2026-03-29": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 2,
+        "trial-scheduled": 1
+      },
+      "2026-03-30": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 2,
+        "trial-scheduled": 2
+      },
+      "2026-03-31": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 1,
+        "trial-scheduled": 1
+      }
+    },
+    "trial_calendar": {
+      "2026-03-01": {
+        "scheduled": 18,
+        "reached": 15,
+        "from_previous_months": 0
+      },
+      "2026-03-02": {
+        "scheduled": 11,
+        "reached": 9,
+        "from_previous_months": 0
+      },
+      "2026-03-03": {
+        "scheduled": 13,
+        "reached": 12,
+        "from_previous_months": 0
+      },
+      "2026-03-04": {
+        "scheduled": 11,
+        "reached": 9,
+        "from_previous_months": 0
+      },
+      "2026-03-05": {
+        "scheduled": 13,
+        "reached": 12,
+        "from_previous_months": 0
+      },
+      "2026-03-06": {
+        "scheduled": 11,
+        "reached": 10,
+        "from_previous_months": 0
+      },
+      "2026-03-07": {
+        "scheduled": 17,
+        "reached": 15,
+        "from_previous_months": 0
+      },
+      "2026-03-08": {
+        "scheduled": 13,
+        "reached": 12,
+        "from_previous_months": 0
+      },
+      "2026-03-09": {
+        "scheduled": 17,
+        "reached": 15,
+        "from_previous_months": 0
+      },
+      "2026-03-10": {
+        "scheduled": 14,
+        "reached": 12,
+        "from_previous_months": 0
+      },
+      "2026-03-11": {
+        "scheduled": 17,
+        "reached": 14,
+        "from_previous_months": 0
+      },
+      "2026-03-12": {
+        "scheduled": 15,
+        "reached": 13,
+        "from_previous_months": 0
+      },
+      "2026-03-13": {
+        "scheduled": 12,
+        "reached": 10,
+        "from_previous_months": 0
+      },
+      "2026-03-14": {
+        "scheduled": 14,
+        "reached": 12,
+        "from_previous_months": 0
+      },
+      "2026-03-15": {
+        "scheduled": 15,
+        "reached": 13,
+        "from_previous_months": 0
+      },
+      "2026-03-16": {
+        "scheduled": 16,
+        "reached": 13,
+        "from_previous_months": 0
+      },
+      "2026-03-17": {
+        "scheduled": 14,
+        "reached": 12,
+        "from_previous_months": 0
+      },
+      "2026-03-18": {
+        "scheduled": 16,
+        "reached": 13,
+        "from_previous_months": 0
+      },
+      "2026-03-19": {
+        "scheduled": 14,
+        "reached": 12,
+        "from_previous_months": 0
+      },
+      "2026-03-20": {
+        "scheduled": 19,
+        "reached": 16,
+        "from_previous_months": 0
+      },
+      "2026-03-21": {
+        "scheduled": 14,
+        "reached": 12,
+        "from_previous_months": 0
+      },
+      "2026-03-22": {
+        "scheduled": 14,
+        "reached": 12,
+        "from_previous_months": 0
+      },
+      "2026-03-23": {
+        "scheduled": 13,
+        "reached": 12,
+        "from_previous_months": 0
+      },
+      "2026-03-24": {
+        "scheduled": 14,
+        "reached": 12,
+        "from_previous_months": 0
+      },
+      "2026-03-25": {
+        "scheduled": 11,
+        "reached": 10,
+        "from_previous_months": 0
+      },
+      "2026-03-26": {
+        "scheduled": 15,
+        "reached": 12,
+        "from_previous_months": 0
+      },
+      "2026-03-27": {
+        "scheduled": 11,
+        "reached": 9,
+        "from_previous_months": 0
+      },
+      "2026-03-28": {
+        "scheduled": 12,
+        "reached": 11,
+        "from_previous_months": 0
+      },
+      "2026-03-29": {
+        "scheduled": 12,
+        "reached": 11,
+        "from_previous_months": 0
+      },
+      "2026-03-30": {
+        "scheduled": 13,
+        "reached": 11,
+        "from_previous_months": 0
+      },
+      "2026-03-31": {
+        "scheduled": 9,
+        "reached": 8,
+        "from_previous_months": 0
+      }
+    },
+    "yandex_by_date": {
+      "2026-03-01": {
+        "leads": 2,
+        "valid": 1,
+        "scheduled": 1,
+        "reached": 1,
+        "valid_scheduled": 1,
+        "valid_reached": 1
+      },
+      "2026-03-02": {
+        "leads": 2,
+        "valid": 1,
+        "scheduled": 1,
+        "reached": 1,
+        "valid_scheduled": 1,
+        "valid_reached": 1
+      },
+      "2026-03-03": {
+        "leads": 4,
+        "valid": 3,
+        "scheduled": 2,
+        "reached": 2,
+        "valid_scheduled": 2,
+        "valid_reached": 2
+      },
+      "2026-03-04": {
+        "leads": 0,
+        "valid": 0,
+        "scheduled": 0,
+        "reached": 0,
+        "valid_scheduled": 0,
+        "valid_reached": 0
+      },
+      "2026-03-05": {
+        "leads": 4,
+        "valid": 3,
+        "scheduled": 2,
+        "reached": 2,
+        "valid_scheduled": 2,
+        "valid_reached": 2
+      },
+      "2026-03-06": {
+        "leads": 2,
+        "valid": 1,
+        "scheduled": 1,
+        "reached": 1,
+        "valid_scheduled": 1,
+        "valid_reached": 1
+      },
+      "2026-03-07": {
+        "leads": 2,
+        "valid": 1,
+        "scheduled": 1,
+        "reached": 1,
+        "valid_scheduled": 1,
+        "valid_reached": 1
+      },
+      "2026-03-08": {
+        "leads": 1,
+        "valid": 1,
+        "scheduled": 1,
+        "reached": 1,
+        "valid_scheduled": 1,
+        "valid_reached": 1
+      },
+      "2026-03-09": {
+        "leads": 2,
+        "valid": 1,
+        "scheduled": 1,
+        "reached": 1,
+        "valid_scheduled": 1,
+        "valid_reached": 1
+      },
+      "2026-03-10": {
+        "leads": 3,
+        "valid": 2,
+        "scheduled": 1,
+        "reached": 1,
+        "valid_scheduled": 1,
+        "valid_reached": 1
+      },
+      "2026-03-11": {
+        "leads": 3,
+        "valid": 2,
+        "scheduled": 1,
+        "reached": 1,
+        "valid_scheduled": 1,
+        "valid_reached": 1
+      },
+      "2026-03-12": {
+        "leads": 4,
+        "valid": 3,
+        "scheduled": 2,
+        "reached": 2,
+        "valid_scheduled": 2,
+        "valid_reached": 2
+      },
+      "2026-03-13": {
+        "leads": 4,
+        "valid": 3,
+        "scheduled": 2,
+        "reached": 2,
+        "valid_scheduled": 2,
+        "valid_reached": 2
+      },
+      "2026-03-14": {
+        "leads": 1,
+        "valid": 1,
+        "scheduled": 1,
+        "reached": 1,
+        "valid_scheduled": 1,
+        "valid_reached": 1
+      },
+      "2026-03-15": {
+        "leads": 2,
+        "valid": 1,
+        "scheduled": 1,
+        "reached": 1,
+        "valid_scheduled": 1,
+        "valid_reached": 1
+      },
+      "2026-03-16": {
+        "leads": 0,
+        "valid": 0,
+        "scheduled": 0,
+        "reached": 0,
+        "valid_scheduled": 0,
+        "valid_reached": 0
+      },
+      "2026-03-17": {
+        "leads": 2,
+        "valid": 1,
+        "scheduled": 1,
+        "reached": 1,
+        "valid_scheduled": 1,
+        "valid_reached": 1
+      },
+      "2026-03-18": {
+        "leads": 2,
+        "valid": 1,
+        "scheduled": 1,
+        "reached": 1,
+        "valid_scheduled": 1,
+        "valid_reached": 1
+      },
+      "2026-03-19": {
+        "leads": 1,
+        "valid": 1,
+        "scheduled": 1,
+        "reached": 1,
+        "valid_scheduled": 1,
+        "valid_reached": 1
+      },
+      "2026-03-20": {
+        "leads": 1,
+        "valid": 1,
+        "scheduled": 1,
+        "reached": 1,
+        "valid_scheduled": 1,
+        "valid_reached": 1
+      },
+      "2026-03-21": {
+        "leads": 0,
+        "valid": 0,
+        "scheduled": 0,
+        "reached": 0,
+        "valid_scheduled": 0,
+        "valid_reached": 0
+      },
+      "2026-03-22": {
+        "leads": 4,
+        "valid": 3,
+        "scheduled": 2,
+        "reached": 2,
+        "valid_scheduled": 2,
+        "valid_reached": 2
+      },
+      "2026-03-23": {
+        "leads": 3,
+        "valid": 2,
+        "scheduled": 1,
+        "reached": 1,
+        "valid_scheduled": 1,
+        "valid_reached": 1
+      },
+      "2026-03-24": {
+        "leads": 4,
+        "valid": 3,
+        "scheduled": 2,
+        "reached": 2,
+        "valid_scheduled": 2,
+        "valid_reached": 2
+      },
+      "2026-03-25": {
+        "leads": 1,
+        "valid": 1,
+        "scheduled": 1,
+        "reached": 1,
+        "valid_scheduled": 1,
+        "valid_reached": 1
+      },
+      "2026-03-26": {
+        "leads": 0,
+        "valid": 0,
+        "scheduled": 0,
+        "reached": 0,
+        "valid_scheduled": 0,
+        "valid_reached": 0
+      },
+      "2026-03-27": {
+        "leads": 0,
+        "valid": 0,
+        "scheduled": 0,
+        "reached": 0,
+        "valid_scheduled": 0,
+        "valid_reached": 0
+      },
+      "2026-03-28": {
+        "leads": 1,
+        "valid": 1,
+        "scheduled": 1,
+        "reached": 1,
+        "valid_scheduled": 1,
+        "valid_reached": 1
+      },
+      "2026-03-29": {
+        "leads": 3,
+        "valid": 2,
+        "scheduled": 1,
+        "reached": 1,
+        "valid_scheduled": 1,
+        "valid_reached": 1
+      },
+      "2026-03-30": {
+        "leads": 0,
+        "valid": 0,
+        "scheduled": 0,
+        "reached": 0,
+        "valid_scheduled": 0,
+        "valid_reached": 0
+      },
+      "2026-03-31": {
+        "leads": 0,
+        "valid": 0,
+        "scheduled": 0,
+        "reached": 0,
+        "valid_scheduled": 0,
+        "valid_reached": 0
+      }
+    }
+  }
+}

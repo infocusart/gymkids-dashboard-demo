@@ -1,0 +1,67 @@
+.dashboard-grid[data-trial-visited] > .dashboard-card {
+  animation: none !important;
+}
+
+.bento-stage:has(.dashboard-grid[data-trial-layout]) {
+  overflow: visible;
+  contain: layout;
+}
+
+.dashboard-grid[data-focus-motion="true"][data-trial-layout] {
+  position: relative;
+  block-size: 802px;
+  grid-template-rows: var(--trial-overview-rows) !important;
+}
+
+.dashboard-grid[data-trial-layout] > .dashboard-card {
+  transition: none;
+}
+
+.dashboard-grid[data-focus-motion="true"][data-trial-layout][data-focus-active="true"] > .dashboard-card {
+  grid-column: var(--bento-focus-column) !important;
+  grid-row: var(--bento-focus-row) !important;
+}
+
+.dashboard-grid[data-trial-layout] > .motion-card,
+.dashboard-grid[data-trial-layout] .motion-primary {
+  scale: 1 !important;
+}
+
+.dashboard-grid[data-trial-layout] .motion-title {
+  transition: none;
+}
+
+.dashboard-grid[data-trial-layout] .motion-border-trail {
+  opacity: 0 !important;
+}
+
+.dashboard-grid[data-trial-layout] .forecast-copy,
+.dashboard-grid[data-trial-layout] .forecast-facts {
+  inline-size: min(100%, var(--trial-copy-width));
+}
+
+.dashboard-grid[data-trial-layout][data-focus-active="true"] .forecast-emblem {
+  inset-inline-end: 26px;
+}
+
+.trial-secondary-card[data-trial-expanded="true"] {
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+.trial-secondary-card[data-trial-expanded="true"] > .card-heading,
+.trial-secondary-card[data-trial-expanded="true"] > .trial-value,
+.trial-secondary-card[data-trial-expanded="true"] > .trial-progress,
+.trial-secondary-card[data-trial-expanded="true"] > .trial-outcome {
+  flex-shrink: 0;
+}
+
+.trial-secondary-card[data-trial-expanded="true"] > .trial-value {
+  margin-block-start: 8px;
+}
+
+.trial-secondary-card[data-trial-expanded="true"] .motion-shimmer::after,
+.dashboard-grid[data-trial-layout][data-focus-phase="animating"] .trial-secondary-card .motion-shimmer::after {
+  animation: none;
+  opacity: 0;
+}

@@ -1,0 +1,63 @@
+.dashboard-grid[data-site-visited] > .dashboard-card {
+  animation: none !important;
+}
+
+.bento-stage:has(.dashboard-grid[data-site-layout]) {
+  overflow: visible;
+  contain: layout;
+}
+
+.dashboard-grid[data-focus-motion="true"][data-site-layout] {
+  position: relative;
+  block-size: 802px;
+  grid-template-rows: var(--site-overview-rows) !important;
+}
+
+.dashboard-grid[data-site-layout] > .dashboard-card {
+  transition: none;
+}
+
+.dashboard-grid[data-focus-motion="true"][data-site-layout][data-focus-active="true"] > .dashboard-card {
+  grid-column: var(--bento-focus-column) !important;
+  grid-row: var(--bento-focus-row) !important;
+}
+
+/* Preserve Promo's overview rectangle for fading, without a visible footprint. */
+.dashboard-grid[data-focus-motion="true"][data-site-layout][data-focus-active="true"] > .promo-card {
+  grid-column: 1 / span 3 !important;
+  grid-row: 4 !important;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.dashboard-grid[data-site-layout] > .motion-card,
+.dashboard-grid[data-site-layout] .motion-primary {
+  scale: 1 !important;
+}
+
+.dashboard-grid[data-site-layout] .motion-title {
+  transition: none;
+}
+
+.dashboard-grid[data-site-layout] .motion-border-trail {
+  opacity: 0 !important;
+}
+
+.dashboard-grid[data-site-layout] .lead-chart {
+  overflow: hidden;
+}
+
+.dashboard-grid[data-site-layout][data-focus-active="true"] .lead-chart {
+  block-size: 0;
+  opacity: 0;
+}
+
+/* The original summary stays in place; only the details use the extra height. */
+.site-card[data-site-expanded="true"] {
+  display: flex;
+  flex-direction: column;
+}
+.site-card[data-site-expanded="true"] > :not(.site-details) {
+  flex-shrink: 0;
+}

@@ -1,0 +1,754 @@
+{
+  "schema_version": "gymkids.manager-dashboard.v1",
+  "environment": "demo",
+  "demo_notice": "Данные предоставлены для демонстрации и не отражают реальные показатели центров.",
+  "generated_at": "2026-09-08T09:00:00+03:00",
+  "center": {
+    "id": "salaryevo",
+    "display_name": "Саларьево",
+    "currency": "RUB",
+    "timezone": "Europe/Moscow"
+  },
+  "request": {
+    "center_id": "salaryevo",
+    "month": "2026-09",
+    "from": "2026-09-01",
+    "to": "2026-09-07",
+    "timezone": "Europe/Moscow"
+  },
+  "time_contract": {
+    "cohort": {
+      "basis": "lead.created_at",
+      "from": "2026-09-01",
+      "to": "2026-09-07"
+    },
+    "crm_snapshot": {
+      "as_of": "2026-09-08T09:00:00+03:00"
+    },
+    "trial_calendar": {
+      "basis": "trial_scheduled_at",
+      "from": "2026-09-01",
+      "to": "2026-09-07"
+    }
+  },
+  "data_status": {
+    "overall": "ready",
+    "partial": false,
+    "warnings": [],
+    "sources": {}
+  },
+  "plan": {
+    "month_days": 30
+  },
+  "overview": {
+    "days": [
+      {
+        "date": "2026-09-01",
+        "leads": 32,
+        "valid": 23,
+        "scheduled": 15,
+        "reached": 13,
+        "invalid": 4,
+        "in_work": 5
+      },
+      {
+        "date": "2026-09-02",
+        "leads": 21,
+        "valid": 15,
+        "scheduled": 11,
+        "reached": 9,
+        "invalid": 3,
+        "in_work": 3
+      },
+      {
+        "date": "2026-09-03",
+        "leads": 26,
+        "valid": 18,
+        "scheduled": 12,
+        "reached": 10,
+        "invalid": 4,
+        "in_work": 4
+      },
+      {
+        "date": "2026-09-04",
+        "leads": 28,
+        "valid": 20,
+        "scheduled": 13,
+        "reached": 12,
+        "invalid": 4,
+        "in_work": 4
+      },
+      {
+        "date": "2026-09-05",
+        "leads": 28,
+        "valid": 20,
+        "scheduled": 13,
+        "reached": 11,
+        "invalid": 4,
+        "in_work": 4
+      },
+      {
+        "date": "2026-09-06",
+        "leads": 20,
+        "valid": 14,
+        "scheduled": 11,
+        "reached": 10,
+        "invalid": 3,
+        "in_work": 3
+      },
+      {
+        "date": "2026-09-07",
+        "leads": 30,
+        "valid": 20,
+        "scheduled": 12,
+        "reached": 10,
+        "invalid": 5,
+        "in_work": 5
+      }
+    ],
+    "source_catalog": [
+      {
+        "key": "website",
+        "label": "Заявка с сайта"
+      },
+      {
+        "key": "promo",
+        "label": "Промоутеры"
+      },
+      {
+        "key": "direct-center",
+        "label": "Прямое обращение в центр"
+      },
+      {
+        "key": "yandex-maps",
+        "label": "Яндекс Карты"
+      },
+      {
+        "key": "telegram",
+        "label": "Телеграм"
+      },
+      {
+        "key": "repeat-processing",
+        "label": "Повторная проработка"
+      },
+      {
+        "key": "other",
+        "label": "Остальные источники"
+      }
+    ],
+    "source_order_keys": [
+      "website",
+      "promo",
+      "direct-center",
+      "yandex-maps",
+      "telegram",
+      "repeat-processing",
+      "other"
+    ],
+    "source_by_key_by_date": {
+      "2026-09-01": {
+        "website": {
+          "leads": 16,
+          "valid": 11,
+          "scheduled": 7,
+          "reached": 6,
+          "valid_scheduled": 7,
+          "valid_reached": 6
+        },
+        "promo": {
+          "leads": 7,
+          "valid": 5,
+          "scheduled": 3,
+          "reached": 2,
+          "valid_scheduled": 3,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "yandex-maps": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "telegram": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "repeat-processing": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "other": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        }
+      },
+      "2026-09-02": {
+        "website": {
+          "leads": 10,
+          "valid": 7,
+          "scheduled": 5,
+          "reached": 4,
+          "valid_scheduled": 5,
+          "valid_reached": 4
+        },
+        "promo": {
+          "leads": 6,
+          "valid": 4,
+          "scheduled": 3,
+          "reached": 2,
+          "valid_scheduled": 3,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "yandex-maps": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "telegram": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "repeat-processing": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "other": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        }
+      },
+      "2026-09-03": {
+        "website": {
+          "leads": 9,
+          "valid": 6,
+          "scheduled": 4,
+          "reached": 3,
+          "valid_scheduled": 4,
+          "valid_reached": 3
+        },
+        "promo": {
+          "leads": 5,
+          "valid": 4,
+          "scheduled": 3,
+          "reached": 2,
+          "valid_scheduled": 3,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "yandex-maps": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "telegram": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "repeat-processing": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "other": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        }
+      },
+      "2026-09-04": {
+        "website": {
+          "leads": 14,
+          "valid": 10,
+          "scheduled": 6,
+          "reached": 5,
+          "valid_scheduled": 6,
+          "valid_reached": 5
+        },
+        "promo": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "yandex-maps": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "telegram": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "repeat-processing": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "other": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        }
+      },
+      "2026-09-05": {
+        "website": {
+          "leads": 13,
+          "valid": 9,
+          "scheduled": 6,
+          "reached": 5,
+          "valid_scheduled": 6,
+          "valid_reached": 5
+        },
+        "promo": {
+          "leads": 7,
+          "valid": 5,
+          "scheduled": 3,
+          "reached": 2,
+          "valid_scheduled": 3,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "yandex-maps": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "telegram": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "repeat-processing": {
+          "leads": 4,
+          "valid": 3,
+          "scheduled": 2,
+          "reached": 2,
+          "valid_scheduled": 2,
+          "valid_reached": 2
+        },
+        "other": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        }
+      },
+      "2026-09-06": {
+        "website": {
+          "leads": 10,
+          "valid": 7,
+          "scheduled": 5,
+          "reached": 4,
+          "valid_scheduled": 5,
+          "valid_reached": 4
+        },
+        "promo": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "direct-center": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "yandex-maps": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "telegram": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "repeat-processing": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "other": {
+          "leads": 1,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        }
+      },
+      "2026-09-07": {
+        "website": {
+          "leads": 15,
+          "valid": 10,
+          "scheduled": 6,
+          "reached": 5,
+          "valid_scheduled": 6,
+          "valid_reached": 5
+        },
+        "promo": {
+          "leads": 7,
+          "valid": 5,
+          "scheduled": 3,
+          "reached": 2,
+          "valid_scheduled": 3,
+          "valid_reached": 2
+        },
+        "direct-center": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "yandex-maps": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "telegram": {
+          "leads": 0,
+          "valid": 0,
+          "scheduled": 0,
+          "reached": 0,
+          "valid_scheduled": 0,
+          "valid_reached": 0
+        },
+        "repeat-processing": {
+          "leads": 3,
+          "valid": 2,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        },
+        "other": {
+          "leads": 2,
+          "valid": 1,
+          "scheduled": 1,
+          "reached": 1,
+          "valid_scheduled": 1,
+          "valid_reached": 1
+        }
+      }
+    },
+    "invalid_reason_order": [
+      "Дубль, уже есть сделка",
+      "Глухой недозвон"
+    ],
+    "invalid_reasons_by_date": {
+      "2026-09-01": {
+        "Дубль, уже есть сделка": 2,
+        "Глухой недозвон": 2
+      },
+      "2026-09-02": {
+        "Дубль, уже есть сделка": 1,
+        "Глухой недозвон": 2
+      },
+      "2026-09-03": {
+        "Дубль, уже есть сделка": 2,
+        "Глухой недозвон": 2
+      },
+      "2026-09-04": {
+        "Дубль, уже есть сделка": 2,
+        "Глухой недозвон": 2
+      },
+      "2026-09-05": {
+        "Дубль, уже есть сделка": 2,
+        "Глухой недозвон": 2
+      },
+      "2026-09-06": {
+        "Дубль, уже есть сделка": 1,
+        "Глухой недозвон": 2
+      },
+      "2026-09-07": {
+        "Дубль, уже есть сделка": 2,
+        "Глухой недозвон": 3
+      }
+    },
+    "stage_catalog": [
+      {
+        "key": "assigned-operator",
+        "label": "Распределены оператору"
+      },
+      {
+        "key": "contacting",
+        "label": "На стадиях связи"
+      },
+      {
+        "key": "callback-agreed",
+        "label": "Согласован перезвон"
+      },
+      {
+        "key": "trial-scheduled",
+        "label": "Записаны на пробное"
+      }
+    ],
+    "stage_order_keys": [
+      "assigned-operator",
+      "contacting",
+      "callback-agreed",
+      "trial-scheduled"
+    ],
+    "stages_by_key_by_date": {
+      "2026-09-01": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 3,
+        "trial-scheduled": 2
+      },
+      "2026-09-02": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 1,
+        "trial-scheduled": 2
+      },
+      "2026-09-03": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 2,
+        "trial-scheduled": 2
+      },
+      "2026-09-04": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 2,
+        "trial-scheduled": 1
+      },
+      "2026-09-05": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 2,
+        "trial-scheduled": 2
+      },
+      "2026-09-06": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 1,
+        "trial-scheduled": 1
+      },
+      "2026-09-07": {
+        "assigned-operator": 1,
+        "contacting": 1,
+        "callback-agreed": 3,
+        "trial-scheduled": 2
+      }
+    },
+    "trial_calendar": {
+      "2026-09-01": {
+        "scheduled": 15,
+        "reached": 13,
+        "from_previous_months": 0
+      },
+      "2026-09-02": {
+        "scheduled": 11,
+        "reached": 9,
+        "from_previous_months": 0
+      },
+      "2026-09-03": {
+        "scheduled": 12,
+        "reached": 10,
+        "from_previous_months": 0
+      },
+      "2026-09-04": {
+        "scheduled": 13,
+        "reached": 12,
+        "from_previous_months": 0
+      },
+      "2026-09-05": {
+        "scheduled": 13,
+        "reached": 11,
+        "from_previous_months": 0
+      },
+      "2026-09-06": {
+        "scheduled": 11,
+        "reached": 10,
+        "from_previous_months": 0
+      },
+      "2026-09-07": {
+        "scheduled": 12,
+        "reached": 10,
+        "from_previous_months": 0
+      }
+    },
+    "yandex_by_date": {
+      "2026-09-01": {
+        "leads": 1,
+        "valid": 1,
+        "scheduled": 1,
+        "reached": 1,
+        "valid_scheduled": 1,
+        "valid_reached": 1
+      },
+      "2026-09-02": {
+        "leads": 1,
+        "valid": 1,
+        "scheduled": 1,
+        "reached": 1,
+        "valid_scheduled": 1,
+        "valid_reached": 1
+      },
+      "2026-09-03": {
+        "leads": 0,
+        "valid": 0,
+        "scheduled": 0,
+        "reached": 0,
+        "valid_scheduled": 0,
+        "valid_reached": 0
+      },
+      "2026-09-04": {
+        "leads": 3,
+        "valid": 2,
+        "scheduled": 1,
+        "reached": 1,
+        "valid_scheduled": 1,
+        "valid_reached": 1
+      },
+      "2026-09-05": {
+        "leads": 1,
+        "valid": 1,
+        "scheduled": 1,
+        "reached": 1,
+        "valid_scheduled": 1,
+        "valid_reached": 1
+      },
+      "2026-09-06": {
+        "leads": 2,
+        "valid": 1,
+        "scheduled": 1,
+        "reached": 1,
+        "valid_scheduled": 1,
+        "valid_reached": 1
+      },
+      "2026-09-07": {
+        "leads": 3,
+        "valid": 2,
+        "scheduled": 1,
+        "reached": 1,
+        "valid_scheduled": 1,
+        "valid_reached": 1
+      }
+    }
+  }
+}

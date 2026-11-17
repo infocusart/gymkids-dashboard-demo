@@ -1,0 +1,151 @@
+{
+  "schema_version": "gymkids.manager-details.v1",
+  "environment": "demo",
+  "demo_notice": "Данные предоставлены для демонстрации и не отражают реальные показатели центров.",
+  "center": {
+    "id": "lobanovo",
+    "display_name": "Лобаново",
+    "currency": "RUB",
+    "timezone": "Europe/Moscow"
+  },
+  "request": {
+    "center_id": "lobanovo",
+    "month": "2026-09",
+    "from": "2026-09-01",
+    "to": "2026-09-07",
+    "timezone": "Europe/Moscow"
+  },
+  "trial_cohort_matrix": {
+    "lead_basis": "lead.created_at",
+    "trial_basis": "trial_scheduled_at",
+    "cells": [
+      {
+        "lead_date": "2026-09-01",
+        "trial_date": "2026-09-01",
+        "scheduled": 12,
+        "reached": 10
+      },
+      {
+        "lead_date": "2026-09-02",
+        "trial_date": "2026-09-02",
+        "scheduled": 9,
+        "reached": 8
+      },
+      {
+        "lead_date": "2026-09-03",
+        "trial_date": "2026-09-03",
+        "scheduled": 13,
+        "reached": 11
+      },
+      {
+        "lead_date": "2026-09-04",
+        "trial_date": "2026-09-04",
+        "scheduled": 9,
+        "reached": 8
+      },
+      {
+        "lead_date": "2026-09-05",
+        "trial_date": "2026-09-05",
+        "scheduled": 10,
+        "reached": 8
+      },
+      {
+        "lead_date": "2026-09-06",
+        "trial_date": "2026-09-06",
+        "scheduled": 12,
+        "reached": 10
+      },
+      {
+        "lead_date": "2026-09-07",
+        "trial_date": "2026-09-07",
+        "scheduled": 11,
+        "reached": 9
+      }
+    ]
+  },
+  "validity_trial_intersections": {
+    "by_lead_date": {
+      "2026-09-01": {
+        "valid": {
+          "leads": 18,
+          "scheduled": 12,
+          "reached": 10
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-09-02": {
+        "valid": {
+          "leads": 14,
+          "scheduled": 9,
+          "reached": 8
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-09-03": {
+        "valid": {
+          "leads": 18,
+          "scheduled": 13,
+          "reached": 11
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-09-04": {
+        "valid": {
+          "leads": 14,
+          "scheduled": 9,
+          "reached": 8
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-09-05": {
+        "valid": {
+          "leads": 14,
+          "scheduled": 10,
+          "reached": 8
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-09-06": {
+        "valid": {
+          "leads": 17,
+          "scheduled": 12,
+          "reached": 10
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-09-07": {
+        "valid": {
+          "leads": 17,
+          "scheduled": 11,
+          "reached": 9
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      }
+    }
+  },
+  "direct": {
+    "available": false,
+    "daily": {
+      "available": false,
+      "rows": []
+    }
+  },
+  "invalid_reasons": {},
+  "promo_coverage": {
+    "fields": {}
+  }
+}

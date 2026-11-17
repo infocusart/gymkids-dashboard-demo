@@ -1,0 +1,7 @@
+/* One-column mobile overview: volume, source mix, validity, conversion. */
+@media (max-width: 720px) {
+  .dashboard-canvas .dashboard-shell .dashboard-grid > .lead-card { order: 1; }
+  .dashboard-canvas .dashboard-shell .dashboard-grid > .sources-card { order: 2; }
+  .dashboard-canvas .dashboard-shell .dashboard-grid > .quality-card { order: 3; }
+  .dashboard-canvas .dashboard-shell .dashboard-grid > .conversion-card { order: 4; }
+}

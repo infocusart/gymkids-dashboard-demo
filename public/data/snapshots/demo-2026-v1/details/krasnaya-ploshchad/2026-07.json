@@ -1,0 +1,535 @@
+{
+  "schema_version": "gymkids.manager-details.v1",
+  "environment": "demo",
+  "demo_notice": "Данные предоставлены для демонстрации и не отражают реальные показатели центров.",
+  "center": {
+    "id": "krasnaya-ploshchad",
+    "display_name": "Красная площадь",
+    "currency": "RUB",
+    "timezone": "Europe/Moscow"
+  },
+  "request": {
+    "center_id": "krasnaya-ploshchad",
+    "month": "2026-07",
+    "from": "2026-07-01",
+    "to": "2026-07-31",
+    "timezone": "Europe/Moscow"
+  },
+  "trial_cohort_matrix": {
+    "lead_basis": "lead.created_at",
+    "trial_basis": "trial_scheduled_at",
+    "cells": [
+      {
+        "lead_date": "2026-07-01",
+        "trial_date": "2026-07-01",
+        "scheduled": 15,
+        "reached": 13
+      },
+      {
+        "lead_date": "2026-07-02",
+        "trial_date": "2026-07-02",
+        "scheduled": 16,
+        "reached": 14
+      },
+      {
+        "lead_date": "2026-07-03",
+        "trial_date": "2026-07-03",
+        "scheduled": 13,
+        "reached": 11
+      },
+      {
+        "lead_date": "2026-07-04",
+        "trial_date": "2026-07-04",
+        "scheduled": 13,
+        "reached": 12
+      },
+      {
+        "lead_date": "2026-07-05",
+        "trial_date": "2026-07-05",
+        "scheduled": 12,
+        "reached": 11
+      },
+      {
+        "lead_date": "2026-07-06",
+        "trial_date": "2026-07-06",
+        "scheduled": 16,
+        "reached": 14
+      },
+      {
+        "lead_date": "2026-07-07",
+        "trial_date": "2026-07-07",
+        "scheduled": 11,
+        "reached": 10
+      },
+      {
+        "lead_date": "2026-07-08",
+        "trial_date": "2026-07-08",
+        "scheduled": 17,
+        "reached": 15
+      },
+      {
+        "lead_date": "2026-07-09",
+        "trial_date": "2026-07-09",
+        "scheduled": 15,
+        "reached": 13
+      },
+      {
+        "lead_date": "2026-07-10",
+        "trial_date": "2026-07-10",
+        "scheduled": 17,
+        "reached": 15
+      },
+      {
+        "lead_date": "2026-07-11",
+        "trial_date": "2026-07-11",
+        "scheduled": 11,
+        "reached": 10
+      },
+      {
+        "lead_date": "2026-07-12",
+        "trial_date": "2026-07-12",
+        "scheduled": 12,
+        "reached": 11
+      },
+      {
+        "lead_date": "2026-07-13",
+        "trial_date": "2026-07-13",
+        "scheduled": 14,
+        "reached": 12
+      },
+      {
+        "lead_date": "2026-07-14",
+        "trial_date": "2026-07-14",
+        "scheduled": 14,
+        "reached": 12
+      },
+      {
+        "lead_date": "2026-07-15",
+        "trial_date": "2026-07-15",
+        "scheduled": 17,
+        "reached": 15
+      },
+      {
+        "lead_date": "2026-07-16",
+        "trial_date": "2026-07-16",
+        "scheduled": 18,
+        "reached": 16
+      },
+      {
+        "lead_date": "2026-07-17",
+        "trial_date": "2026-07-17",
+        "scheduled": 11,
+        "reached": 9
+      },
+      {
+        "lead_date": "2026-07-18",
+        "trial_date": "2026-07-18",
+        "scheduled": 17,
+        "reached": 14
+      },
+      {
+        "lead_date": "2026-07-19",
+        "trial_date": "2026-07-19",
+        "scheduled": 18,
+        "reached": 15
+      },
+      {
+        "lead_date": "2026-07-20",
+        "trial_date": "2026-07-20",
+        "scheduled": 13,
+        "reached": 12
+      },
+      {
+        "lead_date": "2026-07-21",
+        "trial_date": "2026-07-21",
+        "scheduled": 10,
+        "reached": 9
+      },
+      {
+        "lead_date": "2026-07-22",
+        "trial_date": "2026-07-22",
+        "scheduled": 16,
+        "reached": 14
+      },
+      {
+        "lead_date": "2026-07-23",
+        "trial_date": "2026-07-23",
+        "scheduled": 13,
+        "reached": 11
+      },
+      {
+        "lead_date": "2026-07-24",
+        "trial_date": "2026-07-24",
+        "scheduled": 12,
+        "reached": 11
+      },
+      {
+        "lead_date": "2026-07-25",
+        "trial_date": "2026-07-25",
+        "scheduled": 11,
+        "reached": 10
+      },
+      {
+        "lead_date": "2026-07-26",
+        "trial_date": "2026-07-26",
+        "scheduled": 18,
+        "reached": 15
+      },
+      {
+        "lead_date": "2026-07-27",
+        "trial_date": "2026-07-27",
+        "scheduled": 12,
+        "reached": 11
+      },
+      {
+        "lead_date": "2026-07-28",
+        "trial_date": "2026-07-28",
+        "scheduled": 12,
+        "reached": 10
+      },
+      {
+        "lead_date": "2026-07-29",
+        "trial_date": "2026-07-29",
+        "scheduled": 12,
+        "reached": 10
+      },
+      {
+        "lead_date": "2026-07-30",
+        "trial_date": "2026-07-30",
+        "scheduled": 14,
+        "reached": 12
+      },
+      {
+        "lead_date": "2026-07-31",
+        "trial_date": "2026-07-31",
+        "scheduled": 10,
+        "reached": 9
+      }
+    ]
+  },
+  "validity_trial_intersections": {
+    "by_lead_date": {
+      "2026-07-01": {
+        "valid": {
+          "leads": 22,
+          "scheduled": 15,
+          "reached": 13
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-02": {
+        "valid": {
+          "leads": 23,
+          "scheduled": 16,
+          "reached": 14
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-03": {
+        "valid": {
+          "leads": 19,
+          "scheduled": 13,
+          "reached": 11
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-04": {
+        "valid": {
+          "leads": 20,
+          "scheduled": 13,
+          "reached": 12
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-05": {
+        "valid": {
+          "leads": 18,
+          "scheduled": 12,
+          "reached": 11
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-06": {
+        "valid": {
+          "leads": 24,
+          "scheduled": 16,
+          "reached": 14
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-07": {
+        "valid": {
+          "leads": 16,
+          "scheduled": 11,
+          "reached": 10
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-08": {
+        "valid": {
+          "leads": 26,
+          "scheduled": 17,
+          "reached": 15
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-09": {
+        "valid": {
+          "leads": 24,
+          "scheduled": 15,
+          "reached": 13
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-10": {
+        "valid": {
+          "leads": 25,
+          "scheduled": 17,
+          "reached": 15
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-11": {
+        "valid": {
+          "leads": 17,
+          "scheduled": 11,
+          "reached": 10
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-12": {
+        "valid": {
+          "leads": 19,
+          "scheduled": 12,
+          "reached": 11
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-13": {
+        "valid": {
+          "leads": 20,
+          "scheduled": 14,
+          "reached": 12
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-14": {
+        "valid": {
+          "leads": 19,
+          "scheduled": 14,
+          "reached": 12
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-15": {
+        "valid": {
+          "leads": 25,
+          "scheduled": 17,
+          "reached": 15
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-16": {
+        "valid": {
+          "leads": 26,
+          "scheduled": 18,
+          "reached": 16
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-17": {
+        "valid": {
+          "leads": 14,
+          "scheduled": 11,
+          "reached": 9
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-18": {
+        "valid": {
+          "leads": 26,
+          "scheduled": 17,
+          "reached": 14
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-19": {
+        "valid": {
+          "leads": 27,
+          "scheduled": 18,
+          "reached": 15
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-20": {
+        "valid": {
+          "leads": 18,
+          "scheduled": 13,
+          "reached": 12
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-21": {
+        "valid": {
+          "leads": 16,
+          "scheduled": 10,
+          "reached": 9
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-22": {
+        "valid": {
+          "leads": 24,
+          "scheduled": 16,
+          "reached": 14
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-23": {
+        "valid": {
+          "leads": 19,
+          "scheduled": 13,
+          "reached": 11
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-24": {
+        "valid": {
+          "leads": 18,
+          "scheduled": 12,
+          "reached": 11
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-25": {
+        "valid": {
+          "leads": 17,
+          "scheduled": 11,
+          "reached": 10
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-26": {
+        "valid": {
+          "leads": 29,
+          "scheduled": 18,
+          "reached": 15
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-27": {
+        "valid": {
+          "leads": 19,
+          "scheduled": 12,
+          "reached": 11
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-28": {
+        "valid": {
+          "leads": 18,
+          "scheduled": 12,
+          "reached": 10
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-29": {
+        "valid": {
+          "leads": 18,
+          "scheduled": 12,
+          "reached": 10
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-30": {
+        "valid": {
+          "leads": 23,
+          "scheduled": 14,
+          "reached": 12
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      },
+      "2026-07-31": {
+        "valid": {
+          "leads": 15,
+          "scheduled": 10,
+          "reached": 9
+        },
+        "invalid": {
+          "scheduled": 0
+        }
+      }
+    }
+  },
+  "direct": {
+    "available": false,
+    "daily": {
+      "available": false,
+      "rows": []
+    }
+  },
+  "invalid_reasons": {},
+  "promo_coverage": {
+    "fields": {}
+  }
+}

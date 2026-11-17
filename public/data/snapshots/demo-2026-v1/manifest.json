@@ -1,0 +1,1630 @@
+{
+  "schema_version": "gymkids.manifest.v1",
+  "release_id": "demo-2026-v1",
+  "environment": "demo",
+  "demo_notice": "Данные предоставлены для демонстрации и не отражают реальные показатели центров.",
+  "generated_at": "2026-09-08T09:00:00+03:00",
+  "default_center_id": "novo-peredelkino",
+  "centers": [
+    {
+      "center_id": "baku",
+      "display_name": "Баку",
+      "currency": "AZN",
+      "timezone": "Asia/Baku",
+      "default_period": "2026-09",
+      "periods": [
+        {
+          "month": "2026-01",
+          "from": "2026-01-01",
+          "to": "2026-01-31",
+          "payload_path": "centers/baku/2026-01.json",
+          "details_path": "details/baku/2026-01.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-02",
+          "from": "2026-02-01",
+          "to": "2026-02-28",
+          "payload_path": "centers/baku/2026-02.json",
+          "details_path": "details/baku/2026-02.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-03",
+          "from": "2026-03-01",
+          "to": "2026-03-31",
+          "payload_path": "centers/baku/2026-03.json",
+          "details_path": "details/baku/2026-03.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-04",
+          "from": "2026-04-01",
+          "to": "2026-04-30",
+          "payload_path": "centers/baku/2026-04.json",
+          "details_path": "details/baku/2026-04.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-05",
+          "from": "2026-05-01",
+          "to": "2026-05-31",
+          "payload_path": "centers/baku/2026-05.json",
+          "details_path": "details/baku/2026-05.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-06",
+          "from": "2026-06-01",
+          "to": "2026-06-30",
+          "payload_path": "centers/baku/2026-06.json",
+          "details_path": "details/baku/2026-06.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-07",
+          "from": "2026-07-01",
+          "to": "2026-07-31",
+          "payload_path": "centers/baku/2026-07.json",
+          "details_path": "details/baku/2026-07.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-08",
+          "from": "2026-08-01",
+          "to": "2026-08-31",
+          "payload_path": "centers/baku/2026-08.json",
+          "details_path": "details/baku/2026-08.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-09",
+          "from": "2026-09-01",
+          "to": "2026-09-07",
+          "payload_path": "centers/baku/2026-09.json",
+          "details_path": "details/baku/2026-09.json",
+          "data_status": "ready",
+          "partial": false
+        }
+      ]
+    },
+    {
+      "center_id": "chertanovo",
+      "display_name": "Чертаново",
+      "currency": "RUB",
+      "timezone": "Europe/Moscow",
+      "default_period": "2026-09",
+      "periods": [
+        {
+          "month": "2026-01",
+          "from": "2026-01-01",
+          "to": "2026-01-31",
+          "payload_path": "centers/chertanovo/2026-01.json",
+          "details_path": "details/chertanovo/2026-01.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-02",
+          "from": "2026-02-01",
+          "to": "2026-02-28",
+          "payload_path": "centers/chertanovo/2026-02.json",
+          "details_path": "details/chertanovo/2026-02.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-03",
+          "from": "2026-03-01",
+          "to": "2026-03-31",
+          "payload_path": "centers/chertanovo/2026-03.json",
+          "details_path": "details/chertanovo/2026-03.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-04",
+          "from": "2026-04-01",
+          "to": "2026-04-30",
+          "payload_path": "centers/chertanovo/2026-04.json",
+          "details_path": "details/chertanovo/2026-04.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-05",
+          "from": "2026-05-01",
+          "to": "2026-05-31",
+          "payload_path": "centers/chertanovo/2026-05.json",
+          "details_path": "details/chertanovo/2026-05.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-06",
+          "from": "2026-06-01",
+          "to": "2026-06-30",
+          "payload_path": "centers/chertanovo/2026-06.json",
+          "details_path": "details/chertanovo/2026-06.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-07",
+          "from": "2026-07-01",
+          "to": "2026-07-31",
+          "payload_path": "centers/chertanovo/2026-07.json",
+          "details_path": "details/chertanovo/2026-07.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-08",
+          "from": "2026-08-01",
+          "to": "2026-08-31",
+          "payload_path": "centers/chertanovo/2026-08.json",
+          "details_path": "details/chertanovo/2026-08.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-09",
+          "from": "2026-09-01",
+          "to": "2026-09-07",
+          "payload_path": "centers/chertanovo/2026-09.json",
+          "details_path": "details/chertanovo/2026-09.json",
+          "data_status": "ready",
+          "partial": false
+        }
+      ]
+    },
+    {
+      "center_id": "festivalny",
+      "display_name": "Фестивальный",
+      "currency": "RUB",
+      "timezone": "Europe/Moscow",
+      "default_period": "2026-09",
+      "periods": [
+        {
+          "month": "2026-01",
+          "from": "2026-01-01",
+          "to": "2026-01-31",
+          "payload_path": "centers/festivalny/2026-01.json",
+          "details_path": "details/festivalny/2026-01.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-02",
+          "from": "2026-02-01",
+          "to": "2026-02-28",
+          "payload_path": "centers/festivalny/2026-02.json",
+          "details_path": "details/festivalny/2026-02.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-03",
+          "from": "2026-03-01",
+          "to": "2026-03-31",
+          "payload_path": "centers/festivalny/2026-03.json",
+          "details_path": "details/festivalny/2026-03.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-04",
+          "from": "2026-04-01",
+          "to": "2026-04-30",
+          "payload_path": "centers/festivalny/2026-04.json",
+          "details_path": "details/festivalny/2026-04.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-05",
+          "from": "2026-05-01",
+          "to": "2026-05-31",
+          "payload_path": "centers/festivalny/2026-05.json",
+          "details_path": "details/festivalny/2026-05.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-06",
+          "from": "2026-06-01",
+          "to": "2026-06-30",
+          "payload_path": "centers/festivalny/2026-06.json",
+          "details_path": "details/festivalny/2026-06.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-07",
+          "from": "2026-07-01",
+          "to": "2026-07-31",
+          "payload_path": "centers/festivalny/2026-07.json",
+          "details_path": "details/festivalny/2026-07.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-08",
+          "from": "2026-08-01",
+          "to": "2026-08-31",
+          "payload_path": "centers/festivalny/2026-08.json",
+          "details_path": "details/festivalny/2026-08.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-09",
+          "from": "2026-09-01",
+          "to": "2026-09-07",
+          "payload_path": "centers/festivalny/2026-09.json",
+          "details_path": "details/festivalny/2026-09.json",
+          "data_status": "ready",
+          "partial": false
+        }
+      ]
+    },
+    {
+      "center_id": "krasnaya-ploshchad",
+      "display_name": "Красная площадь",
+      "currency": "RUB",
+      "timezone": "Europe/Moscow",
+      "default_period": "2026-09",
+      "periods": [
+        {
+          "month": "2026-01",
+          "from": "2026-01-01",
+          "to": "2026-01-31",
+          "payload_path": "centers/krasnaya-ploshchad/2026-01.json",
+          "details_path": "details/krasnaya-ploshchad/2026-01.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-02",
+          "from": "2026-02-01",
+          "to": "2026-02-28",
+          "payload_path": "centers/krasnaya-ploshchad/2026-02.json",
+          "details_path": "details/krasnaya-ploshchad/2026-02.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-03",
+          "from": "2026-03-01",
+          "to": "2026-03-31",
+          "payload_path": "centers/krasnaya-ploshchad/2026-03.json",
+          "details_path": "details/krasnaya-ploshchad/2026-03.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-04",
+          "from": "2026-04-01",
+          "to": "2026-04-30",
+          "payload_path": "centers/krasnaya-ploshchad/2026-04.json",
+          "details_path": "details/krasnaya-ploshchad/2026-04.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-05",
+          "from": "2026-05-01",
+          "to": "2026-05-31",
+          "payload_path": "centers/krasnaya-ploshchad/2026-05.json",
+          "details_path": "details/krasnaya-ploshchad/2026-05.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-06",
+          "from": "2026-06-01",
+          "to": "2026-06-30",
+          "payload_path": "centers/krasnaya-ploshchad/2026-06.json",
+          "details_path": "details/krasnaya-ploshchad/2026-06.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-07",
+          "from": "2026-07-01",
+          "to": "2026-07-31",
+          "payload_path": "centers/krasnaya-ploshchad/2026-07.json",
+          "details_path": "details/krasnaya-ploshchad/2026-07.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-08",
+          "from": "2026-08-01",
+          "to": "2026-08-31",
+          "payload_path": "centers/krasnaya-ploshchad/2026-08.json",
+          "details_path": "details/krasnaya-ploshchad/2026-08.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-09",
+          "from": "2026-09-01",
+          "to": "2026-09-07",
+          "payload_path": "centers/krasnaya-ploshchad/2026-09.json",
+          "details_path": "details/krasnaya-ploshchad/2026-09.json",
+          "data_status": "ready",
+          "partial": false
+        }
+      ]
+    },
+    {
+      "center_id": "lobanovo",
+      "display_name": "Лобаново",
+      "currency": "RUB",
+      "timezone": "Europe/Moscow",
+      "default_period": "2026-09",
+      "periods": [
+        {
+          "month": "2026-01",
+          "from": "2026-01-01",
+          "to": "2026-01-31",
+          "payload_path": "centers/lobanovo/2026-01.json",
+          "details_path": "details/lobanovo/2026-01.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-02",
+          "from": "2026-02-01",
+          "to": "2026-02-28",
+          "payload_path": "centers/lobanovo/2026-02.json",
+          "details_path": "details/lobanovo/2026-02.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-03",
+          "from": "2026-03-01",
+          "to": "2026-03-31",
+          "payload_path": "centers/lobanovo/2026-03.json",
+          "details_path": "details/lobanovo/2026-03.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-04",
+          "from": "2026-04-01",
+          "to": "2026-04-30",
+          "payload_path": "centers/lobanovo/2026-04.json",
+          "details_path": "details/lobanovo/2026-04.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-05",
+          "from": "2026-05-01",
+          "to": "2026-05-31",
+          "payload_path": "centers/lobanovo/2026-05.json",
+          "details_path": "details/lobanovo/2026-05.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-06",
+          "from": "2026-06-01",
+          "to": "2026-06-30",
+          "payload_path": "centers/lobanovo/2026-06.json",
+          "details_path": "details/lobanovo/2026-06.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-07",
+          "from": "2026-07-01",
+          "to": "2026-07-31",
+          "payload_path": "centers/lobanovo/2026-07.json",
+          "details_path": "details/lobanovo/2026-07.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-08",
+          "from": "2026-08-01",
+          "to": "2026-08-31",
+          "payload_path": "centers/lobanovo/2026-08.json",
+          "details_path": "details/lobanovo/2026-08.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-09",
+          "from": "2026-09-01",
+          "to": "2026-09-07",
+          "payload_path": "centers/lobanovo/2026-09.json",
+          "details_path": "details/lobanovo/2026-09.json",
+          "data_status": "ready",
+          "partial": false
+        }
+      ]
+    },
+    {
+      "center_id": "matveevsky",
+      "display_name": "Матвеевский",
+      "currency": "RUB",
+      "timezone": "Europe/Moscow",
+      "default_period": "2026-09",
+      "periods": [
+        {
+          "month": "2026-01",
+          "from": "2026-01-01",
+          "to": "2026-01-31",
+          "payload_path": "centers/matveevsky/2026-01.json",
+          "details_path": "details/matveevsky/2026-01.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-02",
+          "from": "2026-02-01",
+          "to": "2026-02-28",
+          "payload_path": "centers/matveevsky/2026-02.json",
+          "details_path": "details/matveevsky/2026-02.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-03",
+          "from": "2026-03-01",
+          "to": "2026-03-31",
+          "payload_path": "centers/matveevsky/2026-03.json",
+          "details_path": "details/matveevsky/2026-03.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-04",
+          "from": "2026-04-01",
+          "to": "2026-04-30",
+          "payload_path": "centers/matveevsky/2026-04.json",
+          "details_path": "details/matveevsky/2026-04.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-05",
+          "from": "2026-05-01",
+          "to": "2026-05-31",
+          "payload_path": "centers/matveevsky/2026-05.json",
+          "details_path": "details/matveevsky/2026-05.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-06",
+          "from": "2026-06-01",
+          "to": "2026-06-30",
+          "payload_path": "centers/matveevsky/2026-06.json",
+          "details_path": "details/matveevsky/2026-06.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-07",
+          "from": "2026-07-01",
+          "to": "2026-07-31",
+          "payload_path": "centers/matveevsky/2026-07.json",
+          "details_path": "details/matveevsky/2026-07.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-08",
+          "from": "2026-08-01",
+          "to": "2026-08-31",
+          "payload_path": "centers/matveevsky/2026-08.json",
+          "details_path": "details/matveevsky/2026-08.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-09",
+          "from": "2026-09-01",
+          "to": "2026-09-07",
+          "payload_path": "centers/matveevsky/2026-09.json",
+          "details_path": "details/matveevsky/2026-09.json",
+          "data_status": "ready",
+          "partial": false
+        }
+      ]
+    },
+    {
+      "center_id": "meridian",
+      "display_name": "Меридиан",
+      "currency": "RUB",
+      "timezone": "Europe/Moscow",
+      "default_period": "2026-09",
+      "periods": [
+        {
+          "month": "2026-01",
+          "from": "2026-01-01",
+          "to": "2026-01-31",
+          "payload_path": "centers/meridian/2026-01.json",
+          "details_path": "details/meridian/2026-01.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-02",
+          "from": "2026-02-01",
+          "to": "2026-02-28",
+          "payload_path": "centers/meridian/2026-02.json",
+          "details_path": "details/meridian/2026-02.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-03",
+          "from": "2026-03-01",
+          "to": "2026-03-31",
+          "payload_path": "centers/meridian/2026-03.json",
+          "details_path": "details/meridian/2026-03.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-04",
+          "from": "2026-04-01",
+          "to": "2026-04-30",
+          "payload_path": "centers/meridian/2026-04.json",
+          "details_path": "details/meridian/2026-04.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-05",
+          "from": "2026-05-01",
+          "to": "2026-05-31",
+          "payload_path": "centers/meridian/2026-05.json",
+          "details_path": "details/meridian/2026-05.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-06",
+          "from": "2026-06-01",
+          "to": "2026-06-30",
+          "payload_path": "centers/meridian/2026-06.json",
+          "details_path": "details/meridian/2026-06.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-07",
+          "from": "2026-07-01",
+          "to": "2026-07-31",
+          "payload_path": "centers/meridian/2026-07.json",
+          "details_path": "details/meridian/2026-07.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-08",
+          "from": "2026-08-01",
+          "to": "2026-08-31",
+          "payload_path": "centers/meridian/2026-08.json",
+          "details_path": "details/meridian/2026-08.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-09",
+          "from": "2026-09-01",
+          "to": "2026-09-07",
+          "payload_path": "centers/meridian/2026-09.json",
+          "details_path": "details/meridian/2026-09.json",
+          "data_status": "ready",
+          "partial": false
+        }
+      ]
+    },
+    {
+      "center_id": "mozhayskoe-shosse",
+      "display_name": "Можайское шоссе",
+      "currency": "RUB",
+      "timezone": "Europe/Moscow",
+      "default_period": "2026-09",
+      "periods": [
+        {
+          "month": "2026-01",
+          "from": "2026-01-01",
+          "to": "2026-01-31",
+          "payload_path": "centers/mozhayskoe-shosse/2026-01.json",
+          "details_path": "details/mozhayskoe-shosse/2026-01.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-02",
+          "from": "2026-02-01",
+          "to": "2026-02-28",
+          "payload_path": "centers/mozhayskoe-shosse/2026-02.json",
+          "details_path": "details/mozhayskoe-shosse/2026-02.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-03",
+          "from": "2026-03-01",
+          "to": "2026-03-31",
+          "payload_path": "centers/mozhayskoe-shosse/2026-03.json",
+          "details_path": "details/mozhayskoe-shosse/2026-03.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-04",
+          "from": "2026-04-01",
+          "to": "2026-04-30",
+          "payload_path": "centers/mozhayskoe-shosse/2026-04.json",
+          "details_path": "details/mozhayskoe-shosse/2026-04.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-05",
+          "from": "2026-05-01",
+          "to": "2026-05-31",
+          "payload_path": "centers/mozhayskoe-shosse/2026-05.json",
+          "details_path": "details/mozhayskoe-shosse/2026-05.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-06",
+          "from": "2026-06-01",
+          "to": "2026-06-30",
+          "payload_path": "centers/mozhayskoe-shosse/2026-06.json",
+          "details_path": "details/mozhayskoe-shosse/2026-06.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-07",
+          "from": "2026-07-01",
+          "to": "2026-07-31",
+          "payload_path": "centers/mozhayskoe-shosse/2026-07.json",
+          "details_path": "details/mozhayskoe-shosse/2026-07.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-08",
+          "from": "2026-08-01",
+          "to": "2026-08-31",
+          "payload_path": "centers/mozhayskoe-shosse/2026-08.json",
+          "details_path": "details/mozhayskoe-shosse/2026-08.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-09",
+          "from": "2026-09-01",
+          "to": "2026-09-07",
+          "payload_path": "centers/mozhayskoe-shosse/2026-09.json",
+          "details_path": "details/mozhayskoe-shosse/2026-09.json",
+          "data_status": "ready",
+          "partial": false
+        }
+      ]
+    },
+    {
+      "center_id": "novaya-zarya",
+      "display_name": "Новая заря",
+      "currency": "RUB",
+      "timezone": "Europe/Moscow",
+      "default_period": "2026-09",
+      "periods": [
+        {
+          "month": "2026-01",
+          "from": "2026-01-01",
+          "to": "2026-01-31",
+          "payload_path": "centers/novaya-zarya/2026-01.json",
+          "details_path": "details/novaya-zarya/2026-01.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-02",
+          "from": "2026-02-01",
+          "to": "2026-02-28",
+          "payload_path": "centers/novaya-zarya/2026-02.json",
+          "details_path": "details/novaya-zarya/2026-02.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-03",
+          "from": "2026-03-01",
+          "to": "2026-03-31",
+          "payload_path": "centers/novaya-zarya/2026-03.json",
+          "details_path": "details/novaya-zarya/2026-03.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-04",
+          "from": "2026-04-01",
+          "to": "2026-04-30",
+          "payload_path": "centers/novaya-zarya/2026-04.json",
+          "details_path": "details/novaya-zarya/2026-04.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-05",
+          "from": "2026-05-01",
+          "to": "2026-05-31",
+          "payload_path": "centers/novaya-zarya/2026-05.json",
+          "details_path": "details/novaya-zarya/2026-05.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-06",
+          "from": "2026-06-01",
+          "to": "2026-06-30",
+          "payload_path": "centers/novaya-zarya/2026-06.json",
+          "details_path": "details/novaya-zarya/2026-06.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-07",
+          "from": "2026-07-01",
+          "to": "2026-07-31",
+          "payload_path": "centers/novaya-zarya/2026-07.json",
+          "details_path": "details/novaya-zarya/2026-07.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-08",
+          "from": "2026-08-01",
+          "to": "2026-08-31",
+          "payload_path": "centers/novaya-zarya/2026-08.json",
+          "details_path": "details/novaya-zarya/2026-08.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-09",
+          "from": "2026-09-01",
+          "to": "2026-09-07",
+          "payload_path": "centers/novaya-zarya/2026-09.json",
+          "details_path": "details/novaya-zarya/2026-09.json",
+          "data_status": "ready",
+          "partial": false
+        }
+      ]
+    },
+    {
+      "center_id": "novo-peredelkino",
+      "display_name": "Ново-Переделкино",
+      "currency": "RUB",
+      "timezone": "Europe/Moscow",
+      "default_period": "2026-09",
+      "periods": [
+        {
+          "month": "2026-01",
+          "from": "2026-01-01",
+          "to": "2026-01-31",
+          "payload_path": "centers/novo-peredelkino/2026-01.json",
+          "details_path": "details/novo-peredelkino/2026-01.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-02",
+          "from": "2026-02-01",
+          "to": "2026-02-28",
+          "payload_path": "centers/novo-peredelkino/2026-02.json",
+          "details_path": "details/novo-peredelkino/2026-02.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-03",
+          "from": "2026-03-01",
+          "to": "2026-03-31",
+          "payload_path": "centers/novo-peredelkino/2026-03.json",
+          "details_path": "details/novo-peredelkino/2026-03.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-04",
+          "from": "2026-04-01",
+          "to": "2026-04-30",
+          "payload_path": "centers/novo-peredelkino/2026-04.json",
+          "details_path": "details/novo-peredelkino/2026-04.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-05",
+          "from": "2026-05-01",
+          "to": "2026-05-31",
+          "payload_path": "centers/novo-peredelkino/2026-05.json",
+          "details_path": "details/novo-peredelkino/2026-05.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-06",
+          "from": "2026-06-01",
+          "to": "2026-06-30",
+          "payload_path": "centers/novo-peredelkino/2026-06.json",
+          "details_path": "details/novo-peredelkino/2026-06.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-07",
+          "from": "2026-07-01",
+          "to": "2026-07-31",
+          "payload_path": "centers/novo-peredelkino/2026-07.json",
+          "details_path": "details/novo-peredelkino/2026-07.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-08",
+          "from": "2026-08-01",
+          "to": "2026-08-31",
+          "payload_path": "centers/novo-peredelkino/2026-08.json",
+          "details_path": "details/novo-peredelkino/2026-08.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-09",
+          "from": "2026-09-01",
+          "to": "2026-09-07",
+          "payload_path": "centers/novo-peredelkino/2026-09.json",
+          "details_path": "details/novo-peredelkino/2026-09.json",
+          "data_status": "ready",
+          "partial": false
+        }
+      ]
+    },
+    {
+      "center_id": "olimp",
+      "display_name": "Олимп",
+      "currency": "RUB",
+      "timezone": "Europe/Moscow",
+      "default_period": "2026-09",
+      "periods": [
+        {
+          "month": "2026-01",
+          "from": "2026-01-01",
+          "to": "2026-01-31",
+          "payload_path": "centers/olimp/2026-01.json",
+          "details_path": "details/olimp/2026-01.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-02",
+          "from": "2026-02-01",
+          "to": "2026-02-28",
+          "payload_path": "centers/olimp/2026-02.json",
+          "details_path": "details/olimp/2026-02.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-03",
+          "from": "2026-03-01",
+          "to": "2026-03-31",
+          "payload_path": "centers/olimp/2026-03.json",
+          "details_path": "details/olimp/2026-03.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-04",
+          "from": "2026-04-01",
+          "to": "2026-04-30",
+          "payload_path": "centers/olimp/2026-04.json",
+          "details_path": "details/olimp/2026-04.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-05",
+          "from": "2026-05-01",
+          "to": "2026-05-31",
+          "payload_path": "centers/olimp/2026-05.json",
+          "details_path": "details/olimp/2026-05.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-06",
+          "from": "2026-06-01",
+          "to": "2026-06-30",
+          "payload_path": "centers/olimp/2026-06.json",
+          "details_path": "details/olimp/2026-06.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-07",
+          "from": "2026-07-01",
+          "to": "2026-07-31",
+          "payload_path": "centers/olimp/2026-07.json",
+          "details_path": "details/olimp/2026-07.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-08",
+          "from": "2026-08-01",
+          "to": "2026-08-31",
+          "payload_path": "centers/olimp/2026-08.json",
+          "details_path": "details/olimp/2026-08.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-09",
+          "from": "2026-09-01",
+          "to": "2026-09-07",
+          "payload_path": "centers/olimp/2026-09.json",
+          "details_path": "details/olimp/2026-09.json",
+          "data_status": "ready",
+          "partial": false
+        }
+      ]
+    },
+    {
+      "center_id": "profsoyuznaya",
+      "display_name": "Профсоюзная",
+      "currency": "RUB",
+      "timezone": "Europe/Moscow",
+      "default_period": "2026-09",
+      "periods": [
+        {
+          "month": "2026-01",
+          "from": "2026-01-01",
+          "to": "2026-01-31",
+          "payload_path": "centers/profsoyuznaya/2026-01.json",
+          "details_path": "details/profsoyuznaya/2026-01.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-02",
+          "from": "2026-02-01",
+          "to": "2026-02-28",
+          "payload_path": "centers/profsoyuznaya/2026-02.json",
+          "details_path": "details/profsoyuznaya/2026-02.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-03",
+          "from": "2026-03-01",
+          "to": "2026-03-31",
+          "payload_path": "centers/profsoyuznaya/2026-03.json",
+          "details_path": "details/profsoyuznaya/2026-03.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-04",
+          "from": "2026-04-01",
+          "to": "2026-04-30",
+          "payload_path": "centers/profsoyuznaya/2026-04.json",
+          "details_path": "details/profsoyuznaya/2026-04.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-05",
+          "from": "2026-05-01",
+          "to": "2026-05-31",
+          "payload_path": "centers/profsoyuznaya/2026-05.json",
+          "details_path": "details/profsoyuznaya/2026-05.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-06",
+          "from": "2026-06-01",
+          "to": "2026-06-30",
+          "payload_path": "centers/profsoyuznaya/2026-06.json",
+          "details_path": "details/profsoyuznaya/2026-06.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-07",
+          "from": "2026-07-01",
+          "to": "2026-07-31",
+          "payload_path": "centers/profsoyuznaya/2026-07.json",
+          "details_path": "details/profsoyuznaya/2026-07.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-08",
+          "from": "2026-08-01",
+          "to": "2026-08-31",
+          "payload_path": "centers/profsoyuznaya/2026-08.json",
+          "details_path": "details/profsoyuznaya/2026-08.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-09",
+          "from": "2026-09-01",
+          "to": "2026-09-07",
+          "payload_path": "centers/profsoyuznaya/2026-09.json",
+          "details_path": "details/profsoyuznaya/2026-09.json",
+          "data_status": "ready",
+          "partial": false
+        }
+      ]
+    },
+    {
+      "center_id": "pyatoe-avenyu",
+      "display_name": "Пятое авеню",
+      "currency": "RUB",
+      "timezone": "Europe/Moscow",
+      "default_period": "2026-09",
+      "periods": [
+        {
+          "month": "2026-01",
+          "from": "2026-01-01",
+          "to": "2026-01-31",
+          "payload_path": "centers/pyatoe-avenyu/2026-01.json",
+          "details_path": "details/pyatoe-avenyu/2026-01.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-02",
+          "from": "2026-02-01",
+          "to": "2026-02-28",
+          "payload_path": "centers/pyatoe-avenyu/2026-02.json",
+          "details_path": "details/pyatoe-avenyu/2026-02.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-03",
+          "from": "2026-03-01",
+          "to": "2026-03-31",
+          "payload_path": "centers/pyatoe-avenyu/2026-03.json",
+          "details_path": "details/pyatoe-avenyu/2026-03.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-04",
+          "from": "2026-04-01",
+          "to": "2026-04-30",
+          "payload_path": "centers/pyatoe-avenyu/2026-04.json",
+          "details_path": "details/pyatoe-avenyu/2026-04.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-05",
+          "from": "2026-05-01",
+          "to": "2026-05-31",
+          "payload_path": "centers/pyatoe-avenyu/2026-05.json",
+          "details_path": "details/pyatoe-avenyu/2026-05.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-06",
+          "from": "2026-06-01",
+          "to": "2026-06-30",
+          "payload_path": "centers/pyatoe-avenyu/2026-06.json",
+          "details_path": "details/pyatoe-avenyu/2026-06.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-07",
+          "from": "2026-07-01",
+          "to": "2026-07-31",
+          "payload_path": "centers/pyatoe-avenyu/2026-07.json",
+          "details_path": "details/pyatoe-avenyu/2026-07.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-08",
+          "from": "2026-08-01",
+          "to": "2026-08-31",
+          "payload_path": "centers/pyatoe-avenyu/2026-08.json",
+          "details_path": "details/pyatoe-avenyu/2026-08.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-09",
+          "from": "2026-09-01",
+          "to": "2026-09-07",
+          "payload_path": "centers/pyatoe-avenyu/2026-09.json",
+          "details_path": "details/pyatoe-avenyu/2026-09.json",
+          "data_status": "ready",
+          "partial": false
+        }
+      ]
+    },
+    {
+      "center_id": "salaryevo",
+      "display_name": "Саларьево",
+      "currency": "RUB",
+      "timezone": "Europe/Moscow",
+      "default_period": "2026-09",
+      "periods": [
+        {
+          "month": "2026-01",
+          "from": "2026-01-01",
+          "to": "2026-01-31",
+          "payload_path": "centers/salaryevo/2026-01.json",
+          "details_path": "details/salaryevo/2026-01.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-02",
+          "from": "2026-02-01",
+          "to": "2026-02-28",
+          "payload_path": "centers/salaryevo/2026-02.json",
+          "details_path": "details/salaryevo/2026-02.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-03",
+          "from": "2026-03-01",
+          "to": "2026-03-31",
+          "payload_path": "centers/salaryevo/2026-03.json",
+          "details_path": "details/salaryevo/2026-03.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-04",
+          "from": "2026-04-01",
+          "to": "2026-04-30",
+          "payload_path": "centers/salaryevo/2026-04.json",
+          "details_path": "details/salaryevo/2026-04.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-05",
+          "from": "2026-05-01",
+          "to": "2026-05-31",
+          "payload_path": "centers/salaryevo/2026-05.json",
+          "details_path": "details/salaryevo/2026-05.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-06",
+          "from": "2026-06-01",
+          "to": "2026-06-30",
+          "payload_path": "centers/salaryevo/2026-06.json",
+          "details_path": "details/salaryevo/2026-06.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-07",
+          "from": "2026-07-01",
+          "to": "2026-07-31",
+          "payload_path": "centers/salaryevo/2026-07.json",
+          "details_path": "details/salaryevo/2026-07.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-08",
+          "from": "2026-08-01",
+          "to": "2026-08-31",
+          "payload_path": "centers/salaryevo/2026-08.json",
+          "details_path": "details/salaryevo/2026-08.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-09",
+          "from": "2026-09-01",
+          "to": "2026-09-07",
+          "payload_path": "centers/salaryevo/2026-09.json",
+          "details_path": "details/salaryevo/2026-09.json",
+          "data_status": "ready",
+          "partial": false
+        }
+      ]
+    },
+    {
+      "center_id": "tashkent",
+      "display_name": "Ташкент",
+      "currency": "UZS",
+      "timezone": "Asia/Tashkent",
+      "default_period": "2026-09",
+      "periods": [
+        {
+          "month": "2026-01",
+          "from": "2026-01-01",
+          "to": "2026-01-31",
+          "payload_path": "centers/tashkent/2026-01.json",
+          "details_path": "details/tashkent/2026-01.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-02",
+          "from": "2026-02-01",
+          "to": "2026-02-28",
+          "payload_path": "centers/tashkent/2026-02.json",
+          "details_path": "details/tashkent/2026-02.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-03",
+          "from": "2026-03-01",
+          "to": "2026-03-31",
+          "payload_path": "centers/tashkent/2026-03.json",
+          "details_path": "details/tashkent/2026-03.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-04",
+          "from": "2026-04-01",
+          "to": "2026-04-30",
+          "payload_path": "centers/tashkent/2026-04.json",
+          "details_path": "details/tashkent/2026-04.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-05",
+          "from": "2026-05-01",
+          "to": "2026-05-31",
+          "payload_path": "centers/tashkent/2026-05.json",
+          "details_path": "details/tashkent/2026-05.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-06",
+          "from": "2026-06-01",
+          "to": "2026-06-30",
+          "payload_path": "centers/tashkent/2026-06.json",
+          "details_path": "details/tashkent/2026-06.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-07",
+          "from": "2026-07-01",
+          "to": "2026-07-31",
+          "payload_path": "centers/tashkent/2026-07.json",
+          "details_path": "details/tashkent/2026-07.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-08",
+          "from": "2026-08-01",
+          "to": "2026-08-31",
+          "payload_path": "centers/tashkent/2026-08.json",
+          "details_path": "details/tashkent/2026-08.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-09",
+          "from": "2026-09-01",
+          "to": "2026-09-07",
+          "payload_path": "centers/tashkent/2026-09.json",
+          "details_path": "details/tashkent/2026-09.json",
+          "data_status": "ready",
+          "partial": false
+        }
+      ]
+    },
+    {
+      "center_id": "yerevan",
+      "display_name": "Ереван",
+      "currency": "AMD",
+      "timezone": "Asia/Yerevan",
+      "default_period": "2026-09",
+      "periods": [
+        {
+          "month": "2026-01",
+          "from": "2026-01-01",
+          "to": "2026-01-31",
+          "payload_path": "centers/yerevan/2026-01.json",
+          "details_path": "details/yerevan/2026-01.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-02",
+          "from": "2026-02-01",
+          "to": "2026-02-28",
+          "payload_path": "centers/yerevan/2026-02.json",
+          "details_path": "details/yerevan/2026-02.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-03",
+          "from": "2026-03-01",
+          "to": "2026-03-31",
+          "payload_path": "centers/yerevan/2026-03.json",
+          "details_path": "details/yerevan/2026-03.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-04",
+          "from": "2026-04-01",
+          "to": "2026-04-30",
+          "payload_path": "centers/yerevan/2026-04.json",
+          "details_path": "details/yerevan/2026-04.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-05",
+          "from": "2026-05-01",
+          "to": "2026-05-31",
+          "payload_path": "centers/yerevan/2026-05.json",
+          "details_path": "details/yerevan/2026-05.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-06",
+          "from": "2026-06-01",
+          "to": "2026-06-30",
+          "payload_path": "centers/yerevan/2026-06.json",
+          "details_path": "details/yerevan/2026-06.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-07",
+          "from": "2026-07-01",
+          "to": "2026-07-31",
+          "payload_path": "centers/yerevan/2026-07.json",
+          "details_path": "details/yerevan/2026-07.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-08",
+          "from": "2026-08-01",
+          "to": "2026-08-31",
+          "payload_path": "centers/yerevan/2026-08.json",
+          "details_path": "details/yerevan/2026-08.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-09",
+          "from": "2026-09-01",
+          "to": "2026-09-07",
+          "payload_path": "centers/yerevan/2026-09.json",
+          "details_path": "details/yerevan/2026-09.json",
+          "data_status": "ready",
+          "partial": false
+        }
+      ]
+    },
+    {
+      "center_id": "zhulebino",
+      "display_name": "Жулебино",
+      "currency": "RUB",
+      "timezone": "Europe/Moscow",
+      "default_period": "2026-09",
+      "periods": [
+        {
+          "month": "2026-01",
+          "from": "2026-01-01",
+          "to": "2026-01-31",
+          "payload_path": "centers/zhulebino/2026-01.json",
+          "details_path": "details/zhulebino/2026-01.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-02",
+          "from": "2026-02-01",
+          "to": "2026-02-28",
+          "payload_path": "centers/zhulebino/2026-02.json",
+          "details_path": "details/zhulebino/2026-02.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-03",
+          "from": "2026-03-01",
+          "to": "2026-03-31",
+          "payload_path": "centers/zhulebino/2026-03.json",
+          "details_path": "details/zhulebino/2026-03.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-04",
+          "from": "2026-04-01",
+          "to": "2026-04-30",
+          "payload_path": "centers/zhulebino/2026-04.json",
+          "details_path": "details/zhulebino/2026-04.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-05",
+          "from": "2026-05-01",
+          "to": "2026-05-31",
+          "payload_path": "centers/zhulebino/2026-05.json",
+          "details_path": "details/zhulebino/2026-05.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-06",
+          "from": "2026-06-01",
+          "to": "2026-06-30",
+          "payload_path": "centers/zhulebino/2026-06.json",
+          "details_path": "details/zhulebino/2026-06.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-07",
+          "from": "2026-07-01",
+          "to": "2026-07-31",
+          "payload_path": "centers/zhulebino/2026-07.json",
+          "details_path": "details/zhulebino/2026-07.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-08",
+          "from": "2026-08-01",
+          "to": "2026-08-31",
+          "payload_path": "centers/zhulebino/2026-08.json",
+          "details_path": "details/zhulebino/2026-08.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-09",
+          "from": "2026-09-01",
+          "to": "2026-09-07",
+          "payload_path": "centers/zhulebino/2026-09.json",
+          "details_path": "details/zhulebino/2026-09.json",
+          "data_status": "ready",
+          "partial": false
+        }
+      ]
+    },
+    {
+      "center_id": "zvenigorod",
+      "display_name": "Звенигород",
+      "currency": "RUB",
+      "timezone": "Europe/Moscow",
+      "default_period": "2026-09",
+      "periods": [
+        {
+          "month": "2026-01",
+          "from": "2026-01-01",
+          "to": "2026-01-31",
+          "payload_path": "centers/zvenigorod/2026-01.json",
+          "details_path": "details/zvenigorod/2026-01.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-02",
+          "from": "2026-02-01",
+          "to": "2026-02-28",
+          "payload_path": "centers/zvenigorod/2026-02.json",
+          "details_path": "details/zvenigorod/2026-02.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-03",
+          "from": "2026-03-01",
+          "to": "2026-03-31",
+          "payload_path": "centers/zvenigorod/2026-03.json",
+          "details_path": "details/zvenigorod/2026-03.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-04",
+          "from": "2026-04-01",
+          "to": "2026-04-30",
+          "payload_path": "centers/zvenigorod/2026-04.json",
+          "details_path": "details/zvenigorod/2026-04.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-05",
+          "from": "2026-05-01",
+          "to": "2026-05-31",
+          "payload_path": "centers/zvenigorod/2026-05.json",
+          "details_path": "details/zvenigorod/2026-05.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-06",
+          "from": "2026-06-01",
+          "to": "2026-06-30",
+          "payload_path": "centers/zvenigorod/2026-06.json",
+          "details_path": "details/zvenigorod/2026-06.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-07",
+          "from": "2026-07-01",
+          "to": "2026-07-31",
+          "payload_path": "centers/zvenigorod/2026-07.json",
+          "details_path": "details/zvenigorod/2026-07.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-08",
+          "from": "2026-08-01",
+          "to": "2026-08-31",
+          "payload_path": "centers/zvenigorod/2026-08.json",
+          "details_path": "details/zvenigorod/2026-08.json",
+          "data_status": "ready",
+          "partial": false
+        },
+        {
+          "month": "2026-09",
+          "from": "2026-09-01",
+          "to": "2026-09-07",
+          "payload_path": "centers/zvenigorod/2026-09.json",
+          "details_path": "details/zvenigorod/2026-09.json",
+          "data_status": "ready",
+          "partial": false
+        }
+      ]
+    }
+  ]
+}

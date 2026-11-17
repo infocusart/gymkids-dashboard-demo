@@ -1,0 +1,38 @@
+/* Mobile corrections for the accepted overview. Keep the desktop composition intact. */
+@media (max-width: 599px) {
+  .dashboard-canvas .period-picker .calendar-popover {
+    position: fixed;
+    inset: 50% auto auto 50%;
+    inline-size: min(360px, calc(100vw - 8px));
+    max-block-size: calc(100dvh - 24px);
+    padding: 14px 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    translate: -50% -50%;
+    transform-origin: center;
+  }
+
+  .dashboard-canvas .period-picker .calendar-heading { flex-wrap: wrap; row-gap: 6px; }
+  .dashboard-canvas .period-picker .calendar-heading > span { white-space: normal; }
+  .dashboard-canvas .period-picker .period-select-label select { min-block-size: 44px; }
+
+  .dashboard-canvas .period-picker .calendar-heading,
+  .dashboard-canvas .period-picker .calendar-footer { margin-inline: 12px; }
+  .dashboard-canvas .period-picker .calendar-weekdays,
+  .dashboard-canvas .period-picker .calendar-days { gap: 0; }
+  .dashboard-canvas .period-picker .calendar-day,
+  .dashboard-canvas .period-picker .calendar-day-spacer { min-block-size: 44px; aspect-ratio: auto; }
+  .dashboard-canvas .period-picker .calendar-footer button { min-block-size: 44px; }
+
+  .dashboard-canvas .dashboard-grid > .lead-card.dashboard-card .card-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .dashboard-canvas .dashboard-grid > .lead-card.dashboard-card .card-heading > div:first-child { max-inline-size: 100%; }
+  .dashboard-canvas .dashboard-grid > .lead-card.dashboard-card .card-heading h2 { line-height: 1.12; }
+  .dashboard-canvas .dashboard-grid > .lead-card.dashboard-card .lead-status { position: static; }
+  .dashboard-canvas .dashboard-grid > .lead-card.dashboard-card .lead-story { margin-block-start: 16px; }
+
+}

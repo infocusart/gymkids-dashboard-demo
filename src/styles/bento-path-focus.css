@@ -1,0 +1,55 @@
+.dashboard-grid[data-path-visited] > .dashboard-card {
+  animation: none !important;
+}
+
+.bento-stage:has(.dashboard-grid[data-path-layout]) {
+  overflow: visible;
+  contain: layout;
+}
+
+.dashboard-grid[data-focus-motion="true"][data-path-layout] {
+  position: relative;
+  block-size: 802px;
+  grid-template-rows: var(--path-overview-rows) !important;
+}
+
+.dashboard-grid[data-path-layout] > .dashboard-card {
+  transition: none;
+}
+
+.dashboard-grid[data-focus-motion="true"][data-path-layout][data-focus-active="true"] > .dashboard-card {
+  grid-column: var(--bento-focus-column) !important;
+  grid-row: var(--bento-focus-row) !important;
+}
+
+.dashboard-grid[data-path-layout] > .motion-card,
+.dashboard-grid[data-path-layout] .motion-primary {
+  scale: 1 !important;
+}
+
+.dashboard-grid[data-path-layout] .motion-title {
+  transition: none;
+}
+
+.dashboard-grid[data-path-layout] .motion-border-trail {
+  opacity: 0 !important;
+}
+
+/* Keep the nodes/cells available for exact reversal; never use display:none. */
+.dashboard-grid[data-path-layout][data-focus-active="true"] .trial-secondary-card,
+.dashboard-grid[data-path-layout][data-focus-active="true"] .work-zone,
+.dashboard-grid[data-path-layout][data-focus-active="true"] .forecast-copy p,
+.dashboard-grid[data-path-layout][data-focus-active="true"] .forecast-facts {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* The compact Forecast keeps its original typography and main figures. */
+.dashboard-grid[data-path-layout][data-focus-active="true"] .forecast-emblem {
+  inset-block-start: 50px;
+}
+
+.dashboard-grid[data-path-layout][data-focus-active="true"] .forecast-scale {
+  inset-inline-start: 50%;
+}

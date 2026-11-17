@@ -1,0 +1,19 @@
+.dashboard-canvas.dashboard-canvas-state .data-load-card[data-state="error"],
+.dashboard-canvas.dashboard-canvas-state .data-load-card[data-state="error"] h1,
+.dashboard-canvas.dashboard-canvas-state .data-load-card[data-state="error"] p,
+.dashboard-canvas.dashboard-canvas-state .data-load-card[data-state="error"] > span {
+  color: #182b22;
+}
+
+.dashboard-canvas.dashboard-canvas-state .data-load-card[data-state="error"] button {
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1px solid #163f32;
+  background: #163f32;
+  color: #fff;
+}
+
+.dashboard-canvas.dashboard-canvas-state .data-load-card[data-state="error"] button:focus-visible {
+  outline: 3px solid #163f32;
+  outline-offset: 4px;
+}

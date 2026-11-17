@@ -1,0 +1,91 @@
+.dashboard-grid[data-sources-visited] > .dashboard-card {
+  animation: none !important;
+}
+
+.bento-stage:has(.dashboard-grid[data-sources-layout]) {
+  overflow: visible;
+  contain: layout;
+}
+
+.dashboard-grid[data-focus-motion="true"][data-sources-layout] {
+  position: relative;
+  block-size: 802px;
+  grid-template-rows: var(--sources-overview-rows) !important;
+}
+
+.dashboard-grid[data-sources-layout] > .dashboard-card {
+  transition: none;
+}
+
+.dashboard-grid[data-focus-motion="true"][data-sources-layout][data-focus-active="true"] > .dashboard-card {
+  grid-column: var(--bento-focus-column) !important;
+  grid-row: var(--bento-focus-row) !important;
+}
+
+.dashboard-grid[data-sources-layout] > .motion-card,
+.dashboard-grid[data-sources-layout] .motion-primary {
+  scale: 1 !important;
+}
+
+.dashboard-grid[data-sources-layout] .motion-title {
+  transition: none;
+}
+
+.dashboard-grid[data-sources-layout] .motion-border-trail {
+  opacity: 0 !important;
+}
+
+.sources-card .source-tail {
+  display: grid;
+}
+
+.sources-card .source-detail-rows {
+  display: grid;
+  max-block-size: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-block-size .28s ease, opacity .18s ease;
+}
+
+.sources-card .source-detail-rows .source-row > span {
+  white-space: normal;
+}
+
+.dashboard-grid[data-focus-motion="true"][data-focus-active="true"] > .sources-card[data-source-expanded="true"] .source-row {
+  min-block-size: 36px;
+  grid-template-columns: minmax(132px, 1fr) minmax(28px, 1fr) 38px 56px;
+  gap: 7px;
+  padding-block: 2px;
+}
+
+.dashboard-grid[data-focus-motion="true"][data-focus-active="true"] > .sources-card[data-source-expanded="true"] .source-row > span {
+  white-space: normal;
+  line-height: 1.05;
+}
+
+.sources-card[data-source-expanded="true"] .source-detail-rows {
+  max-block-size: var(--source-detail-height);
+  opacity: 1;
+  transition-delay: .2s, .32s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sources-card .source-detail-rows { transition: none; }
+}
+
+/* Only the owner's approved compact Forecast; all factual text is retained. */
+.dashboard-grid[data-sources-layout][data-focus-active="true"] .forecast-copy {
+  inline-size: 100%;
+}
+
+.dashboard-grid[data-sources-layout][data-focus-active="true"] .forecast-copy p,
+.dashboard-grid[data-sources-layout][data-focus-active="true"] .forecast-facts {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.dashboard-grid[data-sources-layout][data-focus-active="true"] .forecast-emblem {
+  inset-block-start: 215px;
+  inset-inline: 26px auto;
+}

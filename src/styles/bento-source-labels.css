@@ -1,0 +1,63 @@
+/* Keep source names readable while leaving numeric columns and type sizes intact. */
+.dashboard-canvas .dashboard-shell .dashboard-grid .sources-card .source-row {
+  grid-template-columns: 8rem minmax(1rem, 1fr) 2.25rem 3.25rem;
+  column-gap: 8px;
+}
+
+.dashboard-canvas .dashboard-shell .dashboard-grid .sources-card .source-row > span {
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.15;
+}
+
+.dashboard-canvas .dashboard-shell .dashboard-grid .path-card .path-stage-head,
+.dashboard-canvas .dashboard-shell .dashboard-grid .path-card .path-route-row {
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+  column-gap: 12px;
+}
+
+.dashboard-canvas .dashboard-shell .dashboard-grid .path-card .path-route-row > strong {
+  min-inline-size: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.15;
+}
+
+/* Put native full-name hints above the card's transparent open-detail button. */
+.dashboard-canvas .sources-card .source-row > span[title],
+.dashboard-canvas .path-card .path-route-row > strong[title] {
+  position: relative;
+  z-index: 9;
+}
+
+@media (max-width: 600px) {
+  .dashboard-canvas .dashboard-shell .dashboard-grid .sources-card .source-row {
+    grid-template-columns: 7.5rem minmax(1rem, 1fr) 1.75rem 2.75rem;
+    column-gap: 5px;
+  }
+
+  .dashboard-canvas .dashboard-shell .dashboard-grid .path-card .path-stage-head,
+  .dashboard-canvas .dashboard-shell .dashboard-grid .path-card .path-route-row {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 8px;
+  }
+
+  .dashboard-canvas .dashboard-shell .dashboard-grid .path-card .path-route-row {
+    min-block-size: 84px;
+    align-content: center;
+  }
+
+  .dashboard-canvas .dashboard-shell .dashboard-grid .path-card .path-stage-head > span {
+    display: none;
+  }
+
+  .dashboard-canvas .dashboard-shell .dashboard-grid .path-card .path-route {
+    grid-template-columns: 26px minmax(0, 1fr) 26px minmax(0, 1fr) 26px minmax(0, 1fr) 26px;
+  }
+
+  .dashboard-canvas .dashboard-shell .dashboard-grid .path-card .path-stage-head > div {
+    grid-template-columns: repeat(4, 26px);
+  }
+}

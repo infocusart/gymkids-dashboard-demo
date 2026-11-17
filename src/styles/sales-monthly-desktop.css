@@ -1,0 +1,165 @@
+/* Monthly planning composition. The mobile report and its stylesheet are preserved. */
+@media (min-width: 1024px) {
+  .sales-grid.monthly-grid {
+    grid-template-rows: max(270px, calc(100dvh - 638px)) repeat(5, auto);
+    grid-template-areas:
+      "revenue revenue revenue revenue decomposition decomposition decomposition decomposition decomposition decomposition decomposition decomposition"
+      "leads leads leads leads refunds refunds refunds refunds balance balance balance balance"
+      "new new new new new renewals renewals renewals renewals bchk bchk bchk"
+      "new new new new new renewals renewals renewals renewals extra extra extra"
+      "funnel funnel funnel funnel funnel funnel funnel funnel topups topups topups topups"
+      "services services services services services services services services services services services services";
+  }
+  .sales-grid.monthly-grid.has-source-detail {
+    grid-template-rows: max(270px, calc(100dvh - 638px)) repeat(6, auto);
+    grid-template-areas:
+      "revenue revenue revenue revenue decomposition decomposition decomposition decomposition decomposition decomposition decomposition decomposition"
+      "source-detail source-detail source-detail source-detail source-detail source-detail source-detail source-detail source-detail source-detail source-detail source-detail"
+      "leads leads leads leads refunds refunds refunds refunds balance balance balance balance"
+      "new new new new new renewals renewals renewals renewals bchk bchk bchk"
+      "new new new new new renewals renewals renewals renewals extra extra extra"
+      "funnel funnel funnel funnel funnel funnel funnel funnel topups topups topups topups"
+      "services services services services services services services services services services services services";
+  }
+  .monthly-decomposition button[aria-expanded="true"] { color: #153c2e; font-weight: 650; text-decoration: underline; text-underline-offset: 3px; }
+  .monthly-grid .sales-card { padding: 22px; }
+  .monthly-grid .revenue-card { padding: 24px; }
+  .monthly-grid .decomposition-card { grid-area: decomposition; }
+  .monthly-grid .funnel-card { grid-area: funnel; }
+  .monthly-grid .topups-card { grid-area: topups; }
+  .monthly-grid:not(.has-focus) > :is(.refunds-card, .balance-card) { display: flex; flex-direction: column; }
+  .monthly-grid:not(.has-focus) > :is(.refunds-card, .balance-card) > .card-footnote { margin-top: auto; }
+  .monthly-grid .card-top { min-height: 32px; }
+  .monthly-grid .card-top h2 { font-size: 23px; }
+  .monthly-grid .card-kicker { font-size: 14px; }
+  .monthly-eyebrow { display: block; margin-top: 10px; font-size: 15px; color: var(--sales-muted); }
+  .monthly-grid .revenue-card .monthly-eyebrow { color: #e0e4dd; margin-top: 22px; }
+  .monthly-grid .hero-value { font-size: clamp(44px, 4.4vw, 74px); margin: 10px 0 20px; }
+  .monthly-grid .revenue-caption { line-height: 1.45; }
+  .monthly-revenue-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 22px; }
+  .monthly-revenue-summary > div { display: grid; gap: 7px; }
+  .monthly-revenue-summary span { font-size: 15px; color: #e0e4dd; }
+  .monthly-revenue-summary strong { font-size: 23px; font-weight: 550; letter-spacing: -.025em; }
+  .monthly-parameters, .monthly-decomposition { width: 100%; border-collapse: collapse; margin-top: 18px; font-size: 15px; line-height: 1.4; }
+  .monthly-parameters th, .monthly-parameters td, .monthly-decomposition th, .monthly-decomposition td { border-bottom: 1px solid #1d1b1920; padding: 10px 0 10px 12px; text-align: right; vertical-align: baseline; }
+  .monthly-parameters th:first-child, .monthly-decomposition th:first-child { text-align: left; padding-left: 0; }
+  .monthly-parameters tbody th, .monthly-decomposition tbody th { font-weight: 450; }
+  .monthly-parameters thead th, .monthly-decomposition thead th { font-size: 14px; font-weight: 500; color: var(--sales-muted); }
+  .monthly-parameters td, .monthly-decomposition td { white-space: nowrap; font-weight: 600; }
+  .monthly-grid :is(.bchk-card,.extra-card,.refunds-card) .monthly-parameters { table-layout: fixed; }
+  .monthly-grid :is(.bchk-card,.extra-card,.refunds-card) .monthly-parameters th:first-child { width: 44%; }
+  .monthly-grid :is(.bchk-card,.extra-card,.refunds-card) .monthly-parameters td { width: 28%; white-space: normal; overflow-wrap: break-word; }
+  .monthly-grid .revenue-card .monthly-parameters th, .monthly-grid .revenue-card .monthly-parameters td { color: #fbf7f1; border-color: #ffffff20; }
+  .monthly-decomposition { margin-top: 14px; }
+  .monthly-decomposition td, .monthly-decomposition th { padding-top: 5px; padding-bottom: 5px; }
+  .monthly-decomposition button { border: 0; padding: 4px 0; background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; min-height: 30px; }
+  .monthly-decomposition button span { opacity: .55; margin-left: 5px; }
+  .monthly-decomposition button:hover { color: #17402d; text-decoration: underline; text-underline-offset: 4px; }
+  .monthly-reconciliation { margin-top: 15px; padding: 13px 14px; border-radius: 14px; background: #263d2e0d; display: grid; gap: 10px; font-size: 15px; line-height: 1.4; }
+  .monthly-reconciliation > div { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+  .monthly-grid .card-footnote { margin-top: 14px; font-size: 15px; line-height: 1.45; }
+  .monthly-source-value { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+  .monthly-source-value > strong { font-size: clamp(27px, 2.6vw, 42px); font-weight: 600; letter-spacing: -.04em; line-height: 1.15; }
+  .monthly-source-value > span { font-size: 15px; }
+  .monthly-money-plan { font-size: 14px; color: var(--sales-muted); margin: 8px 0 12px; line-height: 1.4; }
+  .monthly-conversion { background: #1c483d10; border-radius: 17px; padding: 17px 18px; margin-top: 24px; }
+  .monthly-conversion > div { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+  .monthly-conversion strong { font-size: 48px; letter-spacing: -.045em; font-weight: 600; line-height: 1.1; }
+  .monthly-conversion > div > span { max-width: 180px; font-size: 16px; line-height: 1.25; font-weight: 550; }
+  .monthly-conversion p { margin: 12px 0 7px; font-size: 14px; line-height: 1.45; }
+  .monthly-conversion-note { font-size: 14px; line-height: 1.45; display: block; }
+  .monthly-terms { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 24px; }
+  .monthly-terms > div { display: grid; gap: 5px; }
+  .monthly-terms strong { font-size: 29px; font-weight: 600; letter-spacing: -.025em; }
+  .monthly-terms span { font-size: 15px; }
+  .monthly-renewal { margin-top: 20px; }
+  .monthly-renewal + .monthly-renewal { border-top: 1px solid #1d1b1920; padding-top: 18px; }
+  .monthly-renewal h3 { font-size: 16px; font-weight: 600; margin: 0; }
+  .monthly-renewal .monthly-source-value { margin-top: 10px; }
+  .monthly-renewal .monthly-source-value > strong { font-size: 29px; }
+  .monthly-renewal-rate { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; margin-top: 14px; }
+  .monthly-renewal-rate > span { font-size: 14px; }
+  .monthly-renewal-rate > strong { font-size: 38px; font-weight: 600; letter-spacing: -.04em; }
+  .monthly-rate-target { font-size: 15px; text-align: right; margin-top: 0; }
+  .monthly-renewal .monthly-parameters { margin-top: 12px; font-size: 15px; }
+  .monthly-renewal .monthly-parameters td, .monthly-renewal .monthly-parameters th { padding-top: 8px; padding-bottom: 8px; }
+  .monthly-funnel { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 26px; gap: 22px; }
+  .monthly-funnel > div { display: grid; gap: 8px; position: relative; }
+  .monthly-funnel > div:not(:last-child)::after { content: "→"; position: absolute; right: -16px; top: 43px; font-size: 20px; opacity: .6; }
+  .monthly-funnel strong { font-size: 46px; letter-spacing: -.04em; line-height: 1; font-weight: 600; }
+  .monthly-funnel span { font-size: 15px; line-height: 1.3; }
+  .monthly-funnel-rates { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; border-top: 1px solid #1d1b1920; margin-top: 24px; padding-top: 18px; }
+  .monthly-funnel-rates > div { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .monthly-funnel-rates span { font-size: 15px; }
+  .monthly-funnel-rates strong { font-size: 28px; letter-spacing: -.03em; }
+  .monthly-funnel-rates > div > span:last-child { flex-basis: 100%; }
+  .monthly-funnel-plans { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 15px; margin-top: 20px; }
+  .monthly-balance-row { display: flex; justify-content: space-between; gap: 14px; font-size: 14px; padding: 12px 0; border-top: 1px solid #ffffff25; }
+  .monthly-grid .balance-head { margin: 26px 0 24px; }
+  .monthly-grid .balance-head > strong { font-size: 72px; }
+  .monthly-grid .balance-head > span { font-size: 14px; max-width: 190px; }
+  .sales-grid.monthly-grid.has-focus { grid-template-areas: none; grid-template-rows: repeat(3, minmax(175px, auto)) auto auto; }
+  .monthly-grid.has-focus > .sales-card { grid-area: auto; }
+  .monthly-grid .sales-card.is-focused { padding: 30px; }
+  .monthly-grid .sales-card.is-neighbor { padding: 18px; }
+  .monthly-grid .is-neighbor .card-top h2 { font-size: 18px; }
+  .monthly-grid .is-neighbor .monthly-source-value > strong { font-size: 27px; }
+  .monthly-grid .is-neighbor .monthly-parameters, .monthly-grid .is-neighbor .monthly-conversion, .monthly-grid .is-neighbor .monthly-terms, .monthly-grid .is-neighbor .monthly-reconciliation, .monthly-grid .is-neighbor .card-footnote, .monthly-grid .is-neighbor .monthly-revenue-summary, .monthly-grid .is-neighbor .monthly-funnel-rates, .monthly-grid .is-neighbor .monthly-funnel-plans { display: none; }
+  .monthly-grid .is-neighbor .monthly-renewal { margin-top: 12px; }
+  .monthly-grid .is-neighbor .monthly-renewal-rate strong { font-size: 26px; }
+  .monthly-grid .is-neighbor .monthly-money-plan, .monthly-grid .is-neighbor .monthly-rate-target { font-size: 12px; }
+  .monthly-grid .is-neighbor .monthly-decomposition { font-size: 12px; table-layout: fixed; }
+  .monthly-grid .is-neighbor .monthly-decomposition th:first-child { width: 46%; }
+  .monthly-grid .is-neighbor .monthly-decomposition td { white-space: normal; overflow-wrap: break-word; }
+  .monthly-grid .is-neighbor .monthly-decomposition td, .monthly-grid .is-neighbor .monthly-decomposition th { padding: 5px 0 5px 6px; }
+  .monthly-grid .is-neighbor .monthly-decomposition th:last-child, .monthly-grid .is-neighbor .monthly-decomposition td:last-child { display: none; }
+  .monthly-grid .is-neighbor .monthly-funnel { grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+  .monthly-grid .is-neighbor .monthly-funnel > div::after { display: none; }
+  .monthly-grid .is-neighbor .monthly-funnel strong { font-size: 29px; }
+  .monthly-grid .is-neighbor .hero-value { font-size: 40px; }
+  .monthly-grid .is-neighbor .balance-head > strong { font-size: 54px; }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .monthly-grid .sales-card { padding: 18px; }
+  .monthly-grid .card-top h2 { font-size: 20px; }
+  .monthly-parameters, .monthly-decomposition { font-size: 15px; }
+  .monthly-parameters td, .monthly-parameters th, .monthly-decomposition td, .monthly-decomposition th { padding-left: 7px; }
+  .monthly-source-value > strong { font-size: 28px; }
+  .monthly-renewal .monthly-source-value > strong { font-size: 25px; }
+  .monthly-conversion strong { font-size: 40px; }
+  .monthly-conversion > div > span { font-size: 14px; }
+  .monthly-revenue-summary { grid-template-columns: 1fr; gap: 12px; }
+  .monthly-funnel strong { font-size: 38px; }
+  .monthly-renewal .monthly-parameters { font-size: 15px; }
+  .monthly-grid .is-neighbor .monthly-decomposition { font-size: 11px; }
+  .monthly-grid .is-neighbor .monthly-decomposition td { white-space: normal; }
+  .monthly-grid:not(.has-focus) > .refunds-card .monthly-parameters th:first-child { width: 36%; }
+  .monthly-grid:not(.has-focus) > .refunds-card .monthly-parameters td { width: 32%; white-space: nowrap; font-size: 14px; overflow-wrap: normal; }
+}
+
+/* Keep the first five cards in the desktop viewport when its height allows it. */
+@media (min-width: 1024px) {
+  .monthly-grid:not(.has-focus) > :is(.revenue-card, .decomposition-card) { min-height: 0; padding: 18px; }
+  .monthly-grid:not(.has-focus) > .revenue-card,
+  .monthly-grid:not(.has-focus) > .decomposition-card { display: flex; flex-direction: column; }
+  .monthly-grid:not(.has-focus) > :is(.revenue-card, .decomposition-card) .card-top { min-height: 28px; }
+  .monthly-grid:not(.has-focus) > :is(.revenue-card, .decomposition-card) .card-top h2 { font-size: 21px; }
+  .monthly-grid:not(.has-focus) > .revenue-card .pill { padding: 4px 8px; font-size: 14px; }
+  .monthly-grid:not(.has-focus) > .revenue-card .monthly-eyebrow { margin-top: 2px; font-size: 14px; line-height: 18px; }
+  .monthly-grid:not(.has-focus) > .revenue-card .hero-value { font-size: clamp(32px, 3.1vw, 44px); line-height: 1.05; margin: 4px 0 8px; }
+  .monthly-grid:not(.has-focus) > .revenue-card .revenue-caption { font-size: 14px; gap: 6px; line-height: 1.4; }
+  .monthly-grid:not(.has-focus) > .revenue-card .revenue-track { height: 5px; margin: 10px 0 12px; }
+  .monthly-grid:not(.has-focus) > .revenue-card .monthly-revenue-summary { grid-template-columns: 1fr 1fr; gap: 10px; margin-top: auto; margin-bottom: 0; }
+  .monthly-grid:not(.has-focus) > .revenue-card .monthly-revenue-summary > div { gap: 3px; }
+  .monthly-grid:not(.has-focus) > .revenue-card .monthly-revenue-summary span { font-size: 14px; line-height: 1.25; }
+  .monthly-grid:not(.has-focus) > .revenue-card .monthly-revenue-summary strong { font-size: 20px; line-height: 1.15; }
+  .monthly-grid:not(.has-focus) > .decomposition-card .monthly-decomposition { flex: 1; margin-top: 4px; font-size: 15px; line-height: 18px; }
+  .monthly-grid:not(.has-focus) > .decomposition-card .monthly-decomposition :is(th, td) { padding-top: 0; padding-bottom: 0; vertical-align: middle; }
+  .monthly-grid:not(.has-focus) > .decomposition-card .monthly-decomposition thead th { font-size: 14px; }
+  .monthly-grid:not(.has-focus) > .decomposition-card .monthly-decomposition button { display: block; min-height: 24px; padding: 0; line-height: 24px; }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .monthly-grid:not(.has-focus) > :is(.revenue-card, .decomposition-card) { padding-inline: 14px; }
+  .monthly-grid:not(.has-focus) > :is(.revenue-card, .decomposition-card) .card-top h2 { font-size: 19px; }
+  .monthly-grid:not(.has-focus) > .decomposition-card .monthly-decomposition { font-size: 15px; }
+}

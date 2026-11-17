@@ -1,0 +1,691 @@
+/* Original overview grid plus a lifted, in-place zoom for Conversion. */
+
+/* These fields belonged to the abandoned adaptive-grid experiment. */
+.site-funnel,
+.site-share-note {
+  display: none;
+}
+
+.bento-card-scrim {
+  display: none;
+}
+
+.bento-stage[data-spatial-busy="true"] .dashboard-card {
+  pointer-events: none;
+  will-change: transform, width, height;
+}
+
+.bento-stage[data-spatial-busy="true"] .motion-card,
+.bento-stage[data-spatial-busy="true"] .motion-card:hover {
+  scale: 1;
+}
+
+.bento-stage[data-spatial-busy="true"] .motion-card *,
+.bento-stage[data-spatial-busy="true"] .motion-card:hover * {
+  animation-play-state: paused !important;
+}
+
+/* On the monitor-width in-app preview the same focus motion is adapted to
+   the existing two-column dashboard instead of swapping to another page. */
+@media (min-width: 821px) and (max-width: 1179px) {
+  .dashboard-grid[data-expanded="site"] > .lead-card,
+  .dashboard-grid[data-expanded="site"] > .forecast-card {
+    min-block-size: 250px;
+    grid-column: span 1;
+    order: 1;
+  }
+
+  .dashboard-grid[data-expanded="site"] > .sources-card,
+  .dashboard-grid[data-expanded="site"] > .conversion-card {
+    min-block-size: 250px;
+    grid-column: span 1;
+    order: 2;
+  }
+
+  .dashboard-grid[data-expanded="site"] > .site-card {
+    min-block-size: 430px;
+    grid-column: 1 / -1;
+    order: 3;
+  }
+
+  .dashboard-grid[data-expanded="site"] > .quality-card {
+    min-block-size: 260px;
+    grid-column: 1 / -1;
+    order: 4;
+  }
+
+  .dashboard-grid[data-expanded="site"] > .promo-card,
+  .dashboard-grid[data-expanded="site"] > .trial-secondary-card {
+    min-block-size: 250px;
+    grid-column: span 1;
+    order: 5;
+  }
+
+  .dashboard-grid[data-expanded="site"] > .path-card {
+    min-block-size: 225px;
+    grid-column: 1 / -1;
+    order: 6;
+  }
+
+  .dashboard-grid[data-expanded="site"] .lead-chart,
+  .dashboard-grid[data-expanded="site"] .forecast-copy p,
+  .dashboard-grid[data-expanded="site"] .forecast-facts,
+  .dashboard-grid[data-expanded="site"] .forecast-emblem,
+  .dashboard-grid[data-expanded="site"] .forecast-scale,
+  .dashboard-grid[data-expanded="site"] .quality-reasons,
+  .dashboard-grid[data-expanded="site"] .work-zone {
+    display: none;
+  }
+
+  .dashboard-grid[data-expanded="site"] .lead-card,
+  .dashboard-grid[data-expanded="site"] .forecast-card {
+    padding: 18px 20px;
+  }
+
+  .dashboard-grid[data-expanded="site"] .lead-number strong {
+    font-size: 64px;
+  }
+
+  .dashboard-grid[data-expanded="site"] .lead-daily-metrics {
+    margin-block-start: 10px;
+  }
+
+  .dashboard-grid[data-expanded="site"] .forecast-copy {
+    inline-size: 100%;
+  }
+
+  .dashboard-grid[data-expanded="site"] .forecast-copy h2 {
+    margin-block-start: 7px;
+    font-size: 24px;
+  }
+
+  .dashboard-grid[data-expanded="site"] .forecast-value {
+    margin-block-start: 15px;
+  }
+
+  .dashboard-grid[data-expanded="site"] .forecast-value strong {
+    font-size: 58px;
+  }
+
+  .dashboard-grid[data-expanded="site"] .quality-card {
+    display: grid;
+    padding: 18px 20px;
+    align-items: center;
+    grid-template-columns: minmax(145px, .75fr) minmax(180px, 1fr) minmax(230px, 1.25fr);
+    grid-template-rows: auto auto;
+    column-gap: 22px;
+  }
+
+  .dashboard-grid[data-expanded="site"] .quality-card > .card-heading {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .dashboard-grid[data-expanded="site"] .quality-value {
+    margin-block-start: 4px;
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .dashboard-grid[data-expanded="site"] .quality-value strong {
+    font-size: 48px;
+  }
+
+  .dashboard-grid[data-expanded="site"] .quality-bar {
+    margin: 0;
+    grid-column: 2;
+    grid-row: 1 / 3;
+  }
+
+  .dashboard-grid[data-expanded="site"] .quality-states {
+    grid-column: 3;
+    grid-row: 1 / 3;
+  }
+}
+
+@media (min-width: 1320px) {
+  .bento-stage {
+    block-size: 802px;
+  }
+
+  .bento-stage .dashboard-grid {
+    position: relative;
+    block-size: 802px;
+    grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+    grid-template-rows: 192px 212px 140px 222px !important;
+    gap: 12px;
+  }
+
+  /* Restore the initial dashboard composition exactly. */
+  .dashboard-grid > .lead-card {
+    grid-column: 1 / 4 !important;
+    grid-row: 1 / 3 !important;
+  }
+
+  .dashboard-grid > .sources-card,
+  .dashboard-grid[data-expanded="conversion"] > .sources-card {
+    grid-column: 4 / 8 !important;
+    grid-row: 1 !important;
+  }
+
+  .dashboard-grid > .conversion-card {
+    grid-column: 8 / 10 !important;
+    grid-row: 1 !important;
+  }
+
+  .dashboard-grid > .quality-card,
+  .dashboard-grid[data-expanded="conversion"] > .quality-card {
+    grid-column: 10 / 13 !important;
+    grid-row: 1 / 4 !important;
+  }
+
+  .dashboard-grid > .forecast-card {
+    grid-column: 4 / 10 !important;
+    grid-row: 2 / 4 !important;
+  }
+
+  .dashboard-grid > .site-card {
+    grid-column: 1 / 4 !important;
+    grid-row: 3 !important;
+  }
+
+  .dashboard-grid > .promo-card,
+  .dashboard-grid[data-expanded="conversion"] > .promo-card {
+    grid-column: 1 / 4 !important;
+    grid-row: 4 !important;
+  }
+
+  .dashboard-grid > .trial-secondary-card,
+  .dashboard-grid[data-expanded="conversion"] > .trial-secondary-card {
+    grid-column: 4 / 7 !important;
+    grid-row: 4 !important;
+  }
+
+  .dashboard-grid > .path-card {
+    display: block;
+    grid-column: 7 / 13 !important;
+    grid-row: 4 !important;
+  }
+
+  /* Undo compact source-list rules from the previous reflow. */
+  .sources-card .source-head {
+    display: none;
+  }
+
+  .sources-card .source-row,
+  .dashboard-grid[data-expanded="conversion"] .sources-card .source-row {
+    min-block-size: 20px;
+    grid-template-columns: 90px minmax(56px, 1fr) 38px 56px;
+    gap: 8px;
+  }
+
+  .sources-card .source-row > strong,
+  .sources-card .source-row > em,
+  .dashboard-grid[data-expanded="conversion"] .sources-card .source-row > strong,
+  .dashboard-grid[data-expanded="conversion"] .sources-card .source-row > em {
+    font-size: 13px;
+  }
+
+  .dashboard-grid > .conversion-card {
+    animation: none;
+  }
+
+  /* The neighbours never reflow. The selected card grows left and down,
+     keeping its original top/right edge and KPI in the same screen position. */
+  .dashboard-grid[data-expanded="conversion"] > .conversion-card {
+    --conversion-summary-width: calc((100cqw - 132px) / 6 - 20px);
+
+    z-index: 30;
+    display: block;
+    grid-column: 4 / 10 !important;
+    grid-row: 1 / 4 !important;
+    padding: 16px;
+    border-color: rgb(var(--picker-tone-rgb) / 40%);
+    background:
+      radial-gradient(circle at 82% 18%, rgb(var(--picker-tone-rgb) / 16%), transparent 42%),
+      linear-gradient(145deg, #e6e5dd 0%, #d6dfd4 100%);
+    box-shadow: 0 32px 86px rgb(11 9 8 / 34%);
+  }
+
+  .dashboard-grid[data-expanded="conversion"] .conversion-card-summary {
+    position: absolute;
+    z-index: 3;
+    inset: 16px 16px 16px auto;
+    block-size: auto;
+    inline-size: var(--conversion-summary-width);
+  }
+
+  .dashboard-grid[data-expanded="conversion"] .conversion-card-summary::before {
+    position: absolute;
+    inset: 0 auto 0 -16px;
+    inline-size: 1px;
+    background: rgb(29 27 25 / 10%);
+    content: "";
+  }
+
+  .dashboard-grid[data-expanded="conversion"] .conversion-card-summary .trial-value {
+    margin-block-start: 24px;
+  }
+
+  .dashboard-grid[data-expanded="conversion"] .conversion-card-summary .trial-progress {
+    margin-block: 20px 12px;
+  }
+
+  .dashboard-grid[data-expanded="conversion"] .conversion-reflow-detail {
+    position: absolute;
+    z-index: 4;
+    overflow: hidden;
+    inset: 18px auto 18px 18px;
+    block-size: auto;
+    inline-size: max(0px, calc(100% - var(--conversion-summary-width) - 68px));
+    color: var(--ink);
+    opacity: var(--spatial-detail-opacity, 1);
+    pointer-events: auto;
+    transform: translate3d(var(--spatial-detail-shift, 0), 0, 0);
+  }
+
+  .dashboard-grid[data-expanded="conversion"] .conversion-reflow-detail__content {
+    display: grid;
+    block-size: 100%;
+    inline-size: 100%;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    gap: 14px;
+  }
+
+  .dashboard-grid[data-expanded="conversion"] .conversion-reflow-detail__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+  }
+
+  .dashboard-grid[data-expanded="conversion"] .conversion-reflow-detail__header > div {
+    display: grid;
+    gap: 4px;
+  }
+
+  .dashboard-grid[data-expanded="conversion"] .conversion-reflow-detail__header > div > span,
+  .dashboard-grid[data-expanded="conversion"] .conversion-reflow-insight span {
+    color: #5a625e;
+    font-size: 10px;
+    font-weight: 760;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+  }
+
+  .dashboard-grid[data-expanded="conversion"] .conversion-reflow-detail__header h3 {
+    margin: 0;
+    color: var(--ink);
+    font-size: 24px;
+    font-weight: 710;
+    letter-spacing: -.05em;
+    line-height: 1;
+  }
+
+  .dashboard-grid[data-expanded="conversion"] .conversion-reflow-back {
+    display: inline-flex;
+    min-block-size: 34px;
+    padding: 0 11px 0 9px;
+    border: 1px solid rgb(29 27 25 / 14%);
+    border-radius: 11px;
+    align-items: center;
+    gap: 6px;
+    color: var(--ink);
+    background: rgb(255 250 244 / 52%);
+    cursor: pointer;
+    font: 700 11px/1 "Inter Tight", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .dashboard-grid[data-expanded="conversion"] .conversion-reflow-back svg,
+  .dashboard-grid[data-expanded="conversion"] .conversion-reflow-insight button svg {
+    inline-size: 15px;
+    fill: none;
+    stroke: currentcolor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.6;
+  }
+
+  .dashboard-grid[data-expanded="conversion"] .conversion-reflow-back:hover,
+  .dashboard-grid[data-expanded="conversion"] .conversion-reflow-insight button:hover {
+    border-color: rgb(var(--picker-tone-rgb) / 55%);
+    background: rgb(var(--picker-tone-rgb) / 12%);
+  }
+
+  .dashboard-grid[data-expanded="conversion"] .conversion-reflow-back:focus-visible,
+  .dashboard-grid[data-expanded="conversion"] .conversion-reflow-insight button:focus-visible {
+    outline: 2px solid rgb(var(--picker-tone-rgb) / 92%);
+    outline-offset: 2px;
+  }
+
+  .dashboard-grid[data-expanded="conversion"] .conversion-journey {
+    display: grid;
+    min-block-size: 0;
+    margin-block-start: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .dashboard-grid[data-expanded="conversion"] .conversion-journey__step {
+    display: grid;
+    min-block-size: 0;
+    padding: 13px 14px;
+    border: 1px solid rgb(29 27 25 / 9%);
+    border-radius: 14px;
+    align-items: center;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto 4px;
+    gap: 4px 8px;
+    background: rgb(255 250 244 / 34%);
+  }
+
+  .dashboard-grid[data-expanded="conversion"] .conversion-journey__index {
+    display: block;
+    color: #6d746f;
+    font-size: 9px;
+    font-weight: 720;
+    letter-spacing: .08em;
+  }
+
+  .dashboard-grid[data-expanded="conversion"] .conversion-journey__step > strong {
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 690;
+  }
+
+  .dashboard-grid[data-expanded="conversion"] .conversion-journey__step > b {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    color: var(--ink);
+    font-size: 34px;
+    font-weight: 630;
+    letter-spacing: -.065em;
+    line-height: .9;
+  }
+
+  .dashboard-grid[data-expanded="conversion"] .conversion-journey__step > small {
+    color: #5f6863;
+    font-size: 10px;
+  }
+
+  .dashboard-grid[data-expanded="conversion"] .conversion-journey__step > i {
+    overflow: hidden;
+    block-size: 4px;
+    border-radius: 99px;
+    grid-column: 1 / 3;
+    background: rgb(29 27 25 / 10%);
+  }
+
+  .dashboard-grid[data-expanded="conversion"] .conversion-journey__step > i > span {
+    display: block;
+    block-size: 100%;
+    border-radius: inherit;
+    background: #3f8d67;
+  }
+
+  .dashboard-grid[data-expanded="conversion"] .conversion-reflow-insight {
+    display: flex;
+    min-block-size: 54px;
+    margin-block-start: 0;
+    padding: 9px 10px 9px 13px;
+    border: 1px solid rgb(29 27 25 / 9%);
+    border-radius: 13px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: rgb(255 250 244 / 48%);
+  }
+
+  .dashboard-grid[data-expanded="conversion"] .conversion-reflow-insight p {
+    margin: 2px 0 0;
+    color: #47504b;
+    font-size: 11px;
+    line-height: 1.2;
+  }
+
+  .dashboard-grid[data-expanded="conversion"] .conversion-reflow-insight strong {
+    color: var(--ink);
+    font-size: 13px;
+  }
+
+  .dashboard-grid[data-expanded="conversion"] .conversion-reflow-insight button {
+    display: inline-flex;
+    min-block-size: 32px;
+    padding: 0 9px 0 11px;
+    border: 1px solid rgb(29 27 25 / 12%);
+    border-radius: 10px;
+    align-items: center;
+    gap: 5px;
+    color: var(--ink);
+    background: rgb(255 250 244 / 54%);
+    cursor: pointer;
+    font: 700 10px/1 "Inter Tight", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    white-space: nowrap;
+  }
+
+  .bento-card-scrim {
+    position: absolute;
+    z-index: 20;
+    display: block;
+    inset: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 24px;
+    appearance: none;
+    background: rgb(10 12 11 / 52%);
+    cursor: pointer;
+    opacity: var(--spatial-scrim-opacity, 0);
+    pointer-events: none;
+  }
+
+  .dashboard-grid[data-expanded="conversion"] {
+    --spatial-scrim-opacity: 1;
+  }
+
+  .dashboard-grid[data-expanded="conversion"] .bento-card-scrim {
+    pointer-events: auto;
+  }
+
+  .bento-stage[data-spatial-busy="true"] .dashboard-card,
+  .bento-stage[data-spatial-busy="true"] .bento-card-scrim {
+    pointer-events: none;
+  }
+
+  .bento-stage[data-spatial-busy="true"] .motion-card,
+  .bento-stage[data-spatial-busy="true"] .motion-card:hover {
+    scale: 1;
+  }
+
+  .bento-stage[data-spatial-busy="true"] .motion-card *,
+  .bento-stage[data-spatial-busy="true"] .motion-card:hover * {
+    animation-play-state: paused !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .conversion-reflow-detail,
+  .bento-card-scrim {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* Site focus keeps every production card and only changes the dashboard geometry. */
+@media (min-width: 1320px) {
+  .bento-stage .dashboard-grid[data-expanded="site"] {
+    grid-template-rows: repeat(8, minmax(0, 1fr)) !important;
+  }
+
+  .dashboard-grid[data-expanded="site"] > .lead-card {
+    grid-column: 1 / 4 !important;
+    grid-row: 1 / 3 !important;
+  }
+
+  .dashboard-grid[data-expanded="site"] > .forecast-card {
+    grid-column: 4 / 7 !important;
+    grid-row: 1 / 3 !important;
+  }
+
+  .dashboard-grid[data-expanded="site"] > .site-card {
+    z-index: 2;
+    grid-column: 1 / 7 !important;
+    grid-row: 3 / 9 !important;
+  }
+
+  .dashboard-grid[data-expanded="site"] > .sources-card {
+    grid-column: 7 / 11 !important;
+    grid-row: 1 / 3 !important;
+  }
+
+  .dashboard-grid[data-expanded="site"] > .conversion-card {
+    grid-column: 11 / 13 !important;
+    grid-row: 1 / 3 !important;
+  }
+
+  .dashboard-grid[data-expanded="site"] > .quality-card {
+    grid-column: 7 / 13 !important;
+    grid-row: 3 / 5 !important;
+  }
+
+  .dashboard-grid[data-expanded="site"] > .trial-secondary-card {
+    grid-column: 7 / 11 !important;
+    grid-row: 5 / 7 !important;
+  }
+
+  .dashboard-grid[data-expanded="site"] > .promo-card {
+    grid-column: 11 / 13 !important;
+    grid-row: 5 / 7 !important;
+  }
+
+  .dashboard-grid[data-expanded="site"] > .path-card {
+    grid-column: 7 / 13 !important;
+    grid-row: 7 / 9 !important;
+  }
+
+  /* Existing content is compacted only while its card occupies a shorter slot. */
+  .dashboard-grid[data-expanded="site"] .lead-chart,
+  .dashboard-grid[data-expanded="site"] .forecast-copy p,
+  .dashboard-grid[data-expanded="site"] .forecast-facts,
+  .dashboard-grid[data-expanded="site"] .forecast-emblem,
+  .dashboard-grid[data-expanded="site"] .forecast-scale,
+  .dashboard-grid[data-expanded="site"] .quality-reasons,
+  .dashboard-grid[data-expanded="site"] .work-zone,
+  .dashboard-grid[data-expanded="site"] .promo-split {
+    display: none;
+  }
+
+  .dashboard-grid[data-expanded="site"] .lead-card {
+    padding: 18px 20px;
+  }
+
+  .dashboard-grid[data-expanded="site"] .lead-number strong {
+    font-size: 64px;
+  }
+
+  .dashboard-grid[data-expanded="site"] .lead-daily-metrics {
+    margin-block-start: 10px;
+  }
+
+  .dashboard-grid[data-expanded="site"] .forecast-card {
+    padding: 20px;
+  }
+
+  .dashboard-grid[data-expanded="site"] .forecast-copy {
+    inline-size: 100%;
+  }
+
+  .dashboard-grid[data-expanded="site"] .forecast-copy h2 {
+    margin-block-start: 7px;
+    font-size: 24px;
+  }
+
+  .dashboard-grid[data-expanded="site"] .forecast-value {
+    margin-block-start: 15px;
+  }
+
+  .dashboard-grid[data-expanded="site"] .forecast-value strong {
+    font-size: 58px;
+  }
+
+  .dashboard-grid[data-expanded="site"] .quality-card {
+    display: grid;
+    padding: 16px 20px;
+    align-items: center;
+    grid-template-columns: minmax(150px, .8fr) minmax(190px, 1fr) minmax(240px, 1.4fr);
+    grid-template-rows: auto auto;
+    column-gap: 24px;
+  }
+
+  .dashboard-grid[data-expanded="site"] .quality-card > .card-heading {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .dashboard-grid[data-expanded="site"] .quality-value {
+    margin-block-start: 4px;
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .dashboard-grid[data-expanded="site"] .quality-value strong {
+    font-size: 48px;
+  }
+
+  .dashboard-grid[data-expanded="site"] .quality-bar {
+    margin: 0;
+    grid-column: 2;
+    grid-row: 1 / 3;
+  }
+
+  .dashboard-grid[data-expanded="site"] .quality-states {
+    grid-column: 3;
+    grid-row: 1 / 3;
+  }
+
+  .dashboard-grid[data-expanded="site"] .promo-card {
+    padding: 14px 16px;
+  }
+
+  .dashboard-grid[data-expanded="site"] .promo-card .channel-value strong {
+    font-size: 38px;
+  }
+
+  .dashboard-grid[data-expanded="site"] .promo-card .channel-meta {
+    display: grid;
+  }
+
+  .dashboard-grid[data-expanded="site"] .path-card {
+    padding-block: 9px;
+  }
+
+  .dashboard-grid[data-expanded="site"] .path-heading h2 {
+    font-size: 19px;
+  }
+
+  .dashboard-grid[data-expanded="site"] .path-heading-note,
+  .dashboard-grid[data-expanded="site"] .path-stage-head {
+    font-size: 10px;
+  }
+
+  .dashboard-grid[data-expanded="site"] .path-map {
+    margin-block-start: 3px;
+  }
+
+  .dashboard-grid[data-expanded="site"] .path-stage-head {
+    min-block-size: 15px;
+  }
+
+  .dashboard-grid[data-expanded="site"] .path-route-row {
+    min-block-size: 24px;
+  }
+
+  .dashboard-grid[data-expanded="site"] .path-route-row > strong,
+  .dashboard-grid[data-expanded="site"] .path-station b {
+    font-size: 12px;
+  }
+
+  .dashboard-grid[data-expanded="site"] .path-link em {
+    font-size: 9px;
+  }
+}

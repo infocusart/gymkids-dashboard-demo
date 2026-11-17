@@ -1,0 +1,12 @@
+{
+  "schema_version": "gymkids.current.v1",
+  "release_id": "demo-2026-v1",
+  "manifest_path": "snapshots/demo-2026-v1/manifest.json",
+  "environment": "demo",
+  "demo_notice": "Данные предоставлены для демонстрации и не отражают реальные показатели центров.",
+  "generated_at": "2026-09-08T09:00:00+03:00",
+  "data_cutoff": "2026-09-07",
+  "current_periods": [
+    "2026-09"
+  ]
+}

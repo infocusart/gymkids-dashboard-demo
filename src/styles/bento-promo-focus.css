@@ -1,0 +1,62 @@
+.dashboard-grid[data-promo-visited] > .dashboard-card {
+  animation: none !important;
+}
+
+.bento-stage:has(.dashboard-grid[data-promo-layout]) {
+  overflow: visible;
+  contain: layout;
+}
+
+.dashboard-grid[data-focus-motion="true"][data-promo-layout] {
+  position: relative;
+  block-size: 802px;
+  grid-template-rows: var(--promo-overview-rows) !important;
+}
+
+.dashboard-grid[data-promo-layout] > .dashboard-card {
+  transition: none;
+}
+
+.dashboard-grid[data-focus-motion="true"][data-promo-layout][data-focus-active="true"] > .dashboard-card {
+  grid-column: var(--bento-focus-column) !important;
+  grid-row: var(--bento-focus-row) !important;
+}
+
+/* Keep Site's overview geometry for its fade, but give it no visible area.
+   Visibility/inert also remove its hover and keyboard targets until return. */
+.dashboard-grid[data-focus-motion="true"][data-promo-layout][data-focus-active="true"] > .site-card {
+  grid-row: 3 !important;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.dashboard-grid[data-promo-layout] > .motion-card,
+.dashboard-grid[data-promo-layout] .motion-primary {
+  scale: 1 !important;
+}
+
+.dashboard-grid[data-promo-layout] .motion-title {
+  transition: none;
+}
+
+.dashboard-grid[data-promo-layout] .motion-border-trail {
+  opacity: 0 !important;
+}
+
+.dashboard-grid[data-promo-layout] .lead-chart {
+  overflow: hidden;
+}
+
+.dashboard-grid[data-promo-layout][data-focus-active="true"] .lead-chart {
+  block-size: 0;
+  opacity: 0;
+}
+
+.promo-card[data-promo-expanded="true"] {
+  display: flex;
+  flex-direction: column;
+}
+.promo-card[data-promo-expanded="true"] > :not(.promo-details) {
+  flex-shrink: 0;
+}
