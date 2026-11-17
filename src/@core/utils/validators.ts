@@ -23,9 +23,14 @@ export const emailValidator = (value: unknown) => {
 
 // 👉 Password Validator
 export const passwordValidator = (password: string) => {
-  const regExp = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%&*()]).{8,}/
-
-  const validPassword = regExp.test(password)
+  // Keep the existing single-line policy without repeated lookahead backtracking.
+  const validPassword = password.split(/[\r\n\u2028\u2029]/).some(part =>
+    part.length >= 8
+    && /\d/.test(part)
+    && /[a-z]/.test(part)
+    && /[A-Z]/.test(part)
+    && /[!@#$%&*()]/.test(part),
+  )
 
   return validPassword || 'Field must contain at least one uppercase, lowercase, special character and digit with min 8 chars'
 }

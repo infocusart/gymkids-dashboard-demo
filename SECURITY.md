@@ -4,7 +4,7 @@ Do not commit credentials or personal data. Report sensitive issues privately to
 
 ## Проверки перед слиянием
 
-MET: Основной CI блокирует функциональные проверки до успешного `pnpm security:check`. Команда отдельно проверяет production, затем полный граф зависимостей из lockfile, начиная с low. Ошибки реестра не игнорируются. Оба прохода обязательны: при финальной сверке 17 ноября production endpoint npm уже сообщил новую picomatch advisory, хотя полный endpoint ещё вернул ноль.
+MET: Основной CI содержит отдельный failing job `pnpm security:check`. Функциональный job запускается независимо, чтобы собирать результаты тестов и покрытие даже при открытой advisory; общий workflow при ошибке security остаётся красным. Команда отдельно проверяет production, затем полный граф зависимостей из lockfile, начиная с low. Ошибки реестра не игнорируются. Оба прохода обязательны: при сверке 17 ноября production endpoint npm сообщил новую picomatch advisory, хотя полный endpoint ещё вернул ноль.
 
 MET: Дополнительный workflow `security-scanners` проверяет проект четырьмя независимыми инструментами:
 

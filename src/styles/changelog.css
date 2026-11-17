@@ -133,7 +133,9 @@
   color: var(--ink);
   background: rgb(255 255 255 / 7%);
   cursor: pointer;
-  font: 700 13px inherit;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .changelog-header-actions button:disabled { cursor: wait; opacity: .55; }
@@ -233,7 +235,7 @@
 .live-work-state-error > div { display: grid; gap: 4px; }
 .live-work-state-error b { color: var(--ink); }
 .live-work-state-error span { font-size: 12px; }
-.live-work-state button { min-block-size: 38px; padding-inline: 14px; border: 1px solid var(--line); border-radius: 11px; color: var(--ink); background: rgb(255 255 255 / 7%); cursor: pointer; font: 700 12px inherit; }
+.live-work-state button { min-block-size: 38px; padding-inline: 14px; border: 1px solid var(--line); border-radius: 11px; color: var(--ink); background: rgb(255 255 255 / 7%); cursor: pointer; font-family: inherit; font-size: 12px; font-weight: 700; }
 
 .release-work-list { display: grid; gap: 12px; }
 .release-candidate-note { margin: 12px 4px 0; color: var(--green); font-size: 11px; text-align: end; }
@@ -261,7 +263,9 @@
   appearance: none;
   color: var(--ink);
   background: rgb(255 255 255 / 6%);
-  font: 600 13px inherit;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .changelog-toolbar select { background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%); background-position: calc(100% - 16px) 19px, calc(100% - 11px) 19px; background-repeat: no-repeat; background-size: 5px 5px; }

@@ -18,5 +18,7 @@ export async function loadFonts() {
 }
 
 export default function () {
-  loadFonts()
+  return loadFonts().catch(() => {
+    console.warn('Не удалось загрузить веб-шрифты; используются системные шрифты.')
+  })
 }

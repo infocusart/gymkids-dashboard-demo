@@ -343,12 +343,24 @@ const getShowRateTone = (showRate: string) => {
                 <VTable class="text-no-wrap">
                   <thead>
                     <tr>
-                      <th>Дата</th>
-                      <th>Лиды</th>
-                      <th>Валидные</th>
-                      <th>Записаны</th>
-                      <th>Дошли</th>
-                      <th>Доходимость</th>
+                      <th scope="col">
+                        Дата
+                      </th>
+                      <th scope="col">
+                        Лиды
+                      </th>
+                      <th scope="col">
+                        Валидные
+                      </th>
+                      <th scope="col">
+                        Записаны
+                      </th>
+                      <th scope="col">
+                        Дошли
+                      </th>
+                      <th scope="col">
+                        Доходимость
+                      </th>
                     </tr>
                   </thead>
 

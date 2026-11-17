@@ -240,15 +240,33 @@ const getValidityTone = (validRate: string) => {
                 <VTable class="text-no-wrap">
                   <thead>
                     <tr>
-                      <th>Дата</th>
-                      <th>Лиды</th>
-                      <th>Валидные</th>
-                      <th>Валидность</th>
-                      <th>Сайт</th>
-                      <th>Промо</th>
-                      <th>Центр</th>
-                      <th>Колесо</th>
-                      <th>Прочее</th>
+                      <th scope="col">
+                        Дата
+                      </th>
+                      <th scope="col">
+                        Лиды
+                      </th>
+                      <th scope="col">
+                        Валидные
+                      </th>
+                      <th scope="col">
+                        Валидность
+                      </th>
+                      <th scope="col">
+                        Сайт
+                      </th>
+                      <th scope="col">
+                        Промо
+                      </th>
+                      <th scope="col">
+                        Центр
+                      </th>
+                      <th scope="col">
+                        Колесо
+                      </th>
+                      <th scope="col">
+                        Прочее
+                      </th>
                     </tr>
                   </thead>
 

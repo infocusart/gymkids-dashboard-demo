@@ -22,7 +22,6 @@ jobs:
       - name: Audit all locked dependencies, including build tooling
         run: pnpm security:check
   verify:
-    needs: security
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -40,7 +39,16 @@ jobs:
       - run: pnpm install --frozen-lockfile --ignore-scripts
       - run: pnpm build:icons
       - run: pnpm lint:strict
-      - run: pnpm test
+      - run: pnpm test:coverage
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: test-coverage
+          path: |
+            coverage/lcov.info
+            coverage/coverage-summary.json
+            coverage/lcov-report/
+          if-no-files-found: error
+          retention-days: 14
       - run: pnpm typecheck
       - run: pnpm build
       - run: git diff --exit-code

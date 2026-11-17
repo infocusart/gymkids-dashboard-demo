@@ -59,10 +59,18 @@ const sourceLabel = {
           <VTable class="text-no-wrap">
             <thead>
               <tr>
-                <th>Метрика</th>
-                <th>Определение</th>
-                <th>Источник</th>
-                <th>Частота</th>
+                <th scope="col">
+                  Метрика
+                </th>
+                <th scope="col">
+                  Определение
+                </th>
+                <th scope="col">
+                  Источник
+                </th>
+                <th scope="col">
+                  Частота
+                </th>
               </tr>
             </thead>
             <tbody>

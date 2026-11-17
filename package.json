@@ -14,7 +14,7 @@
     "preview": "vite preview --port 5050",
     "test": "tsx --test tests/*.test.ts",
     "typecheck": "vue-tsc --noEmit",
-    "lint": "eslint . -c .eslintrc.cjs --fix --ext .ts,.js,.cjs,.vue,.tsx,.jsx",
+    "lint": "eslint . -c .eslintrc.cjs --fix --ext .ts,.js,.mjs,.cjs,.vue,.tsx,.jsx",
     "build:icons": "tsx src/plugins/iconify/build-icons.ts",
     "msw:init": "msw init public/ --save",
     "postinstall": "npm run build:icons && npm run msw:init",
@@ -23,9 +23,10 @@
     "changelog:build": "node scripts/changelog.mjs build",
     "security:check": "corepack pnpm run security:prod && corepack pnpm run security:all",
     "lint:check": "node scripts/lib/lint-check.mjs",
-    "lint:strict": "eslint . scripts/lib/lint-check.mjs -c .eslintrc.cjs --ext .ts,.js,.cjs,.vue,.tsx,.jsx --max-warnings 0",
+    "lint:strict": "eslint . scripts/lib/lint-check.mjs -c .eslintrc.cjs --ext .ts,.js,.mjs,.cjs,.vue,.tsx,.jsx --max-warnings 0",
     "security:prod": "corepack pnpm audit --prod --audit-level low",
-    "security:all": "corepack pnpm audit --audit-level low"
+    "security:all": "corepack pnpm audit --audit-level low",
+    "test:coverage": "c8 tsx --test tests/*.test.ts && node scripts/coverage-check.mjs"
   },
   "dependencies": {
     "@casl/ability": "6.8.1",
@@ -97,6 +98,7 @@
     "@vitejs/plugin-vue": "6.0.1",
     "@vitejs/plugin-vue-jsx": "5.1.1",
     "baseline-browser-mapping": "2.11.27",
+    "c8": "12.0.0",
     "eslint": "8.57.1",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-import-resolver-typescript": "3.10.1",

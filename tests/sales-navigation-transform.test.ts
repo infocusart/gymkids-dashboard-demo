@@ -6,14 +6,14 @@ import config from '../vite.sales.config'
 const plugin = (config as UserConfig).plugins?.flat().find(item => item && 'name' in item && item.name === 'sales-page-metadata') as Plugin
 const hook = plugin.transform
 
-assert.equal(typeof hook, 'function')
-
 const transform = hook as (code: string, id: string) => string | undefined
 const inline = '<RouterLink :to="{ path: \'/bento-preview-focus\', query: { center, period } }">Привлечение</RouterLink>'
 const multiline = '<RouterLink\n :to="{ path: \'/bento-preview-focus\', query: { center, period } }"\n>\nПривлечение\n</RouterLink>'
 const sibling = '<RouterLink to="/other">Соседняя ссылка</RouterLink>'
 
 test('standalone sales replaces only its accepted destination with either template formatting', () => {
+  assert.equal(typeof hook, 'function')
+
   const before = transform(`${sibling}${inline}${sibling}`, '/project/src/pages/sales-bento.vue')
   const after = transform(`${sibling}${multiline}${sibling}`, '/project/src/pages/sales-bento.vue')
 

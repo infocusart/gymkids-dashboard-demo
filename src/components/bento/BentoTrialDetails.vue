@@ -136,6 +136,7 @@ const dailyLabel = (day: DeepReadonly<GymkidsDashboardView['trial']['byDate'][nu
             v-for="(day, index) in trial.byDate"
             :key="day.date"
             class="trial-details__day"
+            role="img"
             tabindex="0"
             :aria-label="dailyLabel(day)"
             :title="dailyLabel(day)"

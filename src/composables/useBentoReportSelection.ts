@@ -225,7 +225,7 @@ export const useBentoReportSelection = ({
     }
   }
 
-  const handleCenterListboxKeydown = (event: KeyboardEvent) => {
+  const handleCenterListboxKeydown = async (event: KeyboardEvent) => {
     if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
       event.preventDefault()
       setActiveCenterIndex(activeCenterIndex.value + (event.key === 'ArrowDown' ? 1 : -1))
@@ -246,7 +246,7 @@ export const useBentoReportSelection = ({
       const center = centers.value[activeCenterIndex.value]
 
       if (center)
-        selectCenterOption(center.center_id)
+        await selectCenterOption(center.center_id)
 
       return
     }

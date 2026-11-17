@@ -168,7 +168,7 @@ export const rgbaToHex = (rgba: string, forceRemoveAlpha = false) => {
   return (
     `#${
       rgba
-        .replace(/^rgba?\(|\s+|\)$/g, '') // Get's rgba / rgb string values
+        .replace(/^rgba?\(/, '').replace(/\)$/, '').replace(/\s+/g, '') // Get's rgba / rgb string values
         .split(',') // splits them at ","
         .filter((string, index) => !forceRemoveAlpha || index !== 3)
         .map(string => Number.parseFloat(string)) // Converts them to numbers

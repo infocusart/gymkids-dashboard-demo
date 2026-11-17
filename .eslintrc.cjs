@@ -238,6 +238,12 @@ module.exports = {
         singleline: { delimiter: 'semi', requireLast: false },
       }],
     },
+  }, {
+    files: ['scripts/**/*.mjs'],
+    rules: {
+      // Native Node ESM requires file extensions for relative imports.
+      'import/extensions': ['error', 'ignorePackages', { js: 'always', mjs: 'always' }],
+    },
   }],
   settings: {
     'import/resolver': {
