@@ -5,6 +5,7 @@ import { randomBytes } from 'node:crypto'
 import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises'
 import { dirname, join, relative } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { normalizeChangelogUrl } from '../src/lib/changelogUrls.js'
 
 const repoRoot = fileURLToPath(new URL('../', import.meta.url))
 const eventsRoot = join(repoRoot, 'changelog/events')
@@ -196,6 +197,10 @@ function validateEvent(event, sourcePath = 'event') {
 
   assertStringArray(event.areas, `${sourcePath}.areas`)
   assertStringArray(event.routes, `${sourcePath}.routes`)
+  event.routes.forEach((route, index) => {
+    if (normalizeChangelogUrl(route) === null)
+      fail(`${sourcePath}.routes[${index}]: разрешены только безопасные внутренние пути`)
+  })
   assertStringArray(event.files, `${sourcePath}.files`)
   assertStringArray(event.done, `${sourcePath}.done`)
   assertStringArray(event.blockers, `${sourcePath}.blockers`)
@@ -218,7 +223,7 @@ function validateEvent(event, sourcePath = 'event') {
     assertString(link?.label, `${sourcePath}.links[${index}].label`)
     assertString(link?.url, `${sourcePath}.links[${index}].url`)
 
-    if (!/^https:\/\//u.test(link.url) && !/^\//u.test(link.url))
+    if (normalizeChangelogUrl(link.url, true) === null)
       fail(`${sourcePath}.links[${index}].url: разрешены только HTTPS или публичные site-relative ссылки`)
   })
 

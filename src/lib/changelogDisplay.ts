@@ -1,12 +1,49 @@
+import { normalizeChangelogUrl } from './changelogUrls'
+import type { ChangelogData, ChangelogLink, LiveActivity } from '@/types/changelog'
+
 interface ReleaseSummaryInput {
   objective: string
   release_intent: string
   release_summary: string | null
 }
 
-export const changelogRouteHref = (route: string) => route
+export const changelogRouteHref = (route: unknown) => normalizeChangelogUrl(route)
 
-export const displayChangelogRoutes = (routes: string[]) => [...new Set(routes.map(changelogRouteHref))]
+export const displayChangelogRoutes = (routes: unknown): string[] => (
+  Array.isArray(routes)
+    ? [...new Set(routes.map(changelogRouteHref).filter((route): route is string => route !== null))]
+    : []
+)
+
+export const displayChangelogLinks = (links: unknown): ChangelogLink[] => (
+  Array.isArray(links)
+    ? links.flatMap((link: unknown) => {
+      if (!link || typeof link !== 'object' || !('url' in link) || !('label' in link) || typeof link.label !== 'string')
+        return []
+
+      const url = normalizeChangelogUrl(link.url, true)
+
+      return url ? [{ label: link.label, url }] : []
+    })
+    : []
+)
+
+export const normalizeChangelogData = (data: ChangelogData): ChangelogData => ({
+  ...data,
+  work_items: data.work_items.map(item => ({
+    ...item, routes: displayChangelogRoutes(item.routes), links: displayChangelogLinks(item.links),
+  })),
+  events: data.events.map(event => ({
+    ...event, routes: displayChangelogRoutes(event.routes), links: displayChangelogLinks(event.links),
+  })),
+})
+
+export const normalizeLiveActivity = (data: LiveActivity): LiveActivity => ({
+  ...data,
+  work_items: data.work_items.map(item => ({
+    ...item, routes: displayChangelogRoutes(item.routes),
+  })),
+})
 
 export const livePreviewLaunchPath = (item: {
   source: string
@@ -14,7 +51,7 @@ export const livePreviewLaunchPath = (item: {
 }) => (
   item.source === 'mcp_change_set'
   && item.preview?.compatible === true
-  && item.preview.launch_path?.startsWith('/review-preview/')
+  && changelogRouteHref(item.preview.launch_path)?.startsWith('/review-preview/')
     ? item.preview.launch_path
     : null
 )

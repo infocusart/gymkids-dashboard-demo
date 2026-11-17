@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 import ReleaseWorkCard from '@/components/changelog/ReleaseWorkCard.vue'
-import { displayChangelogRoutes, formatChangelogDate, shortChangelogCommit } from '@/lib/changelogDisplay'
+import { displayChangelogLinks, displayChangelogRoutes, formatChangelogDate, normalizeChangelogData, normalizeLiveActivity, shortChangelogCommit } from '@/lib/changelogDisplay'
 import type { ChangelogData, LiveActivity, Person, Stage } from '@/types/changelog'
 import gymkidsWhiteLogoUrl from '@images/gymkids/white-logo.png'
 
@@ -103,7 +103,7 @@ const loadWorkActivity = async () => {
     if (!response.ok)
       throw new Error(`Живой MCP-поток вернул ${response.status}`)
 
-    liveActivity.value = await response.json()
+    liveActivity.value = normalizeLiveActivity(await response.json())
     liveLoadState.value = 'ready'
   }
   catch (error) {
@@ -122,7 +122,7 @@ const loadChangelog = async () => {
     if (!response.ok)
       throw new Error(`Источник журнала вернул ${response.status}`)
 
-    changelog.value = await response.json()
+    changelog.value = normalizeChangelogData(await response.json())
     loadState.value = 'ready'
   }
   catch (error) {
@@ -477,7 +477,7 @@ onMounted(refreshAll)
                     <span>Проверка</span><b>{{ check }}</b>
                   </p>
                   <a
-                    v-for="link in item.links"
+                    v-for="link in displayChangelogLinks(item.links)"
                     :key="link.url"
                     :href="link.url"
                   >{{ link.label }}</a>
@@ -529,7 +529,7 @@ onMounted(refreshAll)
                     :href="route"
                   >{{ route }}</a>
                   <a
-                    v-for="link in item.links"
+                    v-for="link in displayChangelogLinks(item.links)"
                     :key="link.url"
                     :href="link.url"
                   >{{ link.label }}</a>
@@ -582,7 +582,7 @@ onMounted(refreshAll)
                     :href="route"
                   >{{ route }}</a>
                   <a
-                    v-for="link in event.links"
+                    v-for="link in displayChangelogLinks(event.links)"
                     :key="link.url"
                     :href="link.url"
                   >{{ link.label }}</a>

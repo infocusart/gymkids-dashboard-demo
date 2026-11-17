@@ -63,15 +63,16 @@ const plainText = (value: unknown, maximum: number) => (
   && ![...value].some(character => character.charCodeAt(0) < 32 || character === '<' || character === '>')
 )
 
-const previewOrigin = (value: string) => {
+export const normalizeGymkidsPreviewOrigin = (value: string, localOrigin?: string) => {
   const origin = new URL(value)
-  const production = origin.protocol === 'https:' && origin.hostname === 'mcp.gymkids-fr.infocuslab.ru'
+  const production = origin.origin === 'https://mcp.gymkids-fr.infocuslab.ru'
 
-  const local = import.meta.env.DEV
+  const local = localOrigin !== undefined
+    && origin.origin === localOrigin
     && origin.protocol === 'http:'
     && ['127.0.0.1', 'localhost'].includes(origin.hostname)
 
-  if ((!production && !local) || origin.pathname !== '/' || origin.search || origin.hash)
+  if ((!production && !local) || origin.username || origin.password || origin.pathname !== '/' || origin.search || origin.hash)
     throw new Error('Недопустимый источник MCP preview')
 
   return origin.origin
@@ -157,7 +158,11 @@ export const loadGymkidsMcpPreview = async (
   if (!request.centerId || !MONTH.test(request.period))
     throw new Error('Некорректная область MCP preview')
 
-  const origin = previewOrigin(request.origin)
+  const origin = normalizeGymkidsPreviewOrigin(
+    request.origin,
+    import.meta.env?.DEV ? import.meta.env.VITE_GYMKIDS_PREVIEW_LOCAL_ORIGIN : undefined,
+  )
+
   const url = new URL(`/preview-artifacts/${request.changeId}`, origin)
 
   url.searchParams.set('content_hash', request.contentHash)
