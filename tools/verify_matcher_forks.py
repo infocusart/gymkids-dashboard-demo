@@ -87,8 +87,14 @@ def check_upstream_advisories():
 
 def main():
     cli = argparse.ArgumentParser(description=__doc__)
-    cli.add_argument("--build", action="store_true", help="regenerate the archives before verifying")
+    mode = cli.add_mutually_exclusive_group()
+    mode.add_argument("--build", action="store_true", help="regenerate the archives before verifying")
+    mode.add_argument("--archives-only", action="store_true", help="verify fork contents without querying OSV")
+    mode.add_argument("--upstream-only", action="store_true", help="check the original versions against OSV")
     args = cli.parse_args()
+    if args.upstream_only:
+        check_upstream_advisories()
+        return
     for version, digest in UPSTREAM.items():
         files = patched_files(version, digest)
         target = ROOT / "vendor" / f"picomatch-{version}-gymkids.1.tgz"
@@ -102,7 +108,8 @@ def main():
                         archive.addfile(member, io.BytesIO(data))
         verify(target, files)
         print(f"Verified {target.name} against upstream plus patch ({len(files)} files)")
-    check_upstream_advisories()
+    if not args.archives_only:
+        check_upstream_advisories()
 
 
 if __name__ == "__main__":
