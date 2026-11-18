@@ -2,15 +2,16 @@
 
 import argparse
 import base64
+from contextlib import closing
 import gzip
 import hashlib
+from http.client import HTTPSConnection
 import io
 import json
 from pathlib import Path
 import subprocess
 import tarfile
 import tempfile
-from urllib.request import Request, urlopen
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -26,10 +27,18 @@ REVIEWED_PARSERS = {
 }
 
 
+def fetch(host, method, path, body=None):
+    with closing(HTTPSConnection(host, timeout=30)) as connection:
+        connection.request(method, path, body=body, headers={"Content-Type": "application/json"} if body else {})
+        with connection.getresponse() as response:
+            if response.status != 200:
+                raise RuntimeError(f"{host} returned HTTP {response.status}")
+            return response.read()
+
+
 def patched_files(version, digest):
-    url = f"https://registry.npmjs.org/picomatch/-/picomatch-{version}.tgz"
-    with urlopen(url, timeout=30) as response:
-        original = response.read()
+    path = f"/picomatch/-/picomatch-{version}.tgz"
+    original = fetch("registry.npmjs.org", "GET", path)
     if hashlib.sha512(original).digest() != base64.b64decode(digest):
         raise ValueError(f"Upstream integrity mismatch for {version}")
     with tarfile.open(fileobj=io.BytesIO(original), mode="r:gz") as archive:
@@ -50,7 +59,7 @@ def patched_files(version, digest):
     if (manifest["name"], manifest["version"]) != ("picomatch", version):
         raise ValueError(f"Unexpected upstream manifest for {version}")
     manifest.update(name="@gymkids-dashboard/picomatch", version=f"{version}-gymkids.1", private=True,
-                    repository="github:infocusart/gymkids-dashboard-demo", upstream=url)
+                    repository="github:infocusart/gymkids-dashboard-demo", upstream=f"https://registry.npmjs.org{path}")
     files["package/package.json"] = (json.dumps(manifest, indent=2) + "\n").encode()
     return files
 
@@ -68,10 +77,8 @@ def verify(archive_path, files):
 def check_upstream_advisories():
     """Keep the original identities visible even when scanners see the private fork."""
     queries = [{"package": {"ecosystem": "npm", "name": "picomatch"}, "version": v} for v in UPSTREAM]
-    request = Request("https://api.osv.dev/v1/querybatch", data=json.dumps({"queries": queries}).encode(),
-                      headers={"Content-Type": "application/json"})
-    with urlopen(request, timeout=30) as response:
-        results = json.load(response)["results"]
+    body = json.dumps({"queries": queries}).encode()
+    results = json.loads(fetch("api.osv.dev", "POST", "/v1/querybatch", body))["results"]
     if len(results) != len(queries) or any("next_page_token" in result for result in results):
         raise ValueError("Incomplete upstream OSV response")
     snapshot = {v: sorted(row.get("vulns", []), key=lambda advisory: advisory["id"])
