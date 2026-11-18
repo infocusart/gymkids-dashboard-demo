@@ -23,12 +23,6 @@ for (const file of files) {
       if (invocation.toolExecutionNotifications?.some(notification => ['warning', 'error'].includes(notification.level)))
         throw new Error(`${file}: analysis reported incomplete coverage or execution warnings`)
     }
-    for (const invocation of run.invocations ?? []) {
-      if (invocation.executionSuccessful === false)
-        throw new Error(`${file}: analysis did not complete`)
-      if (invocation.toolExecutionNotifications?.some(item => ['warning', 'error'].includes(item.level)))
-        throw new Error(`${file}: unresolved scanner diagnostics`)
-    }
     findings += run.results.length
     for (const result of run.results)
       console.error(`${file}: ${result.ruleId}: ${result.message?.text ?? 'finding'}`)

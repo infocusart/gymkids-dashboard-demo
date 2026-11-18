@@ -214,6 +214,15 @@ export const useGymkidsDashboard = (options: DashboardOptions = {}) => {
 
     assertCurrent(operation)
 
+    const request = nextPayload?.request
+    if (nextPayload?.center?.id !== center.center_id || request?.center_id !== center.center_id
+      || request.month !== period.month || request.from !== period.from || request.to !== period.to)
+      throw new Error('Данные отчёта не соответствуют выбранному центру или периоду.')
+
+    if ((nextDetails?.center && nextDetails.center.id !== center.center_id)
+      || (nextDetails?.request && nextDetails.request.month !== period.month))
+      throw new Error('Детализация отчёта не соответствует выбранному центру или периоду.')
+
     // Load disjoint lead cohorts from this immutable release; no raw CRM records.
     const nextHistory = center.trial_history_path
       ? decodeGymkidsTrialHistory(await fetchJson<unknown>(absoluteUrl(center.trial_history_path, manifestUrl.value), signal), center.center_id)

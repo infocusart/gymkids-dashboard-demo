@@ -19,8 +19,12 @@ jobs:
       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
         with:
           node-version-file: .nvmrc
+      - name: Audit production dependencies
+        id: production_audit
+        run: pnpm security:prod
       - name: Audit all locked dependencies, including build tooling
-        run: pnpm security:check
+        if: ${{ !cancelled() && steps.production_audit.outcome != 'skipped' }}
+        run: pnpm security:all
   verify:
     runs-on: ubuntu-latest
     timeout-minutes: 20

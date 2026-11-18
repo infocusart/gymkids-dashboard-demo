@@ -24,6 +24,35 @@ const run = async (body: () => Promise<void>) => {
   }
 }
 
+for (const file of ['centers', 'details']) {
+  for (const mismatch of ['center', 'period']) {
+    test(`a report rejects ${file} from another ${mismatch} and recovers on retry`, () => run(async () => {
+      let wrongFile = true
+      globalThis.fetch = async input => {
+        const url = new URL(String(input))
+        if (wrongFile && url.pathname.endsWith(`/${file}/profsoyuznaya/2026-07.json`)) {
+          url.pathname = mismatch === 'center'
+            ? url.pathname.replace('/profsoyuznaya/', '/novo-peredelkino/')
+            : url.pathname.replace('2026-07.json', '2026-06.json')
+        }
+
+        return respond(url)
+      }
+
+      const model = useGymkidsDashboard(options)
+
+      await model.initialize(selected)
+      assert.equal(model.state.value, 'error')
+      assert.equal(model.dashboard.value, null)
+      wrongFile = false
+      await model.retry()
+      assert.equal(model.state.value, 'ready')
+      assert.equal(model.dashboard.value?.meta.centerId, selected.centerId)
+      assert.equal(model.dashboard.value?.meta.period, selected.period)
+    }))
+  }
+}
+
 test('retry after initial pointer failure retains center, period and day', () => run(async () => {
   let fail = true
   globalThis.fetch = async input => {
