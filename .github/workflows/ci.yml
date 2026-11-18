@@ -41,6 +41,8 @@ jobs:
           node-version-file: .nvmrc
           cache: pnpm
       - run: pnpm install --frozen-lockfile --ignore-scripts
+      - name: Verify matcher fork contents against upstream and reviewed patches
+        run: python3 tools/verify_matcher_forks.py
       - run: pnpm build:icons
       - run: pnpm lint:strict
       - run: pnpm test:coverage

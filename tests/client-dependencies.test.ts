@@ -40,7 +40,7 @@ test('client build allows similarly named modules', async () => {
 })
 
 test('client build blocks bundled and external picomatch imports', async () => {
-  for (const name of ['/node_modules/.pnpm/picomatch@4/node_modules/picomatch/index.js', 'picomatch', 'picomatch/posix'])
+  for (const name of ['/node_modules/.pnpm/picomatch@4/node_modules/picomatch/index.js', 'picomatch', 'picomatch/posix', '@gymkids-dashboard/picomatch/posix', '/node_modules/@gymkids-dashboard/picomatch/index.js'])
     await assert.rejects(buildFixture(name, !name.startsWith('/')), /picomatch is restricted to build tooling/)
 })
 

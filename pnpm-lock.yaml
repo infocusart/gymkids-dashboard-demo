@@ -9,8 +9,9 @@ overrides:
   '@tiptap/core': 3.34.0
   prosemirror-view: 1.42.6
   rollup@>=4 <4.59.0: 4.64.2
-  picomatch@<2.3.2: 2.3.2
-  picomatch@>=4.0.0 <4.0.4: 4.0.7
+  picomatch@2: file:vendor/picomatch-2.3.2-gymkids.1.tgz
+  picomatch@4: file:vendor/picomatch-4.0.7-gymkids.1.tgz
+  fdir>picomatch: file:vendor/picomatch-4.0.7-gymkids.1.tgz
   immutable@>=4 <4.3.9: 4.3.9
   linkify-it@<=5.0.1: 5.0.2
   source-map-js@>=1 <1.2.2: 1.2.2
@@ -22,12 +23,6 @@ overrides:
   glob@>=13 <14.0.2: 14.0.2
 
 patchedDependencies:
-  picomatch@2.3.2:
-    hash: dec3ac64ca1e51d89ecffc55527e7f3a404889efffb3db98e82b9e33e638bb39
-    path: patches/picomatch@2.3.2.patch
-  picomatch@4.0.7:
-    hash: 74dc8b5c79a7586ba206ed5b2a37481bf9d2a23ee67e2aa5d45fbaccf4292d6b
-    path: patches/picomatch@4.0.7.patch
   rollup@4.64.2:
     hash: 95fafe3354bc19b57e235c752dce8090295aadebd6c01cd155da92b38d4a7061
     path: patches/rollup@4.64.2.patch
@@ -303,20 +298,17 @@ packages:
 
   '@antfu/eslint-config-basic@0.43.1':
     resolution: {integrity: sha512-SW6hmGmqI985fsCJ+oivo4MbiMmRMgCJ0Ne8j/hwCB6O6Mc0m5bDqYeKn5HqFhvZhG84GEg5jPDKNiHrBYnQjw==}
-    deprecated: Deprecated, please migrate to @antfu/eslint-config with the flat config
     peerDependencies:
       eslint: '>=7.4.0'
 
   '@antfu/eslint-config-ts@0.43.1':
     resolution: {integrity: sha512-s3zItBSopYbM/3eii/JKas1PmWR+wCPRNS89qUi4zxPvpuIgN5mahkBvbsCiWacrNFtLxe1zGgo5qijBhVfuvA==}
-    deprecated: Deprecated, please migrate to @antfu/eslint-config with the flat config
     peerDependencies:
       eslint: '>=7.4.0'
       typescript: '>=3.9'
 
   '@antfu/eslint-config-vue@0.43.1':
     resolution: {integrity: sha512-HxOfe8Vl+DPrzssbs5LHRDCnBtCy1LSA1DIeV71IC+iTpzoASFahSsVX5qckYu1InFgUm93XOhHCWm34LzPsvg==}
-    deprecated: Deprecated, please migrate to @antfu/eslint-config with the flat config
     peerDependencies:
       eslint: '>=7.4.0'
 
@@ -883,10 +875,19 @@ packages:
   '@floating-ui/utils@0.2.12':
     resolution: {integrity: sha512-HpCo8tmWzLVad5s2d19EhAz5zqrrQ6s69qd6moPMQvkOuSwDT1YgRfWSVuc4ennqrgv3OHppiOGMQ7oC13yIww==}
 
+  '@gymkids-dashboard/picomatch@file:vendor/picomatch-2.3.2-gymkids.1.tgz':
+    resolution: {integrity: sha512-eN9fLqpRTKsKQsDlgwhYTG4MRWwYgSQuMQ920ebIo0qS5VFyNY86lvMSQkEU2Gi6eCu2DngkIifuR/FUDPhwqA==, tarball: file:vendor/picomatch-2.3.2-gymkids.1.tgz}
+    version: 2.3.2-gymkids.1
+    engines: {node: '>=8.6'}
+
+  '@gymkids-dashboard/picomatch@file:vendor/picomatch-4.0.7-gymkids.1.tgz':
+    resolution: {integrity: sha512-y++IShtX32O0ccjrLCSPo6oXIlhxf1BUZX8CQnGJLLM+NZYhLZwLecshwNMnfMr/LqUYyhBxtpatsTDXzqHxMQ==, tarball: file:vendor/picomatch-4.0.7-gymkids.1.tgz}
+    version: 4.0.7-gymkids.1
+    engines: {node: '>=12'}
+
   '@humanwhocodes/config-array@0.13.0':
     resolution: {integrity: sha512-DZLEEqFWQFiyK6h5YIeynKx7JlvCYWL0cImfSRXZ9l4Sg2efkFGTuFf6vzXjK1cq6IYkU+Eg/JizXw+TD2vRNw==}
     engines: {node: '>=10.10.0'}
-    deprecated: Use @eslint/config-array instead
 
   '@humanwhocodes/module-importer@1.0.1':
     resolution: {integrity: sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA==}
@@ -894,7 +895,6 @@ packages:
 
   '@humanwhocodes/object-schema@2.0.3':
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
-    deprecated: Use @eslint/object-schema instead
 
   '@iconify-json/fa@1.2.2':
     resolution: {integrity: sha512-Rw0L97uO3W0Gy2rq4cM/TH3QjzuPuRca1F2steumZ57zOeheGQdiqo50O6KHjm+WgImmV92IFPUTU6eiaJsrTw==}
@@ -1367,14 +1367,12 @@ packages:
   '@stylistic/stylelint-config@1.0.1':
     resolution: {integrity: sha512-JgFP88HZEyo34k9RpWVdcQJtLPrMxYE58IO3qypXhmvE/NmZohj+xjDtQ8UfaarnYsLecnldw57/GHum07Ctdw==}
     engines: {node: ^18.12 || >=20.9}
-    deprecated: Please upgrade to v5 or later.
     peerDependencies:
       stylelint: ^16.0.2
 
   '@stylistic/stylelint-plugin@2.1.3':
     resolution: {integrity: sha512-/KUcqX36AbbUk7KvNuM0dWv2XSlPa1M12CPcC//eA4MNEFsZFl+2Kf8UZCLjlIWIrDNitd591vaVkXfOwUtsFQ==}
     engines: {node: ^18.12 || >=20.9}
-    deprecated: Please upgrade to v5 or later.
     peerDependencies:
       stylelint: ^16.0.2
 
@@ -2752,7 +2750,6 @@ packages:
   eslint-plugin-markdown@3.0.1:
     resolution: {integrity: sha512-8rqoc148DWdGdmYF6WSQFT3uQ6PO7zXYgeBpHAOAakX/zpq+NvFYbDA/H7PYzHajwtmaOzAwfxyl++x0g1/N9A==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
-    deprecated: Please use @eslint/markdown instead
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
 
@@ -2851,7 +2848,6 @@ packages:
   eslint@8.57.1:
     resolution: {integrity: sha512-ypowyDxpVSYpkXr9WPv2PAZCtNip1Mv5KTW0SCurXv/9iOpcrH9PaqUElksqEB6pChqHGDRCFTyrZlGhnLNGiA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
-    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@10.4.0:
@@ -2925,9 +2921,10 @@ packages:
 
   fdir@6.5.0:
     resolution: {integrity: sha512-tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg==}
+    version: 6.5.0
     engines: {node: '>=12.0.0'}
     peerDependencies:
-      picomatch: 4.0.7
+      picomatch: ^3 || ^4
     peerDependenciesMeta:
       picomatch:
         optional: true
@@ -3048,7 +3045,6 @@ packages:
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
-    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   global-modules@2.0.0:
     resolution: {integrity: sha512-NGbfmJBp9x8IxyJSd1P+otYK8vonoJactOogrVfFRIAEY1ukil8RSKDz2Yo7wh1oihl51l/r6W4epkeKJHqL8A==}
@@ -3174,7 +3170,6 @@ packages:
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
-    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
 
   inherits@2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
@@ -3810,14 +3805,6 @@ packages:
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
 
-  picomatch@2.3.2:
-    resolution: {integrity: sha512-V7+vQEJ06Z+c5tSye8S+nHUfI51xoXIXjHQ99cQtKUkQqqO1kO/KCJUfZXuB47h/YBlDhah2H3hdUGXn8ie0oA==}
-    engines: {node: '>=8.6'}
-
-  picomatch@4.0.7:
-    resolution: {integrity: sha512-qcJu88Q2IWqJsDD529JKMdwGm/dvInW4HvQnRwiH9JtihJvzGOscDtHE3x1pBKeUOTysQ8kVmLnJ2kJu7yhcGA==}
-    engines: {node: '>=12'}
-
   pinia@3.0.3:
     resolution: {integrity: sha512-ttXO/InUULUXkMHpTdp9Fj4hLpD/2AoJdmAbAeW2yu1iy1k+pkFekQXw5VpC0/5p51IOR/jDaDRfRWRnMMsGOA==}
     peerDependencies:
@@ -4053,7 +4040,6 @@ packages:
 
   rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
-    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
   rollup@4.64.2:
@@ -4584,7 +4570,6 @@ packages:
 
   unplugin-vue-router@0.8.8:
     resolution: {integrity: sha512-8fKHzIF8+Suc1DhoBHmGxLhXUjhzIKvdTwngAybJ+3UrhNLv7KsGrNjaBVnQmlS9VNpxlwHRJzZ2Vc7IDlDm+A==}
-    deprecated: 'Merged into vuejs/router. Migrate: https://router.vuejs.org/guide/migration/v4-to-v5.html'
     peerDependencies:
       vue-router: ^4.3.0
     peerDependenciesMeta:
@@ -5471,6 +5456,10 @@ snapshots:
 
   '@floating-ui/utils@0.2.12': {}
 
+  '@gymkids-dashboard/picomatch@file:vendor/picomatch-2.3.2-gymkids.1.tgz': {}
+
+  '@gymkids-dashboard/picomatch@file:vendor/picomatch-4.0.7-gymkids.1.tgz': {}
+
   '@humanwhocodes/config-array@0.13.0':
     dependencies:
       '@humanwhocodes/object-schema': 2.0.3
@@ -5726,7 +5715,7 @@ snapshots:
       detect-libc: 2.1.2
       is-glob: 4.0.3
       node-addon-api: 7.1.1
-      picomatch: 4.0.7(patch_hash=74dc8b5c79a7586ba206ed5b2a37481bf9d2a23ee67e2aa5d45fbaccf4292d6b)
+      picomatch: '@gymkids-dashboard/picomatch@file:vendor/picomatch-4.0.7-gymkids.1.tgz'
     optionalDependencies:
       '@parcel/watcher-android-arm64': 2.6.0
       '@parcel/watcher-darwin-arm64': 2.6.0
@@ -5756,7 +5745,7 @@ snapshots:
     dependencies:
       '@types/estree': 1.0.10
       estree-walker: 2.0.2
-      picomatch: 4.0.7(patch_hash=74dc8b5c79a7586ba206ed5b2a37481bf9d2a23ee67e2aa5d45fbaccf4292d6b)
+      picomatch: '@gymkids-dashboard/picomatch@file:vendor/picomatch-4.0.7-gymkids.1.tgz'
     optionalDependencies:
       rollup: 4.64.2(patch_hash=95fafe3354bc19b57e235c752dce8090295aadebd6c01cd155da92b38d4a7061)
 
@@ -6519,7 +6508,7 @@ snapshots:
       local-pkg: 1.2.1
       magic-string-ast: 0.7.1
       pathe: 2.0.3
-      picomatch: 4.0.7(patch_hash=74dc8b5c79a7586ba206ed5b2a37481bf9d2a23ee67e2aa5d45fbaccf4292d6b)
+      picomatch: '@gymkids-dashboard/picomatch@file:vendor/picomatch-4.0.7-gymkids.1.tgz'
     optionalDependencies:
       vue: 3.5.43(typescript@5.9.3)
 
@@ -6655,7 +6644,7 @@ snapshots:
       alien-signals: 3.2.1
       muggle-string: 0.4.1
       path-browserify: 1.0.1
-      picomatch: 4.0.7(patch_hash=74dc8b5c79a7586ba206ed5b2a37481bf9d2a23ee67e2aa5d45fbaccf4292d6b)
+      picomatch: '@gymkids-dashboard/picomatch@file:vendor/picomatch-4.0.7-gymkids.1.tgz'
     optionalDependencies:
       typescript: 5.9.3
 
@@ -6757,7 +6746,7 @@ snapshots:
   anymatch@3.1.3:
     dependencies:
       normalize-path: 3.0.0
-      picomatch: 2.3.2(patch_hash=dec3ac64ca1e51d89ecffc55527e7f3a404889efffb3db98e82b9e33e638bb39)
+      picomatch: '@gymkids-dashboard/picomatch@file:vendor/picomatch-2.3.2-gymkids.1.tgz'
 
   apexcharts@3.54.1:
     dependencies:
@@ -7840,9 +7829,9 @@ snapshots:
     dependencies:
       reusify: 1.1.0
 
-  fdir@6.5.0(picomatch@4.0.7(patch_hash=74dc8b5c79a7586ba206ed5b2a37481bf9d2a23ee67e2aa5d45fbaccf4292d6b)):
+  fdir@6.5.0(@gymkids-dashboard/picomatch@file:vendor/picomatch-4.0.7-gymkids.1.tgz):
     optionalDependencies:
-      picomatch: 4.0.7(patch_hash=74dc8b5c79a7586ba206ed5b2a37481bf9d2a23ee67e2aa5d45fbaccf4292d6b)
+      picomatch: '@gymkids-dashboard/picomatch@file:vendor/picomatch-4.0.7-gymkids.1.tgz'
 
   fflate@0.8.3: {}
 
@@ -8462,7 +8451,7 @@ snapshots:
   micromatch@4.0.8:
     dependencies:
       braces: 3.0.3
-      picomatch: 2.3.2(patch_hash=dec3ac64ca1e51d89ecffc55527e7f3a404889efffb3db98e82b9e33e638bb39)
+      picomatch: '@gymkids-dashboard/picomatch@file:vendor/picomatch-2.3.2-gymkids.1.tgz'
 
   min-indent@1.0.1: {}
 
@@ -8730,10 +8719,6 @@ snapshots:
 
   picocolors@1.1.1: {}
 
-  picomatch@2.3.2(patch_hash=dec3ac64ca1e51d89ecffc55527e7f3a404889efffb3db98e82b9e33e638bb39): {}
-
-  picomatch@4.0.7(patch_hash=74dc8b5c79a7586ba206ed5b2a37481bf9d2a23ee67e2aa5d45fbaccf4292d6b): {}
-
   pinia@3.0.3(typescript@5.9.3)(vue@3.5.43(typescript@5.9.3)):
     dependencies:
       '@vue/devtools-api': 7.7.10
@@ -8913,7 +8898,7 @@ snapshots:
 
   readdirp@3.6.0:
     dependencies:
-      picomatch: 2.3.2(patch_hash=dec3ac64ca1e51d89ecffc55527e7f3a404889efffb3db98e82b9e33e638bb39)
+      picomatch: '@gymkids-dashboard/picomatch@file:vendor/picomatch-2.3.2-gymkids.1.tgz'
 
   readdirp@5.1.1: {}
 
@@ -9470,8 +9455,8 @@ snapshots:
 
   tinyglobby@0.2.17:
     dependencies:
-      fdir: 6.5.0(picomatch@4.0.7(patch_hash=74dc8b5c79a7586ba206ed5b2a37481bf9d2a23ee67e2aa5d45fbaccf4292d6b))
-      picomatch: 4.0.7(patch_hash=74dc8b5c79a7586ba206ed5b2a37481bf9d2a23ee67e2aa5d45fbaccf4292d6b)
+      fdir: 6.5.0(@gymkids-dashboard/picomatch@file:vendor/picomatch-4.0.7-gymkids.1.tgz)
+      picomatch: '@gymkids-dashboard/picomatch@file:vendor/picomatch-4.0.7-gymkids.1.tgz'
 
   to-regex-range@5.0.1:
     dependencies:
@@ -9595,7 +9580,7 @@ snapshots:
       magic-string: 0.30.21
       mlly: 1.8.2
       pathe: 2.0.3
-      picomatch: 4.0.7(patch_hash=74dc8b5c79a7586ba206ed5b2a37481bf9d2a23ee67e2aa5d45fbaccf4292d6b)
+      picomatch: '@gymkids-dashboard/picomatch@file:vendor/picomatch-4.0.7-gymkids.1.tgz'
       pkg-types: 1.3.1
       scule: 1.3.0
       strip-literal: 2.1.1
@@ -9650,7 +9635,7 @@ snapshots:
   unplugin-utils@0.3.2:
     dependencies:
       pathe: 2.0.3
-      picomatch: 4.0.7(patch_hash=74dc8b5c79a7586ba206ed5b2a37481bf9d2a23ee67e2aa5d45fbaccf4292d6b)
+      picomatch: '@gymkids-dashboard/picomatch@file:vendor/picomatch-4.0.7-gymkids.1.tgz'
 
   unplugin-vue-components@0.27.5(@babel/parser@7.29.14)(rollup@4.64.2(patch_hash=95fafe3354bc19b57e235c752dce8090295aadebd6c01cd155da92b38d4a7061))(vue@3.5.43(typescript@5.9.3)):
     dependencies:
@@ -9701,7 +9686,7 @@ snapshots:
     dependencies:
       '@jridgewell/remapping': 2.3.5
       acorn: 8.19.0
-      picomatch: 4.0.7(patch_hash=74dc8b5c79a7586ba206ed5b2a37481bf9d2a23ee67e2aa5d45fbaccf4292d6b)
+      picomatch: '@gymkids-dashboard/picomatch@file:vendor/picomatch-4.0.7-gymkids.1.tgz'
       webpack-virtual-modules: 0.6.2
 
   unrs-resolver@1.13.0:
@@ -9848,8 +9833,8 @@ snapshots:
   vite@7.3.7(@types/node@24.9.2)(sass@1.105.1)(tsx@4.20.6)(yaml@2.8.3):
     dependencies:
       esbuild: 0.28.2
-      fdir: 6.5.0(picomatch@4.0.7(patch_hash=74dc8b5c79a7586ba206ed5b2a37481bf9d2a23ee67e2aa5d45fbaccf4292d6b))
-      picomatch: 4.0.7(patch_hash=74dc8b5c79a7586ba206ed5b2a37481bf9d2a23ee67e2aa5d45fbaccf4292d6b)
+      fdir: 6.5.0(@gymkids-dashboard/picomatch@file:vendor/picomatch-4.0.7-gymkids.1.tgz)
+      picomatch: '@gymkids-dashboard/picomatch@file:vendor/picomatch-4.0.7-gymkids.1.tgz'
       postcss: 8.5.29
       rollup: 4.64.2(patch_hash=95fafe3354bc19b57e235c752dce8090295aadebd6c01cd155da92b38d4a7061)
       tinyglobby: 0.2.17

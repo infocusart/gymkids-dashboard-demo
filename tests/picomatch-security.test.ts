@@ -19,7 +19,8 @@ while (queue.length) {
   visited.add(manifest)
 
   const metadata = JSON.parse(readFileSync(manifest, 'utf8'))
-  if (metadata.name === 'picomatch')
+  assert.notEqual(metadata.name, 'picomatch', 'reachable upstream matcher escaped the fork overrides')
+  if (metadata.name === '@gymkids-dashboard/picomatch')
     packages.push(path.dirname(manifest))
   if (metadata.name === 'rollup')
     rollups.push(path.dirname(manifest))
@@ -36,7 +37,7 @@ while (queue.length) {
 test('repeated wildcard guards stay active independently of the nesting option', () => {
   const versions = packages.map(directory => require(path.join(directory, 'package.json')).version)
 
-  assert.deepEqual([...new Set(versions)].sort(), ['2.3.2', '4.0.7'])
+  assert.deepEqual([...new Set(versions)].sort(), ['2.3.2-gymkids.1', '4.0.7-gymkids.1'])
   for (const directory of packages) {
     const pm = require(directory)
 

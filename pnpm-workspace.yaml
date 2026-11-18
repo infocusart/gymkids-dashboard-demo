@@ -6,6 +6,4 @@ allowBuilds:
   vue-demi: false
 
 patchedDependencies:
-  picomatch@2.3.2: patches/picomatch@2.3.2.patch
-  picomatch@4.0.7: patches/picomatch@4.0.7.patch
   rollup@4.64.2: patches/rollup@4.64.2.patch
