@@ -48,8 +48,16 @@ test('repeated wildcard guards stay active independently of the nesting option',
       assert.equal(close('+(report*)'), ')')
       assert.equal(close('*(report*)'), ')?')
       assert.equal(pm.isMatch('reports.csv', '+(report*)', options), true)
-      assert.equal(pm.isMatch('data.csv', '+(report*|data*)', options), false)
       assert.equal(pm.isMatch('reports.csv', '+(report*)', { ...options, bash: true }), false)
+      for (const [pattern, filename] of [
+        ['+(report*|data*)', 'data.csv'],
+        ['+(@(report*))', 'reports.csv'],
+        ['+(assets/*.svg)', 'assets/logo.svg'],
+        ['+(report**draft)', 'report-draft'],
+      ]) {
+        assert.equal(pm.isMatch(filename, pattern, options), false)
+        assert.equal(pm.parse(pattern, options).tokens[1].value, pattern)
+      }
     }
   }
 })
