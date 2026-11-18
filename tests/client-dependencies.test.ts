@@ -11,10 +11,15 @@ function buildFixture(dependency: string, external = false) {
     plugins: [
       {
         name: 'fixture',
-        resolveId: id => id === 'fixture' || id === dependency ? id : null,
+        resolveId(id) {
+          if (id === 'fixture')
+            return id
+          if (id === 'fixture-dependency')
+            return { id: dependency, external }
+        },
         load(id) {
           if (id === 'fixture')
-            return `export const load = () => import(${JSON.stringify(dependency)})`
+            return 'export const load = () => import("fixture-dependency")'
           if (id === dependency)
             return 'export default 42'
         },
@@ -24,7 +29,7 @@ function buildFixture(dependency: string, external = false) {
     build: {
       write: false,
       lib: { entry: 'fixture', formats: ['es'], fileName: 'fixture' },
-      rollupOptions: { input: 'fixture', external: external ? [dependency] : [] },
+      rollupOptions: { input: 'fixture' },
     },
   })
 }
