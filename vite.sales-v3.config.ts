@@ -5,6 +5,7 @@ import Components from 'unplugin-vue-components/vite'
 import vuetify from 'vite-plugin-vuetify'
 import svgLoader from 'vite-svg-loader'
 import { defineConfig } from 'vite'
+import { excludePicomatchFromClient } from './scripts/lib/client-dependencies'
 import foundation from './vite.config'
 
 export default defineConfig({
@@ -13,6 +14,7 @@ export default defineConfig({
   resolve: foundation.resolve,
   define: foundation.define,
   plugins: [
+    excludePicomatchFromClient(),
     vue(),
     vuetify({ styles: { configFile: 'src/assets/styles/variables/_vuetify.scss' } }),
     Components({ dirs: ['src/@core/components', 'src/components/sales'], dts: false }),

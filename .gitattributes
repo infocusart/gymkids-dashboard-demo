@@ -209,3 +209,5 @@ Procfile          text
 # Patch hashes must stay identical across Windows and Linux checkouts.
 # A context-only blank line in a unified diff has a required space prefix.
 patches/*.patch    text eol=lf whitespace=-blank-at-eol
+# Unified diff context adds one space before Rollup's original tab indentation.
+patches/rollup@4.64.2.patch whitespace=-blank-at-eol,-space-before-tab

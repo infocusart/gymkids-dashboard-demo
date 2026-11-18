@@ -1,6 +1,6 @@
 {
   "all": true,
-  "include": ["src/**/*.ts", "src/**/*.js", "scripts/**/*.mjs", "scripts/**/*.js"],
+  "include": ["src/**/*.ts", "src/**/*.js", "scripts/**/*.mjs", "scripts/**/*.js", "scripts/**/*.ts"],
   "exclude": ["**/*.d.ts"],
   "extension": [".ts", ".js", ".mjs"],
   "reporter": ["text", "lcov", "json-summary"],

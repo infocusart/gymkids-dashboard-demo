@@ -10,6 +10,7 @@ import VueDevTools from 'vite-plugin-vue-devtools'
 import MetaLayouts from 'vite-plugin-vue-meta-layouts'
 import vuetify from 'vite-plugin-vuetify'
 import svgLoader from 'vite-svg-loader'
+import { excludePicomatchFromClient } from './scripts/lib/client-dependencies'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -79,6 +80,7 @@ export default defineConfig({
     }),
 
     svgLoader(),
+    excludePicomatchFromClient(),
 
   ],
   define: { 'process.env': {} },

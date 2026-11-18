@@ -1,23 +1,56 @@
 diff --git a/lib/parse.js b/lib/parse.js
 --- a/lib/parse.js
 +++ b/lib/parse.js
-@@ -512,8 +512,17 @@
-     const body = input.slice(token.startIndex + 2, state.index);
-     const analysis = analyzeRepeatedExtglob(body, opts);
+@@ -280,7 +280,26 @@
+   return depth;
+ };
  
--    if ((token.type === 'plus' || token.type === 'star') && analysis.risky) {
--      const safeOutput = analysis.safeOutput
-+    // Use actual parser tokens: an unclosed bracket may become a literal '['
-+    // followed by a wildcard. Quoted/escaped stars and character classes are not
-+    // wildcard tokens; a star followed by an extglob opener is an operator.
-+    const hasWildcard = tokens.slice(token.tokensIndex + 2).some((inner, index, entries) => {
-+      const next = entries[index + 1];
-+      return (inner.type === 'star' || inner.type === 'globstar') &&
-+        inner.value.includes('*') && !(next && next.extglob && next.value === '(');
-+    });
+-const analyzeRepeatedExtglob = (body, options) => {
++// Backport of micromatch/picomatch #267 and #268. Collapse only a single
++// plain path segment whose one wildcard can absorb the repeated copies.
++const isAbsorbingBranch = body => {
++  const star = body.indexOf('*');
++  return star !== -1 && star === body.lastIndexOf('*') && !/[^a-zA-Z0-9_.*?-]/.test(body);
++};
 +
-+    if ((token.type === 'plus' || token.type === 'star') && (hasWildcard || analysis.risky)) {
-+      const safeOutput = !hasWildcard && analysis.safeOutput
++const hasWildcardToken = bodyTokens => bodyTokens.some((inner, i) => {
++  if ((inner.type !== 'star' && inner.type !== 'globstar') || !inner.value.includes('*')) return false;
++  const next = bodyTokens[i + 1];
++  return !(next && next.extglob && next.value === '(');
++});
++
++const analyzeRepeatedExtglob = (body, options, bodyTokens) => {
++  // This check is independent of the optional nesting limit. All other
++  // wildcard bodies retain the project's literal fallback.
++  if (hasWildcardToken(bodyTokens)) {
++    if (options.bash !== true && isAbsorbingBranch(body)) return { risky: false, collapse: true };
++    return { risky: true };
++  }
+   if (options.maxExtglobRecursion === false) {
+     return { risky: false };
+   }
+@@ -510,9 +529,10 @@
+   const extglobClose = token => {
+     const literal = input.slice(token.startIndex, state.index + 1);
+     const body = input.slice(token.startIndex + 2, state.index);
+-    const analysis = analyzeRepeatedExtglob(body, opts);
+-
+-    if ((token.type === 'plus' || token.type === 'star') && analysis.risky) {
++    const repeated = token.type === 'plus' || token.type === 'star';
++    const analysis = repeated ? analyzeRepeatedExtglob(body, opts, tokens.slice(token.tokensIndex + 2)) : {};
++
++    if (analysis.risky === true) {
+       const safeOutput = analysis.safeOutput
          ? (token.output ? '' : ONE_CHAR) + (opts.capture ? `(${analysis.safeOutput})` : analysis.safeOutput)
          : undefined;
-       const open = tokens[token.tokensIndex];
+@@ -534,6 +554,10 @@
+       push({ type: 'paren', extglob: true, value, output: '' });
+       decrement('parens');
+       return;
++    }
++
++    if (analysis.collapse === true) {
++      token.close = token.type === 'plus' ? ')' : ')?';
+     }
+ 
+     let output = token.close + (opts.capture ? ')' : '');

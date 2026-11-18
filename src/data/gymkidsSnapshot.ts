@@ -28,12 +28,23 @@ export const validateGymkidsManifest = (manifest: GymkidsManifest) => {
 }
 
 const calculateDirectSpend = (details: GymkidsSnapshotDetails | null | undefined, selectedDate: string): number | null => {
-  if (details?.direct?.available === false || details?.direct?.daily?.available === false)
+  const direct = details?.direct
+  if (direct?.available !== true || direct.daily?.available !== true)
     return null
 
-  return (details?.direct?.daily?.rows ?? [])
-    .filter(row => row.date <= selectedDate)
-    .reduce((sum, row) => sum + valueOrZero(row.spend_rub), 0)
+  const rows = direct.daily.rows?.filter(row => row.date <= selectedDate)
+  if (!rows?.length)
+    return null
+
+  let total = 0
+  for (const row of rows) {
+    const spend = metric(row.spend_rub)
+    if (spend === null)
+      return null
+    total += spend
+  }
+
+  return total
 }
 
 export const adaptGymkidsSnapshot = (
@@ -181,7 +192,7 @@ export const adaptGymkidsSnapshot = (
     website: {
       ...websiteSource,
       cpl,
-      cplAvailable: details?.direct?.available === true && details?.direct?.daily?.available === true && cpl !== null,
+      cplAvailable: cpl !== null,
       cplLabel: cpl === null ? '—' : formatMoney(cpl),
       cplBasis: 'расход Direct / лиды Яндекс CRM',
     },

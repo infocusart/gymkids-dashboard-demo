@@ -2,10 +2,22 @@ name: checks
 on:
   push:
   pull_request:
+  schedule:
+    - cron: '17 4 * * *' # 07:17 Moscow time
 permissions:
   contents: read
 jobs:
+  picomatch-upstream-osv:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Check original picomatch versions against OSV
+        run: python3 tools/verify_matcher_forks.py --upstream-only
   security:
+    if: github.event_name != 'schedule'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -19,9 +31,14 @@ jobs:
       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
         with:
           node-version-file: .nvmrc
+      - name: Audit production dependencies
+        id: production_audit
+        run: pnpm security:prod
       - name: Audit all locked dependencies, including build tooling
-        run: pnpm security:check
+        if: ${{ !cancelled() && steps.production_audit.outcome != 'skipped' }}
+        run: pnpm security:all
   verify:
+    if: github.event_name != 'schedule'
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -37,6 +54,8 @@ jobs:
           node-version-file: .nvmrc
           cache: pnpm
       - run: pnpm install --frozen-lockfile --ignore-scripts
+      - name: Verify matcher fork contents against upstream and reviewed patches
+        run: python3 tools/verify_matcher_forks.py --archives-only
       - run: pnpm build:icons
       - run: pnpm lint:strict
       - run: pnpm test:coverage
@@ -51,4 +70,6 @@ jobs:
           retention-days: 14
       - run: pnpm typecheck
       - run: pnpm build
+      - run: pnpm exec vite build --config vite.sales.config.ts
+      - run: pnpm exec vite build --config vite.sales-v3.config.ts
       - run: git diff --exit-code
