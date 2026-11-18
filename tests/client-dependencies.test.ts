@@ -35,7 +35,7 @@ function buildFixture(dependency: string, external = false) {
 }
 
 test('client build allows similarly named modules', async () => {
-  await buildFixture('/node_modules/picomatch-helper/index.js')
+  await assert.doesNotReject(() => buildFixture('/node_modules/picomatch-helper/index.js'))
 })
 
 test('client build blocks bundled and external picomatch imports', async () => {
