@@ -55,4 +55,6 @@ jobs:
           retention-days: 14
       - run: pnpm typecheck
       - run: pnpm build
+      - run: pnpm exec vite build --config vite.sales.config.ts
+      - run: pnpm exec vite build --config vite.sales-v3.config.ts
       - run: git diff --exit-code
