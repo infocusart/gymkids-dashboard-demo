@@ -28,7 +28,7 @@ module.exports = {
     'regex',
     'regexp',
   ],
-  ignorePatterns: ['src/plugins/iconify/*.js', 'node_modules', 'dist', '*.d.ts', 'vendor', '*.json'],
+  ignorePatterns: ['src/plugins/iconify/*.js', 'node_modules', 'dist', '*.d.ts', '!src/types/changelog.d.ts', 'vendor', '*.json'],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
@@ -231,7 +231,7 @@ module.exports = {
   },
   overrides: [{
     // Explicit delimiters let Semgrep CE parse these type contracts completely.
-    files: ['src/data/gymkidsSnapshotTypes.ts', 'src/types/changelog.ts'],
+    files: ['src/data/gymkidsSnapshotTypes.ts', 'src/types/changelog.d.ts'],
     rules: {
       '@stylistic/ts/member-delimiter-style': ['error', {
         multiline: { delimiter: 'semi', requireLast: true },
