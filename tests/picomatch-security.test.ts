@@ -19,6 +19,7 @@ while (queue.length) {
   visited.add(manifest)
 
   const metadata = JSON.parse(readFileSync(manifest, 'utf8'))
+
   assert.notEqual(metadata.name, 'picomatch', 'reachable upstream matcher escaped the fork overrides')
   if (metadata.name === '@gymkids-dashboard/picomatch')
     packages.push(path.dirname(manifest))
